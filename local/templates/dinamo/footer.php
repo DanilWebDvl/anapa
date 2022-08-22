@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <? global $APPLICATION; ?>
+</main>
 <section class="partners_place def_pt b_waves">
     <div class="container_ui">
         <h2 class="title_block mb100">Наши партнеры и спонсоры</h2>

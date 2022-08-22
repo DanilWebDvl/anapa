@@ -26,8 +26,10 @@ if (!$USER->isAuthorized()) {
     <title><?$APPLICATION->ShowTitle()?></title>
     <?$APPLICATION->ShowHead();?>
 </head>
-
-<body>
+<?
+$is_main_page = ($APPLICATION->GetCurPage() == '/') ? true : false;
+?>
+<body class="<?=$is_main_page ?:'other_page' ?>">
 <header>
     <div class="container_ui">
         <div class="flex flex-between">
@@ -145,3 +147,12 @@ if (!$USER->isAuthorized()) {
         <p>* – Записи матчей</p>
     </div>
 </div>
+<? if (!$is_main_page): ?>
+    <section class="main_banner">
+        <div class="center_text"><img src="<?=SITE_TEMPLATE_PATH ?>/img/ico/logo_big.svg" alt=""></div>
+        <div class="container_ui">
+            <h1 class="page_title"><?=$APPLICATION->ShowTitle(false) ?></h1>
+        </div>
+    </section>
+<? endif; ?>
+<main>
