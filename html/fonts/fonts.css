@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-ExtraLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-ExtraLightItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-LightItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-MediumItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-BoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-ExtraBoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Bliss Pro";
+    src: url("BlissPro-Heavy.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}

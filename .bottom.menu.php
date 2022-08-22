@@ -1,0 +1,40 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+$aMenuLinks = Array(
+    Array(
+        "Новости",
+        "/news/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Команда",
+        "/team/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Клуб",
+        "",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Медиа",
+        "",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Волей град",
+        "",
+        Array(),
+        Array(),
+        ""
+    )
+);
+?>
