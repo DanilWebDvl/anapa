@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 ?>
 <? if (!empty($arResult['MONTHS'])): ?>
     <? foreach ($arResult['MONTHS'] as $key => $arMoth): ?>
-        <div class="table_place calendar_table <?=($key!=0) ?:'mt60' ?>">
+        <div class="table_place calendar_table">
             <div class="table_scroll">
                 <div class="table">
                     <div class="header_table">
@@ -26,19 +26,15 @@ $this->setFrameMode(true);
                             <div class="row_table">
                                 <div class="part_small text_center black"><?=$arItem['PROPERTIES']['DATE']['DAY'] ?></div>
                                 <div class="part_full with_img">
-                                    <? if (!empty($arItem['TEAM_H']['NAME'])): ?>
-                                        <span class="text_right"><?=$arItem['TEAM_H']['NAME'] ?></span>
-                                        <span><img src="<?=$arItem['TEAM_H']['ICO'] ?>" alt=""></span>
-                                    <? endif ?>
+                                    <span class="text_right"><?=$arItem['TEAM_H']['NAME'] ?></span>
+                                    <span><img src="<?=$arItem['TEAM_H']['ICO'] ?>" alt=""></span>
                                     <? if (!empty($arItem['PROPERTIES']['SCORE']['VALUE'])): ?>
                                         <span class="text_center"><?=$arItem['PROPERTIES']['SCORE']['VALUE'] ?></span>
                                     <? else: ?>
                                         <span class="text_center">– : –</span>
                                     <? endif ?>
-                                    <? if (!empty($arItem['TEAM_G']['NAME'])): ?>
-                                        <span><img src="<?=$arItem['TEAM_G']['ICO'] ?>" alt=""></span>
-                                        <span><?=$arItem['TEAM_G']['NAME'] ?></span>
-                                    <? endif ?>
+                                    <span><img src="<?=$arItem['TEAM_G']['ICO'] ?>" alt=""></span>
+                                    <span><?=$arItem['TEAM_G']['NAME'] ?></span>
                                 </div>
                                 <div class="part"><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?></div>
                                 <div class="part"><?=$arItem['PROPERTIES']['PLACE']['VALUE'] ?></div>
