@@ -243,6 +243,9 @@
     .mb60 {
         margin-bottom: 25px;
     }
+    .right-side .calendar_table {
+        margin-top: 25px;
+    }
     .tournament_place .flex-tournament {
         display: block;
     }

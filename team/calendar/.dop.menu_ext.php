@@ -9,8 +9,8 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
     Array(
         "ID" => '',
         "IBLOCK_TYPE" => "teams",
-        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('team'),
-        "SECTION_URL" => "/team/#SECTION_CODE_PATH#/",
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
+        "SECTION_URL" => "/team/calendar/#SECTION_CODE_PATH#/",
         "CACHE_TIME" => "3600"
     )
 );

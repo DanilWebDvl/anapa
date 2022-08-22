@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Команда");
+$APPLICATION->SetTitle("Календарь");
 ?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:catalog",
-    "team",
+    "calendar",
     Array(
         "ACTION_VARIABLE" => "action",
         "ADD_ELEMENT_CHAIN" => "N",
@@ -76,7 +76,7 @@ $APPLICATION->SetTitle("Команда");
         "GIFTS_SHOW_OLD_PRICE" => "Y",
         "HIDE_NOT_AVAILABLE" => "N",
         "HIDE_NOT_AVAILABLE_OFFERS" => "N",
-        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('team'),
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
         "IBLOCK_TYPE" => "teams",
         "INCLUDE_SUBSECTIONS" => "Y",
         "INSTANT_RELOAD" => "N",
@@ -138,7 +138,7 @@ $APPLICATION->SetTitle("Команда");
         "SECTION_COUNT_ELEMENTS" => "N",
         "SECTION_ID_VARIABLE" => "SECTION_ID",
         "SECTION_TOP_DEPTH" => "2",
-        "SEF_FOLDER" => "/team/",
+        "SEF_FOLDER" => "/team/calendar/",
         "SEF_MODE" => "Y",
         "SEF_URL_TEMPLATES" => Array(
             "compare" => "",
@@ -183,7 +183,7 @@ $APPLICATION->SetTitle("Команда");
         "USE_BIG_DATA" => "N",
         "USE_COMMON_SETTINGS_BASKET_POPUP" => "N",
         "USE_COMPARE" => "N",
-        "LIST_PROPERTY_CODE" => ["NUM"],
+        "LIST_PROPERTY_CODE" => ["DATE"],
         "USE_ELEMENT_COUNTER" => "N",
         "USE_ENHANCED_ECOMMERCE" => "N",
         "USE_FILTER" => "N",

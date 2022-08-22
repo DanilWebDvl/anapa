@@ -1519,6 +1519,12 @@ body.active_menu {
 .double_side .left-side {
     margin-right: 140px;
 }
+.right-side .calendar_table {
+    margin-top: 60px;
+}
+.right-side .calendar_table:first-child {
+    margin-top: 0;
+}
 .table_place.calendar_table .part_small {
     width: 5%;
     font-size: 26px;
