@@ -5,10 +5,16 @@
         <h2 class="title_block mb100">Наши партнеры и спонсоры</h2>
         <div class="flex partners_list">
             <div class="part">
-                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vtb.png" alt="">
+                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vol1.svg" alt="">
             </div>
             <div class="part">
-                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vtb.png" alt="">
+                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vol2.svg" alt="">
+            </div>
+            <div class="part">
+                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vol3.svg" alt="">
+            </div>
+            <div class="part">
+                <img src="<?=SITE_TEMPLATE_PATH ?>/img/vol4.svg" alt="">
             </div>
         </div>
     </div>
