@@ -4,37 +4,63 @@ $APPLICATION->SetTitle("Контакты");
 ?>
 <main>
     <div class="container_content">
-        <section class="page_contacts_place def_pt_page">
-            <div class="parts_contact_place">
-                <div class="part_contact">
-                    <span class="name_part">Телефон: </span>
-                    <span class="value_part"><a href="tel:88002224752">8 (800) 222-47-52</a></span>
-                </div>
-                <div class="part_contact">
-                    <span class="name_part">Факс:</span>
-                    <span class="value_part"><a href="tel:74956427071">+7 (495) 642-70-71</a></span>
-                </div>
-                <div class="part_contact">
-                    <span class="name_part">Электронная почта:</span>
-                    <span class="value_part"><a href="mailto:office@vcdm-anapa.ru">office@vcdm-anapa.ru</a></span>
-                </div>
-                <div class="part_contact">
-                    <span class="name_part">Пресс-служба:</span>
-                    <span class="value_part"><a href="mailto:info@vcdm-anapa.ru">info@vcdm-anapa.ru</a></span>
-                </div>
-                <div class="part_contact">
-                    <span class="name_part">Юридический адрес:</span>
-                    <span class="value_part">125167, Москва, Ленинградский проспект, дом 36, 3 этаж, помещение № 198</span>
-                </div>
-                <div class="part_contact">
-                    <span class="name_part">Фактический адрес:</span>
-                    <span class="value_part">Краснодарский край, г. Анапа, просп. Южный, д. 5</span>
-                </div>
-            </div>
-        </section>
-        <section class="map_place">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A48c0e58d233f4e94f7923efcbdb048fadbebd96f87b60699e1f60b44e70d914b&amp;height=455&amp;lang=ru_RU&amp;scroll=true"></script>
-        </section>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "contacts",
+            Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "Y",
+                "DISPLAY_DATE" => "N",
+                "DISPLAY_NAME" => "Y",
+                "DISPLAY_PICTURE" => "N",
+                "DISPLAY_PREVIEW_TEXT" => "Y",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array("", ""),
+                "FILTER_NAME" => "",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "9",
+                "IBLOCK_TYPE" => "public",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "INCLUDE_SUBSECTIONS" => "Y",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "20",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array("MAP", "IS_EMAIL", "IS_PHONE", ""),
+                "SET_BROWSER_TITLE" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "SORT",
+                "SORT_BY2" => "ID",
+                "SORT_ORDER1" => "DESC",
+                "SORT_ORDER2" => "ASC",
+                "STRICT_SECTION_CHECK" => "N"
+            )
+        );?>
     </div>
 </main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

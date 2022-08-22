@@ -1,12 +1,5 @@
 @import "../fonts/fonts.css";
 
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 * {
     padding: 0;
     margin: 0;
@@ -331,6 +324,9 @@ header {
 }
 .text_center {
     text-align: center;
+}
+.text_right {
+    text-align: right;
 }
 .calendar_slider_place .card .vs_place img {
     width: 50px;
@@ -924,12 +920,6 @@ header {
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
 }
-.partners_list .part {
-    width: 15%;
-}
-.partners_list .part img {
-    width: 100%;
-}
 .b_waves {
     background-image: url("../img/bwaves.png");
     background-size: cover;
@@ -1094,7 +1084,7 @@ body.active_menu {
 .filter_top .filter_part:last-child {
     margin-right: 0;
 }
-.filter_top .filter_part.active:after {
+.filter_top .filter_part.active:after, .filter_left .filter_part.active:after {
     content: '';
     background-image: url("../img/ico/mini_wave.svg");
     background-repeat: no-repeat;
@@ -1509,4 +1499,100 @@ body.active_menu {
     position: absolute;
     top: 0;
     right: 0;
+}
+.filter_left .filter_part {
+    font-size: 31px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3066BF;
+    padding-bottom: 40px;
+}
+.filter_left .filter_part.active {
+    padding-bottom: 26px;
+}
+.double_side {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+    grid-template-columns: auto 1fr;
+}
+.double_side .left-side {
+    margin-right: 140px;
+}
+.table_place.calendar_table .part_small {
+    width: 5%;
+    font-size: 26px;
+}
+.table_place.calendar_table .header_table .part {
+    text-align: left;
+    font-size: 32px;
+    padding-left: 15px;
+}
+.table_place.calendar_table .body_table {
+    font-size: 18px;
+}
+.table_place.calendar_table .with_img img {
+    margin: 0 18px;
+}
+.table_place.calendar_table .part_full {
+    width: 60%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 50px 1fr 2fr;
+    grid-template-columns: 2fr 1fr 50px 1fr 2fr;
+}
+.table_place.calendar_table .part {
+    width: 15%;
+}
+.sponsor_list .part {
+    padding-bottom: 80px;
+}
+.sponsor_list .logo_sponsor img {
+    max-width: 90%;
+}
+.sponsor_list .logo_sponsor {
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 11px 40px rgba(47, 82, 143, 0.35);
+    box-shadow: 0 11px 40px rgba(47, 82, 143, 0.35);
+    border-radius: 20px;
+    width: 410px;
+    height: 290px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.sponsor_list .data_sponsor .title_sponsor {
+    color: #3066BF;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 48px;
+    padding-bottom: 30px;
+}
+.sponsor_list .data_sponsor {
+    width: calc( 100% - 510px );
+}
+.sponsor_list .data_sponsor .content_sponsor {
+    font-size: 26px;
+    color: #1A1A1A;
+}
+.sponsor_list .data_sponsor .content_sponsor p {
+    padding-bottom: 15px;
+}
+.sponsor_list .data_sponsor .content_sponsor a {
+    color: #2597f4;
+}
+.sponsor_list .data_sponsor .content_sponsor a:hover {
+    text-decoration: underline;
+}
+.container_content a {
+    color: #2597f4;
+}
+.container_content a:hover {
+    text-decoration: underline;
+}
+.container_content .page_contacts_place .part_contact * {
+    color: #3066BF;
 }

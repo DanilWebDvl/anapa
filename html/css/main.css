@@ -1468,3 +1468,6 @@ body.active_menu {
 .container_content a:hover {
     text-decoration: underline;
 }
+.container_content .page_contacts_place .part_contact * {
+    color: #3066BF;
+}
