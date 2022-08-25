@@ -12,7 +12,6 @@
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 $this->setFrameMode(true);
-\_::dJS($arResult);
 ?>
 <?if (!empty($arResult)): ?>
     <ul class="menu_list flex flex-between">
