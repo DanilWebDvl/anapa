@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 <? if (!empty($arResult)): ?>
     <nav>
         <ul class="flex flex-center menu">
-            <? foreach ($arResult as $arItem): ?>
+            <? foreach ($arResult as $arItem): if ($arItem['TEXT'] == '') continue; ?>
                 <li class="part<?=($arItem['SELECTED'] == true) ? ' active' : '' ?>">
                     <a href="<?=$arItem['LINK'] ?>"><?=$arItem['TEXT'] ?></a>
                 </li>
