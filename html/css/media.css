@@ -395,6 +395,18 @@
     }
 }
 @media (max-width: 767px) {
+    .calendar_slider_place .card .vs_place .vs_text {
+        font-size: 33px;
+        padding: 0 2px;
+    }
+    .calendar_slider_place.match_results_place .card .stage {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+    .calendar_slider_place.match_results_place .card .data_place, .calendar_slider_place.match_results_place .card .time_place {
+        order: 2;
+    }
     .sponsor_list .data_sponsor .content_sponsor {
         font-size: 20px;
     }

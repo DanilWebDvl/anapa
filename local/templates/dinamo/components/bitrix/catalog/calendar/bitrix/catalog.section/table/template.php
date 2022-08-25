@@ -27,13 +27,13 @@ $this->setFrameMode(true);
                                 <div class="part_small text_center black"><?=$arItem['PROPERTIES']['DATE']['DAY'] ?></div>
                                 <div class="part_full with_img">
                                     <span class="text_right"><?=$arItem['TEAM_H']['NAME'] ?></span>
-                                    <span><img src="<?=$arItem['TEAM_H']['ICO'] ?>" alt=""></span>
+                                    <span><img src="<?=$arItem['TEAM_H']['ICO'] ?>"></span>
                                     <? if (!empty($arItem['PROPERTIES']['SCORE']['VALUE'])): ?>
                                         <span class="text_center"><?=$arItem['PROPERTIES']['SCORE']['VALUE'] ?></span>
                                     <? else: ?>
                                         <span class="text_center">– : –</span>
                                     <? endif ?>
-                                    <span><img src="<?=$arItem['TEAM_G']['ICO'] ?>" alt=""></span>
+                                    <span><img src="<?=$arItem['TEAM_G']['ICO'] ?>"></span>
                                     <span><?=$arItem['TEAM_G']['NAME'] ?></span>
                                 </div>
                                 <div class="part"><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?></div>

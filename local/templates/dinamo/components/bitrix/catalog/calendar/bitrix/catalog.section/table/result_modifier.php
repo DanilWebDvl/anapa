@@ -13,56 +13,15 @@ if (!empty($arResult['ITEMS'])) {
         if (!empty($month[0][1])) {
 
             if (!empty($arItem['PROPERTIES']['TEAM_H']['VALUE'])) {
-
-                if (empty($arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_H']['VALUE']])) {
-                    if (empty($arTEAM_H_prop)) {
-                        $obTEAM_H_prop = CIBlockProperty::GetByID($arItem['PROPERTIES']['TEAM_H']['ID'], $arParams['IBLOCK_ID']);
-                        if($arTEAM_H_prop = $obTEAM_H_prop->GetNext()) {
-                            $arTEAM_H_iblock = $arTEAM_H_prop['LINK_IBLOCK_ID'];
-                        }
-                    }
-
-                    $obTEAM_H = CIBlockElement::GetList(
-                        [],
-                        ['IBLOCK_ID' => $arTEAM_H_iblock, 'ID' => $arItem['PROPERTIES']['TEAM_H']['VALUE']],
-                        false,
-                        false,
-                        ['NAME', 'ID', 'PROPERTY_ICO']
-                    );
-                    while ($arTEAM_H = $obTEAM_H->GetNext()) {
-                        if (!empty($arTEAM_H['PROPERTY_ICO_VALUE']))
-                            $arTEAM_H['ICO'] = CFile::GetPath($arTEAM_H['PROPERTY_ICO_VALUE']);
-                        $arResult['TEAMS'][$arTEAM_H['ID']] = $arTEAM_H;
-                    }
-                }
+                if (empty($arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_H']['VALUE']]))
+                    $arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_H']['VALUE']] = \Module\Project\Helpers\Utils::getTeamByProp($arParams['IBLOCK_ID'], $arItem['PROPERTIES']['TEAM_H']['ID'], $arItem['PROPERTIES']['TEAM_H']['VALUE']);
 
                 $arItem['TEAM_H'] = $arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_H']['VALUE']];
-
             }
             if (!empty($arItem['PROPERTIES']['TEAM_G']['VALUE'])) {
 
-                if (empty($arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_G']['VALUE']])) {
-
-                    if (empty($arTEAM_G_prop)) {
-                        $obTEAM_G_prop = CIBlockProperty::GetByID($arItem['PROPERTIES']['TEAM_G']['ID'], $arParams['IBLOCK_ID']);
-                        if($arTEAM_G_prop = $obTEAM_G_prop->GetNext()) {
-                            $arTEAM_G_iblock = $arTEAM_G_prop['LINK_IBLOCK_ID'];
-                        }
-                    }
-                    $obTEAM_G = CIBlockElement::GetList(
-                        [],
-                        ['IBLOCK_ID' => $arTEAM_G_iblock, 'ID' => $arItem['PROPERTIES']['TEAM_G']['VALUE']],
-                        false,
-                        false,
-                        ['NAME', 'ID', 'PROPERTY_ICO']
-                    );
-                    while ($arTEAM_G = $obTEAM_G->GetNext()) {
-                        if (!empty($arTEAM_G['PROPERTY_ICO_VALUE']))
-                            $arTEAM_G['ICO'] = CFile::GetPath($arTEAM_G['PROPERTY_ICO_VALUE']);
-                        $arResult['TEAMS'][$arTEAM_G['ID']] = $arTEAM_G;
-                    }
-
-                }
+                if (empty($arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_G']['VALUE']]))
+                    $arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_G']['VALUE']] = \Module\Project\Helpers\Utils::getTeamByProp($arParams['IBLOCK_ID'], $arItem['PROPERTIES']['TEAM_G']['ID'], $arItem['PROPERTIES']['TEAM_G']['VALUE']);
 
                 $arItem['TEAM_G'] = $arResult['TEAMS'][$arItem['PROPERTIES']['TEAM_G']['VALUE']];
             }

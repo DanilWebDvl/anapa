@@ -9,6 +9,7 @@ if (!$USER->isAuthorized()) {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
 <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <?
     $asset = Bitrix\Main\Page\Asset::getInstance();
     $asset->addCss(SITE_TEMPLATE_PATH . '/css/main.css');

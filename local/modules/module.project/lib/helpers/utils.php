@@ -51,4 +51,25 @@ class Utils
         return $array[$num];
     }
 
+    public static function getTeamByProp($iblock, $prop_id, $item_id) {
+        $obTEAM_prop = \CIBlockProperty::GetByID($prop_id, $iblock);
+        if($arTEAM_prop = $obTEAM_prop->GetNext())
+            $arTEAM_iblock = $arTEAM_prop['LINK_IBLOCK_ID'];
+
+        $obTEAM = \CIBlockElement::GetList(
+            [],
+            ['IBLOCK_ID' => $arTEAM_iblock, 'ID' => $item_id],
+            false,
+            false,
+            ['NAME', 'ID', 'PROPERTY_ICO']
+        );
+        while ($arTEAM = $obTEAM->GetNext()) {
+            if (!empty($arTEAM['PROPERTY_ICO_VALUE']))
+                $arTEAM['ICO'] = \CFile::GetPath($arTEAM['PROPERTY_ICO_VALUE']);
+            $arItem = $arTEAM;
+        }
+
+        return $arItem;
+    }
+
 }

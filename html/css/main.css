@@ -306,7 +306,7 @@ header {
     padding: 25px 50px 45px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 .text_center {
     text-align: center;
@@ -323,6 +323,7 @@ header {
     font-size: 48px;
     font-weight: 500;
     padding: 0 10px;
+    align-self: center;
 }
 .calendar_slider_place .card .vs_place .vs_text .desc {
     font-size: 18px;
@@ -1204,6 +1205,18 @@ body.active_menu {
 }
 .calendar_slider_place .match_results_list .date_time {
     padding: 0 22px;
+    position: relative;
+}
+.calendar_slider_place .match_results_list .date_time:after {
+    content: '';
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.3;
+    display: block;
 }
 .calendar_slider_place .match_results_list .card {
     width: 410px;

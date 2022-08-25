@@ -432,6 +432,22 @@
     }
 }
 @media (max-width: 767px) {
+    .calendar_slider_place .card .vs_place .vs_text {
+        font-size: 33px;
+        padding: 0 2px;
+    }
+    .calendar_slider_place.match_results_place .card .stage {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+    .calendar_slider_place.match_results_place .card .data_place, .calendar_slider_place.match_results_place .card .time_place {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+    }
     .sponsor_list .data_sponsor .content_sponsor {
         font-size: 20px;
     }
