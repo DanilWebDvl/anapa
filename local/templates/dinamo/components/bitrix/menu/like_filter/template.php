@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 ?>
 <? if (!empty($arResult)): ?>
     <div class="filter_top flex">
-        <? foreach ($arResult as $arItem): ?>
+        <? foreach ($arResult as $arItem): if ($arItem['PARAMS']['HIDE_IN_LEFT'] == 'Y') continue; ?>
             <div class="filter_part<?=$arItem['SELECTED'] ? ' active' : '' ?>">
                 <span><a href="<?=$arItem['LINK'] ?>"><?=$arItem['TEXT'] ?></a></span>
             </div>

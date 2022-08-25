@@ -99,54 +99,28 @@ $is_main_page = ($APPLICATION->GetCurPage() == '/') ? true : false;
 <?$APPLICATION->ShowPanel()?>
 <div class="mega_menu">
     <div class="menu_place">
-        <ul class="menu_list flex flex-between">
-            <li class="parent_item_list">
-                <p class="parent_item"><a href="team.php">Команда</a></p>
-                <ul class="child_list">
-                    <li><a href="">Игроки</a></li>
-                    <li><a href="">Тренерский штаб</a></li>
-                    <li><a href="">Календарь</a></li>
-                    <li><a href="">Турнирная таблица</a></li>
-                </ul>
-            </li>
-            <li class="parent_item_list">
-                <p class="parent_item"><a href="news.php">Новости</a></p>
-                <ul class="child_list">
-                    <li><a href="results.php">Результаты</a></li>
-                    <li><a href="interview.php">Интервью</a></li>
-                    <li><a href="articles.php">Статьи</a></li>
-                </ul>
-            </li>
-            <li class="parent_item_list">
-                <p class="parent_item"><a href="">Клуб</a></p>
-                <ul class="child_list">
-                    <li><a href="">Руководство</a></li>
-                    <li><a href="">Спонсоры и партнеры</a></li>
-                    <li><a href="contacts.php">Контакты</a></li>
-                </ul>
-            </li>
-            <li class="parent_item_list">
-                <p class="parent_item"><a href="photo.php">Медиа</a></p>
-                <ul class="child_list">
-                    <li><a href="photos.php">Фото</a></li>
-                    <li><a href="video.php">Видео</a></li>
-                    <li><a href="">Для скачивания *</a></li>
-                </ul>
-            </li>
-            <li class="parent_item_list">
-                <p class="parent_item"><a href="about.php">Волей град</a></p>
-                <ul class="child_list">
-                    <li><a href="">Инфраструктура</a></li>
-                    <li><a href="">Арена</a></li>
-                    <li><a href="">Отель</a></li>
-                </ul>
-            </li>
-            <li class="parent_item_list"></li>
-        </ul>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "mega_menu",
+            Array(
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "left",
+                "DELAY" => "N",
+                "MAX_LEVEL" => "2",
+                "MENU_CACHE_GET_VARS" => array(""),
+                "MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_USE_GROUPS" => "Y",
+                "ROOT_MENU_TYPE" => "top",
+                "USE_EXT" => "Y"
+            )
+        );?>
     </div>
-    <div class="desc_place">
-        <p>* – Записи матчей</p>
-    </div>
+    <? if (false): ?>
+        <div class="desc_place">
+            <p>* – Записи матчей</p>
+        </div>
+    <? endif ?>
 </div>
 <? if (!$is_main_page): ?>
     <section class="main_banner">

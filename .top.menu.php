@@ -24,7 +24,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Медиа",
-		"",
+		"/media/",
 		Array(), 
 		Array(), 
 		"" 
