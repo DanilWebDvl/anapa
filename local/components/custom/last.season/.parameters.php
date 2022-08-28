@@ -49,6 +49,31 @@ $arComponentParameters = array(
 			"NAME"=>GetMessage("SORT_ORDER"),
 			"TYPE"=>"STRING"
 		),
+		"PAGER_LINK" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("PAGER_LINK"),
+			"TYPE"=>"STRING"
+		),
+		"PAGER_TITLE" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("PAGER_TITLE"),
+			"TYPE"=>"STRING"
+		),
+		"TITLE_BLOCK" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("TITLE_BLOCK"),
+			"TYPE"=>"STRING"
+		),
+		"TITLE_BLOCK_2" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("TITLE_BLOCK_2"),
+			"TYPE"=>"STRING"
+		),
+		"PAGER_SHOW_ALL" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("PAGER_SHOW_ALL"),
+			"TYPE"=>"STRING"
+		),
 	),
 );
 ?>

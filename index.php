@@ -127,73 +127,25 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "SORT_ORDER2" => "ASC",
         "STRICT_SECTION_CHECK" => "N",
         "TITLE_BLOCK" => "Новости",
-        "PAGER_LINK" => 'news'
+        "PAGER_LINK" => '/news/'
     )
 ); ?>
-    <section class="tournament_place def_mt pos-rel">
-        <div class="b_waves near_both mob_show"></div>
-        <div class="container_ui">
-            <div class="flex flex-between flex-tournament">
-                <div class="table_place">
-                    <h2 class="title_block">Турнирная таблица</h2>
-                    <div class="table_scroll">
-                        <div class="table">
-                            <div class="header_table">
-                                <div class="part">Место</div>
-                                <div class="part"></div>
-                                <div class="part_full">Команда</div>
-                                <div class="part">И</div>
-                                <div class="part">В</div>
-                                <div class="part">О</div>
-                                <div class="part">П</div>
-                                <div class="part">Сеты</div>
-                            </div>
-                            <div class="body_table">
-                                <? for ($i = 0; $i < 9; $i++): ?>
-                                    <div class="row_table">
-                                        <div class="part black">1</div>
-                                        <div class="part with_img">
-                                            <img src="<?=SITE_TEMPLATE_PATH ?>/img/ico/i-d.png" alt="">
-                                        </div>
-                                        <div class="part_full">
-                                            <span>Динамо-АК Барс</span>
-                                        </div>
-                                        <div class="part">26</div>
-                                        <div class="part">33</div>
-                                        <div class="part">44</div>
-                                        <div class="part">1</div>
-                                        <div class="part">78-83</div>
-                                    </div>
-                                <? endfor ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="full-btn">
-                        <a href="" class="btn_link">ПОКАЗАТЬ ВСЕ</a>
-                    </div>
-                </div>
-                <div class="leader_place">
-                    <h2 class="title_block">Игрок месяца</h2>
-                    <div class="big_card card_sport">
-                        <div class="img_with_wave">
-                            <img src="<?=SITE_TEMPLATE_PATH ?>/img/woman.png" alt="">
-                        </div>
-                        <div class="info_card">
-                            <div class="num">
-                                71
-                            </div>
-                            <div class="more_info">
-                                <p class="name">Татьяна Дмитриевна</p>
-                                <p class="role">Пасующая</p>
-                                <p class="birth_title">Дата рождения</p>
-                                <p class="birth">28.03.2001</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<?$APPLICATION->IncludeComponent(
+    "custom:last.season",
+    "",
+    Array(
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('tournament'),
+        "IBLOCK_TYPE" => "teams",
+        "TEMPLATE_NAME" => "main_tournament",
+        "SORT_BY" => "PROPERTY_PLACE",
+        "SORT_ORDER" => "ASC",
+        "PAGER_SHOW_ALL" => "Y",
+        "PAGER_LINK" => "/team/tournament/",
+        "PAGER_TITLE" => "ПОКАЗАТЬ ВСЕ",
+        "TITLE_BLOCK" => "Турнирная таблица",
+        "TITLE_BLOCK_2" => "Игрок месяца"
+    )
+);?>
     <section class="team_place def_mt pos-rel">
         <div class="container_ui">
             <h2 class="title_block mb60">Команда</h2>

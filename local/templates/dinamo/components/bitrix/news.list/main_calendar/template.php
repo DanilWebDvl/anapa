@@ -22,7 +22,7 @@ $this->setFrameMode(true);
                     <div class="card <?=($arItem['PREV'] == 'Y') ? 'prev' : '' ?>">
                         <div class="date_time">
                             <div class="data_place">
-                                <p><?=$arItem['DAY'] ?> <?=$arItem['MONTH'] ?></p>
+                                <p><?=$arItem['MONTH'] ?> <?=$arItem['DAY'] ?></p>
                             </div>
                             <div class="time_place">
                                 <p><?=$arItem['TIME'] ?></p>

@@ -72,4 +72,28 @@ class Utils
         return $arItem;
     }
 
+    public static function getPlayerByUF($iblock, $prop_code, $item_id) {
+        $obField = \CUserTypeEntity::GetList([], ['FIELD_NAME' => $prop_code, 'ENTITY_ID' => 'IBLOCK_'. $iblock .'_SECTION']);
+        while ($arField = $obField->GetNext()) {
+            $team_iblock = $arField['SETTINGS']['IBLOCK_ID'];
+        }
+
+        $obTEAMs = \CIBlockElement::GetList(
+            [],
+            ['IBLOCK_ID' => $team_iblock, 'ID' => $item_id],
+            false,
+            false,
+            []
+        );
+        while ($obTEAM = $obTEAMs->GetNextElement()) {
+            $arTEAM = $obTEAM->GetFields();
+            $arTEAM['PROP'] = $obTEAM->GetProperties();
+            if (!empty($arTEAM['PROP']['ICO']['VALUE']))
+                $arTEAM['ICO'] = \CFile::GetPath($arTEAM['PROP']['ICO']['VALUE']);
+            $arItem = $arTEAM;
+        }
+
+        return $arItem;
+    }
+
 }

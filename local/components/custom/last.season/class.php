@@ -38,12 +38,13 @@ class LastSeason extends \CBitrixComponent
             ['UF_FINAL_DATE_SEASON' => 'DESC'],
             ['ACTIVE' => 'Y', 'IBLOCK_ID' => $this->arParams["IBLOCK_ID"]],
             false,
-            [],
+            ['*', 'UF_*'],
             ['nTopCount' => 1]
         );
 
         while ($arSection = $obSection->GetNext()) {
             $this->section_id = $arSection['ID'];
+            $this->section = $arSection;
         }
         if (empty($this->section_id))
             $this->errors->setError(new Error('Section date is empty'));
@@ -95,10 +96,10 @@ class LastSeason extends \CBitrixComponent
                 "PAGER_BASE_LINK_ENABLE" => "N",
                 "PAGER_DESC_NUMBERING" => "N",
                 "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALL" => $this->arParams["PAGER_SHOW_ALL"] ?: "N",
                 "PAGER_SHOW_ALWAYS" => "N",
                 "PAGER_TEMPLATE" => ".default",
-                "PAGER_TITLE" => "",
+                "PAGER_TITLE" => $this->arParams["PAGER_TITLE"] ?: "",
                 "PARENT_SECTION" => $this->section_id,
                 "PARENT_SECTION_CODE" => "",
                 "PREVIEW_TRUNCATE_LEN" => "",
@@ -114,7 +115,11 @@ class LastSeason extends \CBitrixComponent
                 "SORT_BY2" => "ID",
                 "SORT_ORDER1" => $this->arParams["SORT_ORDER"] ?: "DESC",
                 "SORT_ORDER2" => "ASC",
-                "STRICT_SECTION_CHECK" => "N"
+                "STRICT_SECTION_CHECK" => "N",
+                "PAGER_LINK" => $this->arParams["PAGER_LINK"] ?: "",
+                "TITLE_BLOCK" => $this->arParams["TITLE_BLOCK"] ?: "",
+                "TITLE_BLOCK_2" => $this->arParams["TITLE_BLOCK_2"] ?: "",
+                "SECTION" => $this->section
             )
         );
     }
