@@ -21,11 +21,11 @@ $this->setFrameMode(true);
                     <picture>
                         <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">
                     </picture>
-                    <div class="text-place flex flex-bottom smooth_back">
+                    <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
                         <div class="content-slide">
                             <p class="part"><?=$arItem['NAME'] ?></p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <? endforeach; ?>
         </div>
