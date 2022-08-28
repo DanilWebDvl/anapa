@@ -1,67 +1,123 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Динамо");
+include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
 ?>
-<main>
-    <section class="main_slider_place">
-        <div class="slider_init white-btns">
-            <div class="slide">
-                <picture>
-                    <img src="<?=SITE_TEMPLATE_PATH ?>/img/main.jpg" alt="first pic">
-                </picture>
-                <div class="text-place flex flex-bottom smooth_back">
-                    <div class="content-slide">
-                        <p class="part">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slide">
-                <picture>
-                    <img src="<?=SITE_TEMPLATE_PATH ?>/img/main.jpg" alt="first pic">
-                </picture>
-                <div class="text-place flex flex-bottom smooth_back">
-                    <div class="content-slide">
-                        <p class="part">Начинается аккредитация СМИ на матч «Динамо» — «Ростов» 2</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bot_arrows"></div>
-    </section>
-    <section class="calendar_slider_place">
-        <div class="slider_multiple owl-carousel">
-            <? for ($i = 1; $i < 9; $i++): ?>
-                <div class="slide">
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "main_slider",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "N",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "N",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array("", ""),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('mainslider'),
+        "IBLOCK_TYPE" => "public",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array("LINK", "*"),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "ID",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+);?>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "main_calendar",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "N",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "N",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array("", ""),
+        "FILTER_NAME" => "arrFilterCalendar",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
+        "IBLOCK_TYPE" => "team",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array("DATE", "*"),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "ID",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+);?>
 
-                    <div class="card <?=($i < 3) ? 'prev' : '' ?>">
-                        <div class="date_time">
-                            <div class="data_place">
-                                <p><?=$i ?> августа</p>
-                            </div>
-                            <div class="time_place">
-                                <p>18:00</p>
-                            </div>
-                        </div>
-                        <div class="vs_place">
-                            <div class="text_center">
-                                <img src="<?=SITE_TEMPLATE_PATH ?>/img/ico/i-d.png" alt="">
-                                <p class="desc">Динамо Анапа</p>
-                            </div>
-                            <p class="vs_text"><?=($i < 3) ? 'vs' : '3:1' ?></p>
-                            <div class="text_center">
-                                <img src="<?=SITE_TEMPLATE_PATH ?>/img/ico/i-a.png" alt="">
-                                <p class="desc">Локомотив Москва</p>
-                            </div>
-                        </div>
-                        <div class="desc_place">
-                            <p>Арена «Волей Град»</p>
-                        </div>
-                    </div>
-
-                </div>
-            <? endfor ?>
-        </div>
-    </section>
     <section class="news_slider_place">
         <div class="container_ui">
             <h2 class="title_block mb60">Новости</h2>
@@ -304,5 +360,4 @@ $APPLICATION->SetTitle("Динамо");
             </div>
         </div>
     </section>
-</main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

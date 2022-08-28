@@ -56,6 +56,30 @@ $aTabs = array(
                 '',
                 array('text', 90),
             ),
+            array(
+                'FOOTER_1',
+                Loc::getMessage('FOOTER_1'),
+                '',
+                array('text', 90),
+            ),
+            array(
+                'FOOTER_2',
+                Loc::getMessage('FOOTER_2'),
+                '',
+                array('text', 90),
+            ),
+            array(
+                'FOOTER_PHONE',
+                Loc::getMessage('FOOTER_PHONE'),
+                '',
+                array('text', 90),
+            ),
+            array(
+                'FOOTER_EMAIL',
+                Loc::getMessage('FOOTER_EMAIL'),
+                '',
+                array('text', 90),
+            ),
         ),
     ),
     array(

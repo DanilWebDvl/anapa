@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Контакты");
         "FIELD_CODE" => array("", ""),
         "FILTER_NAME" => "",
         "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-        "IBLOCK_ID" => "9",
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('contacts'),
         "IBLOCK_TYPE" => "public",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
         "INCLUDE_SUBSECTIONS" => "Y",
