@@ -322,6 +322,9 @@ header {
     -ms-flex-align: start;
     align-items: start;
 }
+.calendar_slider_place .slider_multiple .card.prev .vs_place {
+    padding: 25px 25px 45px;
+}
 .text_center {
     text-align: center;
 }
@@ -340,6 +343,10 @@ header {
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
+}
+.calendar_slider_place .slider_multiple .card.prev .vs_place .vs_text {
+    font-size: 31px;
+    padding: 0;
 }
 .calendar_slider_place .card .vs_place .vs_text .desc {
     font-size: 18px;
@@ -1338,7 +1345,7 @@ body.active_menu {
 .calendar_slider_place.match_results_place .card .vs_place {
     padding: 60px 35px 0;
 }
-.calendar_slider_place.match_results_place .card .vs_place > * {
+.calendar_slider_place .card .vs_place > * {
     width: 33%;
 }
 .pager_cards_list .pager_card {
