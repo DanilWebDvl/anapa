@@ -1359,6 +1359,9 @@ body.active_menu {
 .pager_cards_list .pager_card picture img {
     width: 100%;
 }
+.pager_cards_list .pager_card .text-place .content-slide {
+    width: 100%;
+}
 .pager_cards_list .pager_card .text-place {
     padding: 32px 40px;
 }

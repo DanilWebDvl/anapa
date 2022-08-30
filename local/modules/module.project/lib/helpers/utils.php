@@ -96,4 +96,11 @@ class Utils
         return $arItem;
     }
 
+    public static function sortArByKeyDate($a, $b) {
+        if ($a["UF_DATE"] == $b["UF_DATE"]) {
+            return 0;
+        }
+        return (strtotime($a["UF_DATE"]) > strtotime($b["UF_DATE"])) ? -1 : 1;
+    }
+
 }

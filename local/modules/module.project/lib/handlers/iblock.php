@@ -2,7 +2,7 @@
 namespace Module\Project\Handlers;
 
 use Bitrix\Main\Diag\Debug;
-use Bitrix\Main\Type\DateTime;
+use Bitrix\Main\Type\Date;
 
 class Iblock
 {
@@ -37,6 +37,15 @@ class Iblock
             }
             $arFields['PROPERTY_VALUES'][$arProps['SYS_YEAR']['ID']][$id_y]['VALUE'] = $obDate->format('Y');
             $arFields['PROPERTY_VALUES'][$arProps['SYS_MONTH']['ID']][$id_m]['VALUE'] = $obDate->format('m');
+        }
+    }
+
+    public static function beforeSaveSection(&$arFields)
+    {
+        if (!empty($arFields['UF_DATE']) && isset($arFields['UF_SYS_YEAR'])) {
+            $obDate = new Date($arFields['UF_DATE']);
+            $arFields['UF_SYS_YEAR'] = $obDate->format('Y');
+            $arFields['UF_SYS_MONTH'] = $obDate->format('m');
         }
     }
 }
