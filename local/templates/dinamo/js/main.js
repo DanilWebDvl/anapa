@@ -37,6 +37,7 @@ function menu() {
 }
 
 function sliders() {
+    let scrollX = 0;
     $('.slider_init').slick({
         prevArrow: '<button type="button" class="slick-prev"></button>',
         nextArrow: '<button type="button" class="slick-next"></button>',
@@ -69,13 +70,17 @@ function sliders() {
         }
     });
     slider_multiple.on('mousewheel', '.owl-stage', function (e) {
-        console.log(e.originalEvent.deltaY && document.documentElement.clientWidth > 991);
-        if (e.originalEvent.deltaY>0) {
-            slider_multiple.trigger('next.owl');
-        } else {
-            slider_multiple.trigger('prev.owl');
+        scrollX++;
+        if (scrollX > 10) {
+            if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==-0) {
+                slider_multiple.trigger('next.owl');
+                e.preventDefault();
+            } else if (e.originalEvent.deltaX!==-0) {
+                slider_multiple.trigger('prev.owl');
+                e.preventDefault();
+            }
+            scrollX = 0;
         }
-        e.preventDefault();
     });
     var slider_multiple_team = $('.slider_multiple_team');
     slider_multiple_team.owlCarousel({
@@ -106,12 +111,17 @@ function sliders() {
         }
     });
     slider_multiple_team.on('mousewheel', '.owl-stage', function (e) {
-        if (e.originalEvent.deltaY>0 && document.documentElement.clientWidth > 991) {
-            slider_multiple_team.trigger('next.owl');
-        } else {
-            slider_multiple_team.trigger('prev.owl');
+        scrollX++;
+        if (scrollX > 10) {
+            if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==0) {
+                slider_multiple_team.trigger('next.owl');
+                e.preventDefault();
+            } else if (e.originalEvent.deltaX!==-0) {
+                slider_multiple_team.trigger('prev.owl');
+                e.preventDefault();
+            }
+            scrollX = 0;
         }
-        e.preventDefault();
     });
     if ( document.documentElement.clientWidth <= 991 ){
         $('.single_slider_media').removeClass('owl-carousel');
@@ -162,12 +172,17 @@ function sliders() {
             }
         });
         slider_multiple_2.on('mousewheel', '.owl-stage', function (e) {
-            if (e.originalEvent.deltaY>0 && document.documentElement.clientWidth > 991) {
-                slider_multiple_2.trigger('next.owl');
-            } else {
-                slider_multiple_2.trigger('prev.owl');
+            scrollX++;
+            if (scrollX > 10) {
+                if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==0) {
+                    slider_multiple_2.trigger('next.owl');
+                    e.preventDefault();
+                } else if (e.originalEvent.deltaX!==-0) {
+                    slider_multiple_2.trigger('prev.owl');
+                    e.preventDefault();
+                }
+                scrollX = 0;
             }
-            e.preventDefault();
         });
     }
 }

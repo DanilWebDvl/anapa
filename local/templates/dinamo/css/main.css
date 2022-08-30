@@ -745,6 +745,9 @@ header {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.slider_team_place .slider_multiple_team .player {
+    width: 300px;
+}
 .slider_team_place .card_sport {
     width: 300px;
     -webkit-box-shadow: none;
