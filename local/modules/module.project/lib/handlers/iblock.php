@@ -3,6 +3,7 @@ namespace Module\Project\Handlers;
 
 use Bitrix\Main\Diag\Debug;
 use Bitrix\Main\Type\Date;
+use Bitrix\Main\Type\DateTime;
 
 class Iblock
 {

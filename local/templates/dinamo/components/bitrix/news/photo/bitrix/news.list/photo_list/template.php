@@ -30,12 +30,12 @@ $this->setFrameMode(true);
             </div>
         <? endforeach; ?>
         <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
-        <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-            <div class="text_center pagen<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
-                <!--pagen-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
-                <?=$arResult["NAV_STRING"]?>
-                <!--pagen-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
-            </div>
-        <?endif;?>
     </div>
+    <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+        <div class="text_center pagen<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
+            <!--pagen-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
+            <?=$arResult["NAV_STRING"]?>
+            <!--pagen-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
+        </div>
+    <?endif;?>
 <? endif; ?>

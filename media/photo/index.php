@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Медиа");
 ?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news",
-    "media",
+    "photo",
     Array(
         "ADD_ELEMENT_CHAIN" => "Y",
         "ADD_SECTIONS_CHAIN" => "Y",
