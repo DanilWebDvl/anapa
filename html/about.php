@@ -44,17 +44,49 @@
                 <p>Уникальность этого места — в сочетании профессиональной подготовки спортсменов и оздоровительного отдыха для всех желающих.</p>
                 <blockquote>»Волей Град» – станет домашней площадкой для волейболисток клуба «Динамо-Анапа» . Команда будет проводить здесь не только домашние матчи, но и строить весь тренировочный процесс в рамках инфраструктуры «Волей града».</blockquote>
                 <div class="single_slider owl-carousel">
-                    <img src="img/image.png" alt="">
-                    <img src="img/image.png" alt="">
-                    <img src="img/image.png" alt="">
-                    <img src="img/image.png" alt="">
-                    <img src="img/image.png" alt="">
+                    <div>
+                        <img src="img/image.png" alt="">
+                        <div class="slide_for_content">
+                            <div class="right-btn desc_photo">
+                                <p>asdasdasd</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/image.png" alt="">
+                        <div class="slide_for_content">
+                            <div class="right-btn desc_photo">
+                                <p>asdasdasd</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/image.png" alt="">
+                        <div class=" slide_for_content">
+                            <div class="right-btn  desc_photo">
+                                <p>asdasdasd</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/image.png" alt="">
+                        <div class=" slide_for_content">
+                            <div class="right-btn  desc_photo">
+                                <p>asdasdasd</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/image.png" alt="">
+                        <div class=" slide_for_content">
+                            <div class="right-btn  desc_photo">
+                                <p>asdasdasd</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="mb100 slide_for_content">
                     <div class="nav_by_slider nav_by_slider_single"></div>
-                    <div class="right-btn btn_with_arrows desc_photo">
-                        <p>asdasdasd</p>
-                    </div>
                 </div>
                 <p>Спортивно-оздоровительный комплекс «Волей Град» имени Юрия Сапеги расположен на живописной косе в трёхстах метрах от Витязевского лимана и полукилометре от Чёрного моря, на площади 12 га.</p>
                 <p>Комплекс построен в 2007 году и назван в честь знаменитого волейболиста Юрия Николаевича Сапеги, в прошлом известного игрока сборной СССР, тренера и руководителя, генерального менеджера Всероссийской Федерации Волейбола.</p>

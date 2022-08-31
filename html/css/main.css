@@ -437,6 +437,9 @@ header {
     padding-top: 60px;
     display: flex;
 }
+.nav_by_slider.nav_by_slider_single {
+    padding-top: 20px;
+}
 .nav_by_slider button {
     width: 80px;
     height: 80px;
@@ -1175,6 +1178,7 @@ body.active_menu {
 }
 .slide_for_content .desc_photo {
     margin-left: 50%;
+    padding-top: 10px;
 }
 .container_content blockquote {
     color: #3066BF;

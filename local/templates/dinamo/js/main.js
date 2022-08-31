@@ -243,4 +243,28 @@ function filter() {
         });
 
     });
+
+
+    window.addEventListener('scroll', function() {
+
+        if ($('.filter_top.fixed').hasClass('active')) {
+            if ($(window).scrollTop() < $('.filter_top.fixed').closest('.parent').offset().top) {
+                $('.filter_top.fixed').removeClass('active');
+            }
+        } else {
+            if ($(window).scrollTop() >= $('.filter_top.fixed').closest('.parent').offset().top) {
+                $('.filter_top.fixed').addClass('active');
+            }
+        }
+
+        $('.filter_top.fixed .filter_part').each(function (index, val) {
+            let link = $(val).find('a');
+            let id = link.attr('href');
+            if ($(window).scrollTop() >= $(id).offset().top - 50 && $(window).scrollTop() <= $(id).offset().top + 50) {
+                $('.filter_top.fixed .filter_part').removeClass('active');
+                $(val).addClass('active');
+            }
+        });
+
+    });
 }
