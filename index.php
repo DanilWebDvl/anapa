@@ -205,125 +205,16 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "PAGER_LINK" => '/team/'
     )
 ); ?>
-    <section class="media_place def_mt">
-        <div class="container_ui">
-            <h2 class="title_block mb60">Медиа</h2>
-            <div class="slide_media_place">
-                <div class="single_slider_media owl-carousel mob_hide">
-                    <? for ($i = 0; $i < 4; $i++): ?>
-                        <div class="news_part flex">
-
-                            <div class="side_2 part color_line pink pos-rel">
-                                <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                                <div class="text-place flex flex-bottom smooth_back">
-                                <span class="content-slide">
-                                    <p class="link"><a href="" >Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                                    <div class="flex flex-between flex-a-center">
-                                        <p class="data">28.06.2022</p>
-                                        <p class="num with_bac">235</p>
-                                    </div>
-                                </span>
-                                </div>
-                            </div>
-                            <div class="side_1 flex middle_part part">
-                                <div class="m_part color_line pink pos-rel">
-                                    <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                                    <div class="text-place flex flex-bottom smooth_back">
-                                <span class="content-slide">
-                                    <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                                    <div class="flex flex-between flex-a-center">
-                                        <p class="data">28.06.2022</p>
-                                    </div>
-                                </span>
-                                    </div>
-                                </div>
-                                <div class="m_part color_line pink pos-rel">
-                                    <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                                    <div class="text-place flex flex-bottom smooth_back">
-                                <span class="content-slide">
-                                    <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                                    <div class="flex flex-between flex-a-center">
-                                        <p class="data">28.06.2022</p>
-                                    </div>
-                                </span>
-                                    </div>
-                                </div>
-                                <div class="m_part color_line pink pos-rel">
-                                    <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                                    <div class="text-place flex flex-bottom smooth_back">
-                                <span class="content-slide">
-                                    <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                                    <div class="flex flex-between flex-a-center">
-                                        <p class="data">28.06.2022</p>
-                                    </div>
-                                </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="side_3 part color_line blue pos-rel">
-                                <picture class="video_ico"><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                                <div class="text-place flex flex-bottom smooth_back">
-                                <span class="content-slide">
-                                    <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                                    <div class="flex flex-between flex-a-center">
-                                        <p class="data">28.06.2022</p>
-                                    </div>
-                                </span>
-                                </div>
-                            </div>
-
-                        </div>
-                    <? endfor ?>
-                </div>
-                <div class="mob_show">
-                    <div class="media_mob_list">
-                        <div class="part color_line pink pos-rel news_part">
-                            <p class="num with_bac mob_show">235</p>
-                            <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                            <div class="text-place flex flex-bottom smooth_back">
-                        <span class="content-slide">
-                            <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                            <div class="flex flex-between flex-a-center">
-                                <p class="data">28.06.2022</p>
-                                <p class="num mob_hide">235</p>
-                            </div>
-                        </span>
-                            </div>
-                        </div>
-                        <div class="part color_line pink pos-rel news_part">
-                            <p class="num with_bac mob_show">235</p>
-                            <picture><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                            <div class="text-place flex flex-bottom smooth_back">
-                        <span class="content-slide">
-                            <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                            <div class="flex flex-between flex-a-center">
-                                <p class="data">28.06.2022</p>
-                                <p class="num mob_hide">235</p>
-                            </div>
-                        </span>
-                            </div>
-                        </div>
-                        <div class="part color_line blue pos-rel news_part">
-                            <picture class="video_ico"><img src="<?=SITE_TEMPLATE_PATH ?>/img/sport.jpg" alt=""></picture>
-                            <div class="text-place flex flex-bottom smooth_back">
-                        <span class="content-slide">
-                            <p class="link"><a href="">Начинается аккредитация СМИ на матч «Динамо» — «Ростов»</a></p>
-                            <div class="flex flex-between flex-a-center">
-                                <p class="data">28.06.2022</p>
-                                <p class="num mob_hide">235</p>
-                            </div>
-                        </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container_ui container_without_p">
-                    <div class="nav_by_slider nav_by_slider_media"></div>
-                    <div class="right-btn btn_with_arrows">
-                        <a href="" class="btn_link">ВСЕ МЕДИА</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<?$APPLICATION->IncludeComponent(
+    "custom:media_main",
+    "",
+    Array(
+        "IBLOCK_ID_PHOTO" => Module\Project\Helpers\Utils::getIdByCode('photo'),
+        "IBLOCK_ID_VIDEO" => Module\Project\Helpers\Utils::getIdByCode('video'),
+        "IBLOCK_TYPE" => "media",
+        "PAGER_LINK" => "/media/photo/",
+        "PAGER_TITLE" => "ВСЕ МЕДИА",
+        "TITLE_BLOCK" => "Медиа"
+    )
+);?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

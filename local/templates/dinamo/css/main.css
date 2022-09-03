@@ -148,6 +148,18 @@ a {
     transition: .3s color;
     text-decoration: none;
 }
+h1 {
+    font-size: 74px;
+}
+h2 {
+    font-size: 58px;
+}
+h3 {
+    font-size: 40px;
+}
+h4 {
+    font-size: 30px;
+}
 main {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -1380,7 +1392,7 @@ body.active_menu {
 .pager_cards_list .pager_card picture img {
     width: 100%;
 }
-.pager_cards_list .pager_card .text-place .content-slide {
+.pager_cards_list .pager_card .text-place .content-slide, .slide_media_place .text-place .content-slide {
     width: 100%;
 }
 .pager_cards_list .pager_card .text-place {

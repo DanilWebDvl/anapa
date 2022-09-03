@@ -18,21 +18,12 @@ $arComponentParameters = array(
 		"IBLOCK_TYPE" => Array(
 			"PARENT" => "BASE",
 			"NAME"=>GetMessage("CP_BMS_IBLOCK_TYPE"),
-			"TYPE"=>"LIST",
-			"VALUES"=>$arTypesEx,
-			"DEFAULT"=>"catalog",
-			"ADDITIONAL_VALUES"=>"N",
-			"REFRESH" => "Y",
+			"TYPE"=>"STRING"
 		),
 		"IBLOCK_ID" => Array(
 			"PARENT" => "BASE",
 			"NAME"=>GetMessage("CP_BMS_IBLOCK_ID"),
-			"TYPE"=>"LIST",
-			"VALUES"=>$arIBlocks,
-			"DEFAULT"=>'1',
-			"MULTIPLE"=>"N",
-			"ADDITIONAL_VALUES"=>"N",
-			"REFRESH" => "Y",
+			"TYPE"=>"STRING"
 		),
 		"TEMPLATE_NAME" => Array(
 			"PARENT" => "BASE",

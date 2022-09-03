@@ -66,7 +66,7 @@ $APPLICATION->SetTitle("Видео");
         "SET_STATUS_404" => "Y",
         "SET_TITLE" => "N",
         "SHOW_404" => "N",
-        "SORT_BY1" => "ID",
+        "SORT_BY1" => "PROPERTY_DATE",
         "SORT_BY2" => "SORT",
         "SORT_ORDER1" => "DESC",
         "SORT_ORDER2" => "ASC",
