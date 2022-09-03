@@ -18,14 +18,30 @@ $this->setFrameMode(true);
         <div class="slider_init white-btns">
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="slide">
-                    <picture>
-                        <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">
-                    </picture>
-                    <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
-                        <div class="content-slide">
-                            <p class="part"><?=$arItem['NAME'] ?></p>
-                        </div>
-                    </a>
+                    <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['path'])): ?>
+                        <video playsinline loop="" muted="" autoplay="" class="fullscreen-bg__video">
+                            <source src="<?=$arItem['PROPERTIES']['VIDEO']['VALUE']['path'] ?>">
+                        </video>
+                    <? else: ?>
+                        <picture>
+                            <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">
+                        </picture>
+                    <? endif; ?>
+                    <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['path'])): ?>
+                        <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['title'])): ?>
+                            <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
+                                <div class="content-slide">
+                                    <p class="part"><?=$arItem['PROPERTIES']['VIDEO']['VALUE']['title'] ?></p>
+                                </div>
+                            </a>
+                        <? endif; ?>
+                    <? else: ?>
+                        <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
+                            <div class="content-slide">
+                                <p class="part"><?=$arItem['NAME'] ?></p>
+                            </div>
+                        </a>
+                    <? endif; ?>
                 </div>
             <? endforeach; ?>
         </div>

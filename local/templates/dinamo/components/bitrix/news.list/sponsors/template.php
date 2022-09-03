@@ -18,19 +18,23 @@ $this->setFrameMode(true);
         <? if (!empty($arResult['ITEMS'])): ?>
             <div class="flex sponsor_list">
                 <? foreach ($arResult['ITEMS'] as $arItem): ?>
-                        <div class="part flex flex-between">
-                            <div class="logo_sponsor flex flex-a-center">
-                                <? if (!empty($arItem['ICO'])): ?>
-                                    <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
-                                <? endif ?>
-                            </div>
-                            <div class="data_sponsor">
-                                <p class="title_sponsor"><?=$arItem['NAME'] ?></p>
-                                <div class="content_sponsor">
-                                    <?=$arItem['~PREVIEW_TEXT'] ?>
-                                </div>
+                    <?
+                    if (!empty($arItem['PROPERTIES']['LINK']['VALUE']))
+                        $link = $arItem['PROPERTIES']['LINK']['VALUE'];
+                    ?>
+                    <div class="part flex flex-between">
+                        <a class="logo_sponsor flex flex-a-center"<?=!empty($link) ? ' href="'.$link.'"' : '' ?>>
+                            <? if (!empty($arItem['ICO'])): ?>
+                                <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
+                            <? endif ?>
+                        </a>
+                        <div class="data_sponsor">
+                            <a class="title_sponsor"<?=!empty($link) ? ' href="'.$link.'"' : '' ?>><?=$arItem['NAME'] ?></a>
+                            <div class="content_sponsor">
+                                <?=$arItem['~PREVIEW_TEXT'] ?>
                             </div>
                         </div>
+                    </div>
                 <? endforeach; ?>
             </div>
         <? endif ?>

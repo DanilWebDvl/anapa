@@ -143,7 +143,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "PAGER_LINK" => "/team/tournament/",
         "PAGER_TITLE" => "ПОКАЗАТЬ ВСЕ",
         "TITLE_BLOCK" => "Турнирная таблица",
-        "TITLE_BLOCK_2" => "Игрок месяца"
+        "TITLE_BLOCK_2" => "Капитан команды"
     )
 );?>
 <? $APPLICATION->IncludeComponent(

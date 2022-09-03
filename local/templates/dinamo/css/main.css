@@ -225,6 +225,9 @@ header {
     width: 100%;
     max-width: 100%;
 }
+.main_slider_place .slide video {
+    width: 100%;
+}
 .main_slider_place .slide .text-place {
     padding: 0 0 40px 80px;
     height: 300px;

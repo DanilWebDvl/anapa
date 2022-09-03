@@ -54,7 +54,7 @@ $APPLICATION->SetTitle("Спонсоры");
         "SHOW_404" => "N",
         "SORT_BY1" => "SORT",
         "SORT_BY2" => "ID",
-        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER1" => "ASC",
         "SORT_ORDER2" => "ASC",
         "STRICT_SECTION_CHECK" => "N"
     )

@@ -19,9 +19,13 @@ $this->setFrameMode(true);
             <h2 class="title_block mb100">Наши партнеры и спонсоры</h2>
             <div class="flex partners_list">
                 <? foreach ($arResult['ITEMS'] as $arItem): if (empty($arItem['ICO'])) continue; ?>
-                    <div class="part">
+                    <?
+                    if (!empty($arItem['PROPERTIES']['LINK']['VALUE']))
+                        $link = $arItem['PROPERTIES']['LINK']['VALUE'];
+                    ?>
+                    <a class="part"<?=!empty($link) ? ' href="'.$link.'"' : '' ?>>
                         <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
-                    </div>
+                    </a>
                 <? endforeach; ?>
             </div>
         </div>
