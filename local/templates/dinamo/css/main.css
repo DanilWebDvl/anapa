@@ -262,9 +262,17 @@ header {
     background-image: url("../img/ico/left.png");
     background-size: cover;
     margin: 0 auto;
+    transition: .3s all;
 }
 .slider_init.white-btns .slick-arrow {
     border: 2px solid #fff;
+    transition: .3s all;
+}
+.slider_init.white-btns .slick-arrow:hover {
+    background-color: #fff;
+}
+.slider_init.white-btns .slick-arrow:hover:after {
+    background-image: url("../img/ico/left-b.png");
 }
 .main_slider_place .slider_init .slick-prev {
     right: 187px;
@@ -507,6 +515,10 @@ header {
     margin-right: 30px;
     border: none;
     cursor: pointer;
+    transition: .3s all;
+}
+.nav_by_slider button:hover {
+    background: #3066BF !important;
 }
 .nav_by_slider button span {
     display: none;
@@ -538,6 +550,10 @@ header {
     padding: 25px 70px;
     background-position-x: right;
     text-align: center;
+    transition: .3s all;
+}
+.btn_link:hover {
+    background-color: #3066BF;
 }
 .full-btn .btn_link {
     width: 100%;
@@ -1126,6 +1142,9 @@ body.active_menu {
     cursor: pointer;
 
 }
+.filter_top .filter_part:hover a {
+    text-decoration: underline;
+}
 .filter_top .filter_part:last-child {
     margin-right: 0;
 }
@@ -1694,4 +1713,7 @@ body.active_menu {
     background-image: url(../img/ico/left.png);
     background-size: cover;
     margin: 0 auto;
+}
+.but_to_top:hover {
+    background: #3066BF;
 }

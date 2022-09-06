@@ -360,6 +360,9 @@
     }
 }
 @media (max-width: 991px) {
+    .btn_link {
+        padding: 15px 70px;
+    }
     .sponsor_list .part {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -627,7 +630,15 @@
     .btn_with_arrows .btn_link {
         width: 100%;
         text-align: center;
-        padding: 25px 40px;
+        padding: 15px 40px;
+    }
+    .full-btn .btn_link {
+        padding: 15px 70px;
+    }
+    .but_to_top {
+        width: 60px;
+        right: 10px;
+        bottom: 10px;
     }
     .news_slider_place {
         padding-left: 22px;
