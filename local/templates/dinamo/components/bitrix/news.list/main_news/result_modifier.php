@@ -11,6 +11,8 @@ if (!empty($arResult['ITEMS'])) {
     foreach ($arResult['ITEMS'] as &$arItem) {
         if (!empty($arItem['PREVIEW_PICTURE']))
             $arItem['PREVIEW_PICTURE']['RESIZE'] = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], ['width' => 830, 'height' => 450])['src'];
+        else
+            $arItem['PREVIEW_PICTURE']['RESIZE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
         if (!empty($arItem['PREVIEW_TEXT']))
             $arItem['FORMAT_PREVIEW_TEXT'] = TruncateText($arItem['PREVIEW_TEXT'], 49);
         if (!empty($arItem['PROPERTIES']['DATE']['VALUE'])) {

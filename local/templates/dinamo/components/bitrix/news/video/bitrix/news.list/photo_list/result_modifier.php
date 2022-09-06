@@ -14,6 +14,8 @@ if (!empty($arResult['ITEMS'])) {
         }
         if (!empty($arItem['PREVIEW_PICTURE'])) {
             $arItem['PREVIEW_PICTURE']['RESIZE'] = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], ['width' => 410, 'height' => 260])['src'];
+        } else {
+            $arItem['PREVIEW_PICTURE']['RESIZE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
         }
         if (!empty($arItem['PREVIEW_TEXT']))
             $arItem['FORMAT_PREVIEW_TEXT'] = TruncateText($arItem['PREVIEW_TEXT'], 49);

@@ -39,9 +39,10 @@ class MediaMain extends \CBitrixComponent
             ['nTopCount' => 12]
         );
         while ($arSection = $obSection->GetNext()) {
-            if (!empty($arSection['PICTURE'])) {
+            if (!empty($arSection['PICTURE']))
                 $arSection['PICTURE'] = CFile::GetPath($arSection['PICTURE']);
-            }
+            else
+                $arSection['PICTURE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
             $this->arResult['PHOTO'][] = $arSection;
         }
 
@@ -54,9 +55,10 @@ class MediaMain extends \CBitrixComponent
         );
         while ($obElement = $obElements->GetNextElement()) {
             $arEl = $obElement->GetFields();
-            if (!empty($arEl['PREVIEW_PICTURE'])) {
+            if (!empty($arEl['PREVIEW_PICTURE']))
                 $arEl['PREVIEW_PICTURE'] = CFile::GetPath($arEl['PREVIEW_PICTURE']);
-            }
+            else
+                $arEl['PREVIEW_PICTURE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
             $arEl['PROPERTIES'] = $obElement->GetProperties();
             $this->arResult['VIDEO'][] = $arEl;
         }

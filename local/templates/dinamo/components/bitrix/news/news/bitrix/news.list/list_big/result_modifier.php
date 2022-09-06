@@ -14,6 +14,8 @@ if (!empty($arResult['ITEMS'])) {
         }
         if (!empty($arItem['PREVIEW_PICTURE'])) {
             $arItem['PREVIEW_PICTURE']['RESIZE'] = $arItem['PREVIEW_PICTURE']['SRC'];
+        } else {
+            $arItem['PREVIEW_PICTURE']['RESIZE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
         }
         if (!empty($arItem['PREVIEW_TEXT']))
             $arItem['FORMAT_PREVIEW_TEXT'] = TruncateText($arItem['PREVIEW_TEXT'], 49);
