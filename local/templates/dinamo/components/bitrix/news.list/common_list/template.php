@@ -18,7 +18,7 @@ $this->setFrameMode(true);
         <div class="pager_cards_list flex items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
             <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
-                <div class="pager_card pos-rel">
+                <div class="js_pager_card pager_card pos-rel">
                     <picture>
                         <? if (!empty($arItem['PREVIEW_PICTURE']['RESIZE'])): ?>
                             <img src="<?=$arItem['PREVIEW_PICTURE']['RESIZE'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">

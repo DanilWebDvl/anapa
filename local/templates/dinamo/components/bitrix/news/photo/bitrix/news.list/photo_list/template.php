@@ -17,7 +17,7 @@ $this->setFrameMode(true);
     <div class="pager_cards_list flex items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
         <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
         <? foreach ($arResult['ITEMS'] as $arItem): ?>
-            <div class="pager_card pos-rel" href="<?=$arItem['DETAIL_PICTURE']['SRC'] ?>" data-fancybox="gallery">
+            <div class="js_pager_card pager_card pos-rel" href="<?=$arItem['DETAIL_PICTURE']['SRC'] ?>" data-fancybox="gallery">
                 <picture><img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt=""></picture>
                 <div class="text-place flex flex-bottom smooth_back color_line sky">
                     <span class="content-slide">

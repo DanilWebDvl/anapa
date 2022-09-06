@@ -25,7 +25,7 @@ $this->setFrameMode(true);
                     <? foreach ($arResult['SLIDE'] as $arSlide): ?>
                         <div class="news_part flex">
                             <? if (!empty($arSlide['PHOTO'][0])): ?>
-                                <div class="side_2 part color_line pink pos-rel">
+                                <div class="js_pager_card side_2 part color_line pink pos-rel">
                                     <picture><img src="<?=$arSlide['PHOTO'][0]['PICTURE'] ?>" alt=""></picture>
                                     <div class="text-place flex flex-bottom smooth_back">
                                         <span class="content-slide">
@@ -41,7 +41,7 @@ $this->setFrameMode(true);
                             <? if (count($arSlide['PHOTO']) > 1): ?>
                                 <div class="side_1 flex middle_part part">
                                     <? foreach ($arSlide['PHOTO'] as $key => $arPhoto): if ($key == 0) continue; ?>
-                                        <div class="m_part color_line pink pos-rel">
+                                        <div class="js_pager_card m_part color_line pink pos-rel">
                                             <picture><img src="<?=$arPhoto['PICTURE'] ?>" alt=""></picture>
                                             <div class="text-place flex flex-bottom smooth_back">
                                             <span class="content-slide">
@@ -56,7 +56,7 @@ $this->setFrameMode(true);
                                 </div>
                             <? endif ?>
                             <? if (!empty($arSlide['VIDEO'][0])): ?>
-                                <div class="side_3 part color_line blue pos-rel" href="<?=$arSlide['VIDEO'][0]['PROPERTIES']['VIDEO']['VALUE']['path'] ?>" data-fancybox>
+                                <div class="js_pager_card side_3 part color_line blue pos-rel" href="<?=$arSlide['VIDEO'][0]['PROPERTIES']['VIDEO']['VALUE']['path'] ?>" data-fancybox>
                                     <picture class="video_ico"><img src="<?=$arSlide['VIDEO'][0]['PREVIEW_PICTURE'] ?>" alt=""></picture>
                                     <div class="text-place flex flex-bottom smooth_back">
                                         <span class="content-slide">
@@ -76,7 +76,7 @@ $this->setFrameMode(true);
                     <div class="media_mob_list">
                         <? for ($i = 0; $i < 2; $i++): ?>
                             <? if (!empty($arResult['SLIDE'][0]['PHOTO'][$i])): $arPhoto = $arResult['SLIDE'][0]['PHOTO'][$i]; ?>
-                                <div class="part color_line pink pos-rel news_part">
+                                <div class="js_pager_card part color_line pink pos-rel news_part">
                                     <p class="num with_bac mob_show"><?=$arPhoto['ELEMENT_CNT'] ?></p>
                                     <picture><img src="<?=$arPhoto['PICTURE'] ?>" alt=""></picture>
                                     <div class="text-place flex flex-bottom smooth_back">

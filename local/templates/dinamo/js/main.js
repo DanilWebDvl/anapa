@@ -4,6 +4,16 @@ $(document).ready(function(){
     team_page();
     popup();
     filter();
+    events();
+});
+
+function events() {
+    $('body').on('click', '.js_pager_card', function () {
+        let link = $(this).find('a').attr('href');
+        if (link !== undefined && link !== '') {
+            document.location.href = link;
+        }
+    });
 
     $('body').on('click', '.js_but_to_top', function () {
         $('body,html').animate({scrollTop: 0}, 400);
@@ -23,7 +33,7 @@ $(document).ready(function(){
         }
 
     });
-});
+}
 
 function popup() {
     $('[data-fancybox="gallery"]').fancybox({
