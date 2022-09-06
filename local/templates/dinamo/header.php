@@ -3,7 +3,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 global $USER, $APPLICATION;
 if (!$USER->isAuthorized()) {
-    $USER->Authorize(1);
+    //$USER->Authorize(1);
 }
 ?>
 <!DOCTYPE html>
@@ -130,4 +130,5 @@ $is_main_page = ($APPLICATION->GetCurPage() == '/') ? true : false;
         </div>
     </section>
 <? endif; ?>
+<a class="but_to_top js_but_to_top"></a>
 <main>

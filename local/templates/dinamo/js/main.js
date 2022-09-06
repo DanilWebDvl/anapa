@@ -4,6 +4,25 @@ $(document).ready(function(){
     team_page();
     popup();
     filter();
+
+    $('body').on('click', '.js_but_to_top', function () {
+        $('body,html').animate({scrollTop: 0}, 400);
+    });
+
+    window.addEventListener('scroll', function() {
+        if ($('.js_but_to_top').length <= 0) return;
+
+        if ($(window).scrollTop() >= 500) {
+            if (!$('.js_but_to_top').hasClass('active')) {
+                $('.js_but_to_top').addClass('active');
+            }
+        } else {
+            if ($('.js_but_to_top').hasClass('active')) {
+                $('.js_but_to_top').removeClass('active');
+            }
+        }
+
+    });
 });
 
 function popup() {
@@ -246,6 +265,7 @@ function filter() {
 
 
     window.addEventListener('scroll', function() {
+        if ($('.filter_top.fixed').length <= 0) return;
 
         if ($('.filter_top.fixed').hasClass('active')) {
             if ($(window).scrollTop() < $('.filter_top.fixed').closest('.parent').offset().top) {
