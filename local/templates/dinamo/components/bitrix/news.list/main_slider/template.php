@@ -28,14 +28,14 @@ $this->setFrameMode(true);
                         </picture>
                     <? endif; ?>
                     <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['path'])): ?>
-                        <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['title'])): ?>
+                        <? if (!empty($arItem['PROPERTIES']['VIDEO']['VALUE']['title']) && $arItem['PROPERTIES']['HIDE_TEXT']['VALUE_XML_ID'] != 'Y'): ?>
                             <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
                                 <div class="content-slide">
                                     <p class="part"><?=$arItem['PROPERTIES']['VIDEO']['VALUE']['title'] ?></p>
                                 </div>
                             </a>
                         <? endif; ?>
-                    <? else: ?>
+                    <? elseif ($arItem['PROPERTIES']['HIDE_TEXT']['VALUE_XML_ID'] != 'Y'): ?>
                         <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'] ?>" class="text-place flex flex-bottom smooth_back">
                             <div class="content-slide">
                                 <p class="part"><?=$arItem['NAME'] ?></p>

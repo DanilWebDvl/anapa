@@ -17,7 +17,7 @@ $aMenuLinks = Array(
     ),
     Array(
         "Клуб",
-        "",
+        "/club/",
         Array(),
         Array(),
         ""
@@ -30,8 +30,8 @@ $aMenuLinks = Array(
         ""
     ),
     Array(
-        "Волей град",
-        "",
+        "Волейград",
+        "/about/",
         Array(),
         Array(),
         ""

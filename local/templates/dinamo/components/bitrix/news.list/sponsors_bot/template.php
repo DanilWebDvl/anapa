@@ -23,7 +23,7 @@ $this->setFrameMode(true);
                     if (!empty($arItem['PROPERTIES']['LINK']['VALUE']))
                         $link = $arItem['PROPERTIES']['LINK']['VALUE'];
                     ?>
-                    <a class="part"<?=!empty($link) ? ' href="'.$link.'"' : '' ?>>
+                    <a class="part"<?=!empty($link) ? ' href="'.$link.'"' : '' ?> target="_blank">
                         <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
                     </a>
                 <? endforeach; ?>

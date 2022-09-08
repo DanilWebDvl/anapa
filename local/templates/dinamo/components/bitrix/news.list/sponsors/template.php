@@ -23,7 +23,7 @@ $this->setFrameMode(true);
                         $link = $arItem['PROPERTIES']['LINK']['VALUE'];
                     ?>
                     <div class="part flex flex-between">
-                        <a class="logo_sponsor flex flex-a-center"<?=!empty($link) ? ' href="'.$link.'"' : '' ?>>
+                        <a class="logo_sponsor flex flex-a-center"<?=!empty($link) ? ' href="'.$link.'"' : '' ?> target="_blank">
                             <? if (!empty($arItem['ICO'])): ?>
                                 <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
                             <? endif ?>

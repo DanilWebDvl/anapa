@@ -74,9 +74,9 @@ function sliders() {
     var slider_multiple = $('.slider_multiple');
     slider_multiple.owlCarousel({
         stagePadding: 50,
-        loop:true,
         center:true,
         dots:true,
+        loop: true,
         autoWidth:true,
         onTranslate: slide_drag,
         responsive:{
@@ -100,7 +100,7 @@ function sliders() {
     });
     slider_multiple.on('mousewheel', '.owl-stage', function (e) {
         scrollX++;
-        if (scrollX > 10) {
+        if (scrollX > 5) {
             if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==-0) {
                 slider_multiple.trigger('next.owl');
                 e.preventDefault();
@@ -117,7 +117,7 @@ function sliders() {
         nav:true,
         navContainer: $('.nav_by_slider_team'),
         stagePadding: 50,
-        loop:true,
+        loop: true,
         center:true,
         autoWidth:true,
         responsive:{
@@ -141,7 +141,7 @@ function sliders() {
     });
     slider_multiple_team.on('mousewheel', '.owl-stage', function (e) {
         scrollX++;
-        if (scrollX > 10) {
+        if (scrollX > 5) {
             if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==0) {
                 slider_multiple_team.trigger('next.owl');
                 e.preventDefault();
@@ -184,7 +184,6 @@ function sliders() {
             margin: 30,
             nav:true,
             navContainer: $('.nav_by_slider_2'),
-            loop: true,
             dots:false,
             center:true,
             onTranslated: slide_drag_2,
@@ -202,7 +201,7 @@ function sliders() {
         });
         slider_multiple_2.on('mousewheel', '.owl-stage', function (e) {
             scrollX++;
-            if (scrollX > 10) {
+            if (scrollX > 5) {
                 if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==0) {
                     slider_multiple_2.trigger('next.owl');
                     e.preventDefault();

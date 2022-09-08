@@ -30,7 +30,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Волей град",
+		"Волейград",
 		"/about/",
 		Array(), 
 		Array(), 
