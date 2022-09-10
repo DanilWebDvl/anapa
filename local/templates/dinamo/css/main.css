@@ -179,6 +179,9 @@ header {
     text-transform: uppercase;
     padding-right: 40px;
 }
+.menu_t .part a:hover {
+    text-decoration: underline;
+}
 .menu_t .part:last-child {
     padding-right: 0;
 }
@@ -1006,6 +1009,9 @@ footer .menu_b ul {
 footer .menu_b .part {
     padding-right: 40px;
 }
+footer .menu_b .part a:hover {
+    text-decoration: underline;
+}
 footer .menu_b .part:last-child {
     padding-right: 0;
 }
@@ -1059,9 +1065,6 @@ footer .desc_b {
     background-color: #3066BF;
     padding: 60px 180px;
     color: #fff;
-    -webkit-transition: 1s all;
-    -o-transition: 1s all;
-    transition: 1s all;
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;

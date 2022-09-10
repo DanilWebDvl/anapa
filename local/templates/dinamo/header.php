@@ -2,9 +2,6 @@
 use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 global $USER, $APPLICATION;
-if (!$USER->isAuthorized()) {
-    //$USER->Authorize(1);
-}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
