@@ -28,6 +28,7 @@ $this->setFrameMode(true);
                         <div class="card_sport">
                             <div class="img_with_wave">
                                 <p class="num"><?=$arItem['PROPERTIES']['NUM']['VALUE'] ?></p>
+                                <div class="block"></div>
                                 <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>">
                                 <div class="b-wave"></div>
                             </div>

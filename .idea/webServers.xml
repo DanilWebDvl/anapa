@@ -2,11 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="96ed18c2-a27c-4b25-88c8-8961c337767e" name="dinamo">
-        <fileTransfer rootFolder="/home/bitrix/www/" accessType="SFTP" host="109.68.215.65" port="22" sshConfigId="8069a372-6d6a-4455-9ea0-505c57793906" sshConfig="bitrix@109.68.215.65:22 password">
+      <webServer id="96ed18c2-a27c-4b25-88c8-8961c337767e" name="dinamo" url="http://109.68.215.65">
+        <fileTransfer host="109.68.215.65" port="22" rootFolder="/home/bitrix/www/" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

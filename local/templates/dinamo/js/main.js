@@ -55,9 +55,11 @@ function team_page() {
 function menu() {
     $('body').on('click', '.js_menu', function (){
         $('body').toggleClass('active_menu');
-        let header_height = $('header').outerHeight();
+        //let header_height = $('header').outerHeight();
+        let header_height=150
         $('.mega_menu').css('top', header_height + 'px');
         $(this).find('.svg_burger').toggle();
+
         $(this).find('.svg_burger_close').toggle();
     });
     $('body').on('click', '.js_filter_burger', function (){

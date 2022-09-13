@@ -65,6 +65,7 @@ $this->setFrameMode(true);
                         <h2 class="title_block"><?=$arParams['TITLE_BLOCK_2'] ?></h2>
                         <div class="big_card card_sport">
                             <div class="img_with_wave">
+                                <div class="block"></div>
                                 <img src="<?=$arResult['PLAYER']['PICTURE'] ?>" alt="<?=$arResult['PLAYER']['NAME'] ?>">
                             </div>
                             <div class="info_card">

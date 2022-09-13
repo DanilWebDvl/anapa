@@ -10,6 +10,7 @@ global $USER, $APPLICATION;
 <?
     $asset = Bitrix\Main\Page\Asset::getInstance();
     $asset->addCss(SITE_TEMPLATE_PATH . '/css/main.css');
+    $asset->addCss(SITE_TEMPLATE_PATH . '/css/custom.css');
     $asset->addCss(SITE_TEMPLATE_PATH . '/css/media.css');
     $asset->addCss(SITE_TEMPLATE_PATH . '/vendor/slick/slick.css');
     $asset->addCss(SITE_TEMPLATE_PATH . '/vendor/owlcarousel/owl.carousel.min.css');
@@ -17,6 +18,7 @@ global $USER, $APPLICATION;
 
     $asset->addJs(SITE_TEMPLATE_PATH . '/vendor/jquery-2.1.3.min.js');
     $asset->addJs(SITE_TEMPLATE_PATH . '/js/main.js');
+    $asset->addJs(SITE_TEMPLATE_PATH . '/js/custom.js');
     $asset->addJs(SITE_TEMPLATE_PATH . '/vendor/slick/slick.min.js');
     $asset->addJs(SITE_TEMPLATE_PATH . '/vendor/owlcarousel/owl.carousel.min.js');
     $asset->addJs(SITE_TEMPLATE_PATH . '/vendor/fancybox/jquery.fancybox.min.js');
@@ -29,6 +31,7 @@ $is_main_page = ($APPLICATION->GetCurPage() == '/') ? true : false;
 ?>
 <body class="<?=$is_main_page ?:'other_page' ?>">
 <header>
+    <div class="sb_share"></div>
     <div class="container_ui">
         <div class="flex flex-between">
             <div class="logo_place">
@@ -84,8 +87,9 @@ $is_main_page = ($APPLICATION->GetCurPage() == '/') ? true : false;
                     )
                 );?>
             </div>
-            <div class="burger_place flex flex-a-center">
-                <div class="burger js_menu">
+
+            <div class="js_menu burger_place flex flex-a-center">
+                <div class="burger ">
                     <? include $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH. '/img/ico/burger.svg'?>
                     <? include $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH .'/img/ico/close.svg'?>
                 </div>

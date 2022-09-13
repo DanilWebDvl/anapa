@@ -41,6 +41,7 @@ $this->setFrameMode(true);
                             <div class="card_sport">
                                 <div class="img_with_wave only_bot_wave">
                                     <? if (!empty($arItem['PREVIEW_PICTURE']['SRC'])): ?>
+                                        <div class="block"></div>
                                         <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">
                                     <? endif ?>
                                     <div class="b-wave"></div>

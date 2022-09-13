@@ -1,0 +1,148 @@
+.menu_t .part {
+  a {
+    &:before {
+      content: "";
+    }
+  }
+}
+
+body.active_menu {
+  .soc_t {
+    display: flex !important;
+  }
+
+  .container_ui .logo_place path {
+    @media (max-width: 426px) {
+      display: none;
+    }
+
+  }
+
+  .container_ui .logo_place path.mob_logo {
+    display: block;
+  }
+}
+
+.container_ui .logo_place path {
+  @media (max-width: 426px) {
+    display: block;
+    transform: scale(0.8);
+  }
+}
+
+.main_slider_place {
+  @media (max-width: 426px) {
+    max-height: 220px;
+  }
+}
+
+.sb_share {
+  background-image: url("../img/shar.svg");
+  width: 904px;
+  height: 1378px;
+
+  position: absolute;
+  right: 0;
+  top: 90%;
+  z-index: -1;
+
+}
+
+.calendar_slider_place {
+  .owl-stage {
+    .owl-item {
+      .card {
+        height: 405px;
+        @media (max-width: 426px) {
+          height: 325px;
+        }
+      }
+
+      .active {
+        .card {
+          background-color: #3066BF;
+        }
+
+      }
+    }
+  }
+}
+
+.slider_team_place {
+  .card_sport {
+    .block {
+      height: 400px;
+    }
+
+    .img_with_wave {
+      img {
+        position: absolute;
+        top: 130px;
+        transform: scale(1.5, 1.5);
+      }
+    }
+  }
+
+  .data_player {
+    .name {
+      word-spacing: 9999999px;
+    }
+  }
+}
+
+.leader_place {
+  .card_sport {
+    .block {
+      height: 582px;
+      @media (max-width: 426px) {
+        height: 465px;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 130px;
+      transform: scale(1.5, 1.5);
+    }
+  }
+}
+
+.card {
+  .vs_text.sb_vs_big {
+    font-size: 48px !important;
+  }
+}
+
+
+.but_to_top {
+  &:after {
+    content: '';
+    position: relative;
+    top: 15px;
+    left: 5px;
+    width: 18px;
+    height: 24px;
+    display: block;
+    background-image: url(../img/arrow_top_one.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    transform: matrix(0, 1, 1, 0, 0, 0);
+    -webkit-transition: background 800ms ease;
+    -moz-transition: background 800ms ease;
+    -ms-transition: background 800ms ease;
+    -o-transition: background 800ms ease;
+    transition: background 800ms ease;
+
+  }
+  &:hover{
+    &:after {
+      background-image: url(../img/arrow_top.svg);
+      -moz-transform: scale(1.5) rotate(-90deg);
+      -webkit-transform: scale(1.5) rotate(-90deg);
+      -o-transform: scale(1.5) rotate(-90deg);
+      -ms-transform: scale(1.5) rotate(-90deg);
+      transform: scale(1.5) rotate(-90deg);
+    }
+  }
+}

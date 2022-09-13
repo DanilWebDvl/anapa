@@ -1,0 +1,84 @@
+.menu_t .part a:before {
+  content: ""; }
+
+body.active_menu .soc_t {
+  display: flex !important; }
+@media (max-width: 426px) {
+  body.active_menu .container_ui .logo_place path {
+    display: none; } }
+body.active_menu .container_ui .logo_place path.mob_logo {
+  display: block; }
+
+@media (max-width: 426px) {
+  .container_ui .logo_place path {
+    display: block;
+    transform: scale(0.8); } }
+
+@media (max-width: 426px) {
+  .main_slider_place {
+    max-height: 220px; } }
+
+.sb_share {
+  background-image: url("../img/shar.svg");
+  width: 904px;
+  height: 1378px;
+  position: absolute;
+  right: 0;
+  top: 90%;
+  z-index: -1; }
+
+.calendar_slider_place .owl-stage .owl-item .card {
+  height: 405px; }
+  @media (max-width: 426px) {
+    .calendar_slider_place .owl-stage .owl-item .card {
+      height: 325px; } }
+.calendar_slider_place .owl-stage .owl-item .active .card {
+  background-color: #3066BF; }
+
+.slider_team_place .card_sport .block {
+  height: 400px; }
+.slider_team_place .card_sport .img_with_wave img {
+  position: absolute;
+  top: 130px;
+  transform: scale(1.5, 1.5); }
+.slider_team_place .data_player .name {
+  word-spacing: 9999999px; }
+
+.leader_place .card_sport .block {
+  height: 582px; }
+  @media (max-width: 426px) {
+    .leader_place .card_sport .block {
+      height: 465px; } }
+.leader_place .card_sport img {
+  position: absolute;
+  top: 130px;
+  transform: scale(1.5, 1.5); }
+
+.card .vs_text.sb_vs_big {
+  font-size: 48px !important; }
+
+.but_to_top:after {
+  content: '';
+  position: relative;
+  top: 15px;
+  left: 5px;
+  width: 18px;
+  height: 24px;
+  display: block;
+  background-image: url(../img/arrow_top_one.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  transform: matrix(0, 1, 1, 0, 0, 0);
+  -webkit-transition: background 800ms ease;
+  -moz-transition: background 800ms ease;
+  -ms-transition: background 800ms ease;
+  -o-transition: background 800ms ease;
+  transition: background 800ms ease; }
+.but_to_top:hover:after {
+  background-image: url(../img/arrow_top.svg);
+  -moz-transform: scale(1.5) rotate(-90deg);
+  -webkit-transform: scale(1.5) rotate(-90deg);
+  -o-transform: scale(1.5) rotate(-90deg);
+  -ms-transform: scale(1.5) rotate(-90deg);
+  transform: scale(1.5) rotate(-90deg); }

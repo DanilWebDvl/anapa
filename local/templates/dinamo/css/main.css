@@ -373,7 +373,7 @@ header {
     align-self: center;
 }
 .calendar_slider_place .slider_multiple .card.prev .vs_place .vs_text {
-    font-size: 31px;
+    font-size: 32px;
     padding: 0;
 }
 .calendar_slider_place .card .vs_place .vs_text .desc {
@@ -1737,6 +1737,7 @@ body.active_menu {
     background-size: cover;
     margin: 0 auto;
 }
+
 .but_to_top:hover {
     background: #3066BF;
 }

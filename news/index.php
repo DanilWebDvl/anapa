@@ -88,4 +88,9 @@ $APPLICATION->SetTitle("Новости");
         "YANDEX" => "N"
     )
 );?>
+    <style>
+        .sb_share{
+            display: none;
+        }
+    </style>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
