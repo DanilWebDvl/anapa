@@ -15,24 +15,24 @@ function events() {
         }
     });
 
-    $('body').on('click', '.js_but_to_top', function () {
-        $('body,html').animate({scrollTop: 0}, 400);
-    });
+    // $('body').on('click', '.js_but_to_top', function () {
+    //     $('body,html').animate({scrollTop: 0}, 400);
+    // });
 
-    window.addEventListener('scroll', function() {
-        if ($('.js_but_to_top').length <= 0) return;
-
-        if ($(window).scrollTop() >= 500) {
-            if (!$('.js_but_to_top').hasClass('active')) {
-                $('.js_but_to_top').addClass('active');
-            }
-        } else {
-            if ($('.js_but_to_top').hasClass('active')) {
-                $('.js_but_to_top').removeClass('active');
-            }
-        }
-
-    });
+    // window.addEventListener('scroll', function() {
+    //     if ($('.js_but_to_top').length <= 0) return;
+    //
+    //     if ($(window).scrollTop() >= 500) {
+    //         if (!$('.js_but_to_top').hasClass('active')) {
+    //             $('.js_but_to_top').addClass('active');
+    //         }
+    //     } else {
+    //         if ($('.js_but_to_top').hasClass('active')) {
+    //             $('.js_but_to_top').removeClass('active');
+    //         }
+    //     }
+    //
+    // });
 }
 
 function popup() {
@@ -56,7 +56,7 @@ function menu() {
     $('body').on('click', '.js_menu', function (){
         $('body').toggleClass('active_menu');
         //let header_height = $('header').outerHeight();
-        let header_height=150
+        let header_height=104;
         $('.mega_menu').css('top', header_height + 'px');
         $(this).find('.svg_burger').toggle();
 
@@ -78,8 +78,8 @@ function sliders() {
         stagePadding: 50,
         center:true,
         dots:true,
-        loop: true,
-        autoWidth:true,
+        //loop: true,
+        autoWidth:false,
         onTranslate: slide_drag,
         responsive:{
             0:{
@@ -190,11 +190,10 @@ function sliders() {
             center:true,
             onTranslated: slide_drag_2,
             initialized: slide_drag_2,
-            autoWidth:true,
+            autoWidth:false,
             responsive:{
                 600:{
                     items:2
-
                 },
                 1000:{
                     items:3

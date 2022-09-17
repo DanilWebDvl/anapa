@@ -3,21 +3,35 @@
 $aMenuLinks = Array(
 	Array(
 		"Инфраструктура",
-		"/about/#1",
+		"/about/infrastructure/",
 		Array(),
         Array(),
         ""
 	),
 	Array(
 		"Арена",
-		"/about/#2",
+		"/about/arena/",
 		Array(), 
 		Array(),
 		"" 
 	),
 	Array(
 		"Отель",
-		"/about/#3",
+		"/about/hotel/",
+		Array(),
+		Array(),
+		""
+	),
+    Array(
+		"Академия",
+		"/about/academia/",
+		Array(),
+		Array(),
+		""
+	),
+    Array(
+		"Тренировки",
+		"/about/training/",
 		Array(),
 		Array(),
 		""

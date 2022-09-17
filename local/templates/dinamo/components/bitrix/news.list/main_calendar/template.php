@@ -33,7 +33,7 @@ $this->setFrameMode(true);
                                 <img src="<?=$arItem['TEAM_H']['ICO'] ?>" alt="">
                                 <p class="desc"><?=$arItem['TEAM_H']['NAME'] ?></p>
                             </div>
-                            <p class="vs_text text_center <?=$arItem['PROPERTIES']['SCORE']['VALUE']?'':'sb_vs_big'?>"><?=$arItem['PROPERTIES']['SCORE']['VALUE'] ?: 'vs' ?></p>
+                            <p class="vs_text text_center <?=$arItem['PROPERTIES']['SCORE']['VALUE']?'':'sb_vs_big'?>"><?=$arItem['PROPERTIES']['SCORE']['VALUE'] ?str_replace(' ','',$arItem['PROPERTIES']['SCORE']['VALUE']): 'vs' ?></p>
                             <div class="text_center">
                                 <img src="<?=$arItem['TEAM_G']['ICO'] ?>" alt="">
                                 <p class="desc"><?=$arItem['TEAM_G']['NAME'] ?></p>

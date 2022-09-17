@@ -1,5 +1,36 @@
-.menu_t .part a:before {
-  content: ""; }
+.filter_part a:hover,
+.menu a:hover,
+.menu_b a:hover {
+  position: relative;
+  text-decoration: none !important; }
+  .filter_part a:hover:after,
+  .menu a:hover:after,
+  .menu_b a:hover:after {
+    content: "";
+    background-image: url(/local/templates/dinamo/css/../img/ico/mini_wave.svg);
+    background-position: left;
+    background-size: cover;
+    display: block;
+    height: 14px;
+    left: 0;
+    right: 0;
+    position: absolute; }
+
+.menu_b a:hover:after {
+  background-image: url(/local/templates/dinamo/css/../img/ico/mini_wave_white.svg); }
+
+.menu_list li a {
+  position: relative; }
+  .menu_list li a:hover:after {
+    content: "";
+    background-image: url(/local/templates/dinamo/css/../img/ico/mini_wave_white.svg);
+    background-position: left;
+    background-size: cover;
+    display: block;
+    height: 14px;
+    left: 0;
+    right: 0;
+    position: absolute; }
 
 body.active_menu .soc_t {
   display: flex !important; }
@@ -82,3 +113,27 @@ body.active_menu .container_ui .logo_place path.mob_logo {
   -o-transform: scale(1.5) rotate(-90deg);
   -ms-transform: scale(1.5) rotate(-90deg);
   transform: scale(1.5) rotate(-90deg); }
+
+.slider_multiple_2 .owl-item {
+  max-width: 300px; }
+  .slider_multiple_2 .owl-item .news {
+    max-width: 300px; }
+.slider_multiple_2 .owl-item.active.center {
+  max-width: 630px !important; }
+  .slider_multiple_2 .owl-item.active.center .news {
+    max-width: 630px !important;
+    width: 100% !important; }
+.slider_multiple_2 .news .sb_pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center;
+  background-position-y: inherit; }
+
+.sb_club .h1 {
+  padding-bottom: 0px; }
+.sb_club .data_sponsor {
+  width: calc( 100% - 440px ); }
+.sb_club .logo_sponsor {
+  width: 440px;
+  height: 440px; }

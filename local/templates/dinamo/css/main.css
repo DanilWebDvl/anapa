@@ -180,7 +180,7 @@ header {
     padding-right: 40px;
 }
 .menu_t .part a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .menu_t .part:last-child {
     padding-right: 0;
@@ -562,6 +562,7 @@ header {
 }
 .btn_link:hover {
     background-color: #3066BF;
+    background-image:url("../img/fbtn_hover.png");
 }
 .full-btn .btn_link {
     width: 100%;
@@ -1154,21 +1155,29 @@ body.active_menu {
 
 }
 .filter_top .filter_part:hover a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .filter_top .filter_part:last-child {
     margin-right: 0;
 }
-.filter_top .filter_part.active:after, .filter_left .filter_part.active:after {
+.filter_top .filter_part.active a,
+.filter_left .filter_part.active a
+{
+    position: relative;
+}
+.filter_top .filter_part.active a:after,
+.filter_left .filter_part.active a:after {
     content: '';
     background-image: url("../img/ico/mini_wave.svg");
     background-repeat: no-repeat;
     background-position: left;
     display: block;
+    background-size: cover;
     height: 14px;
     left: 0;
     right: 0;
-    bottom: 10px;
+    position: absolute;
+    /*bottom: 10px;*/
 }
 .def_pt_page {
     padding-top: 80px;
@@ -1313,12 +1322,12 @@ body.active_menu {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-.container_content h1, .container_content h2, .container_content h3, .container_content h4, .container_content h5, .container_content h6 {
+.container_content h1, .container_content h2, .container_content h3, .container_content h4, .container_content h5, .container_content h6,.h1{
     color: #3066BF;
     text-transform: uppercase;
     padding-bottom: 30px;
 }
-.container_content h1 {
+.container_content h1, .h1 {
     font-size: 58px;
     font-weight: 700;
 }
