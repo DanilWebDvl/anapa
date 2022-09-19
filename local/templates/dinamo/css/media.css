@@ -124,6 +124,10 @@
     }
 }
 @media (max-width: 1024px) {
+    .tournament_place .leader_place .card_sport {
+        margin: 0 auto;
+        width: 370px;
+    }
     .calendar_slider_place .match_results_list .card {
         padding: 20px 0 0;
     }
@@ -290,10 +294,6 @@
         width: 100%;
         padding-left: 0;
     }
-    .tournament_place .leader_place .card_sport {
-        margin: 0 auto;
-        width: 370px;
-    }
     .card_sport .info_card {
         margin-top: -47%;
         padding: 120px 20px 38px;
@@ -372,6 +372,8 @@
     .list_owner_data .tabs_place {
         width: 100%;
         overflow-y: scroll;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-right: -24px;
     }
@@ -704,11 +706,10 @@
         -o-object-fit: cover;
         object-fit: cover;
     }
+}
+@media (max-width: 430px) {
     .tournament_place .leader_place .card_sport {
         margin: 0 auto;
         width: 100%;
     }
-}
-@media (max-width: 374px) {
-
 }

@@ -123,6 +123,16 @@ function sliders() {
             scrollX = 0;
         }
     });
+    let num = 0;
+    $(slider_multiple).find('.card').each(function (index, el) {
+        if ($(el).hasClass('prev')) {
+            num = index;
+        } else {
+            return false;
+        }
+    });
+    $(slider_multiple).owlCarousel('to', num - 1);
+
     var slider_multiple_team = $('.slider_multiple_team');
     slider_multiple_team.owlCarousel({
         dots:true,
