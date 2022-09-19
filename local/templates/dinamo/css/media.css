@@ -360,6 +360,30 @@
     }
 }
 @media (max-width: 991px) {
+    .list_owner_data {
+        padding: 24px 0 24px 24px;
+    }
+    .list_owner_data .tabs_place {
+        width: 100%;
+        overflow-y: scroll;
+        display: flex;
+        margin-right: -24px;
+    }
+    .list_owner_data .tabs_place .tab {
+        margin-right: 25px;
+        white-space: nowrap;
+    }
+    .list_owner_data .tabs_place::-webkit-scrollbar { width: 0; height: 0 }
+    .list_owner_data .tabs_place { -ms-overflow-style: none; }
+    .list_owner_data .tabs_place { overflow: -moz-scrollbars-none; }
+
+    .list_owner_data .tabs_content_place {
+        padding-right: 24px;
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
     .btn_link {
         padding: 15px 70px;
     }
@@ -435,6 +459,9 @@
     }
 }
 @media (max-width: 767px) {
+    header .soc_t {
+        display: none;
+    }
     .calendar_slider_place .card .vs_place .vs_text {
         font-size: 33px;
         padding: 0 2px;

@@ -66,6 +66,8 @@ class Utils
         while ($arTEAM = $obTEAM->GetNext()) {
             if (!empty($arTEAM['PROPERTY_ICO_VALUE']))
                 $arTEAM['ICO'] = \CFile::GetPath($arTEAM['PROPERTY_ICO_VALUE']);
+            else
+                $arTEAM['ICO'] = SITE_TEMPLATE_PATH . '/img/ico/team_empty.svg';
             $arItem = $arTEAM;
         }
 

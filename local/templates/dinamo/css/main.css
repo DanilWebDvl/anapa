@@ -179,9 +179,6 @@ header {
     text-transform: uppercase;
     padding-right: 40px;
 }
-.menu_t .part a:hover {
-    text-decoration: underline;
-}
 .menu_t .part:last-child {
     padding-right: 0;
 }
@@ -337,7 +334,7 @@ header {
     text-align: center;
 }
 .calendar_slider_place .card .vs_place {
-    padding: 25px 50px 45px;
+    padding: 25px 18px 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -364,6 +361,9 @@ header {
     -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+.calendar_slider_place .card .vs_place p.desc {
+    word-break: break-word;
+}
 .calendar_slider_place .card .vs_place .vs_text {
     font-size: 48px;
     font-weight: 500;
@@ -373,7 +373,7 @@ header {
     align-self: center;
 }
 .calendar_slider_place .slider_multiple .card.prev .vs_place .vs_text {
-    font-size: 31px;
+    font-size: 32px;
     padding: 0;
 }
 .calendar_slider_place .card .vs_place .vs_text .desc {
@@ -485,12 +485,12 @@ header {
     color: #3066BF;
     text-transform: uppercase;
 }
-.container_ui {
-    width: 1290px;
-    margin: 0 auto;
-}
 .container_content {
     width: 1070px;
+    margin: 0 auto;
+}
+.container_ui {
+    width: 1290px;
     margin: 0 auto;
 }
 .mt60 {
@@ -562,6 +562,7 @@ header {
 }
 .btn_link:hover {
     background-color: #3066BF;
+    background-image:url("../img/fbtn_hover.png");
 }
 .full-btn .btn_link {
     width: 100%;
@@ -700,6 +701,10 @@ header {
     background-image: url("../img/d-wave.png");
     height: 90%;
 }
+.in_club.card_sport .img_with_wave:before {
+    height: 95%;
+    bottom: -53px;
+}
 .card_sport .img_with_wave {
     position: relative;
     margin-bottom: -4px;
@@ -817,6 +822,9 @@ header {
     top: 16px;
     right: 24px;
     color: #3066BF;
+}
+.card_sport.in_club {
+    align-self: flex-start;
 }
 .slider_team_place .data_player {
     padding-top: 15px;
@@ -1009,9 +1017,6 @@ footer .menu_b ul {
 footer .menu_b .part {
     padding-right: 40px;
 }
-footer .menu_b .part a:hover {
-    text-decoration: underline;
-}
 footer .menu_b .part:last-child {
     padding-right: 0;
 }
@@ -1154,21 +1159,29 @@ body.active_menu {
 
 }
 .filter_top .filter_part:hover a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .filter_top .filter_part:last-child {
     margin-right: 0;
 }
-.filter_top .filter_part.active:after, .filter_left .filter_part.active:after {
+.filter_top .filter_part.active a,
+.filter_left .filter_part.active a
+{
+    position: relative;
+}
+.filter_top .filter_part.active a:after,
+.filter_left .filter_part.active a:after {
     content: '';
     background-image: url("../img/ico/mini_wave.svg");
     background-repeat: no-repeat;
     background-position: left;
     display: block;
+    background-size: cover;
     height: 14px;
     left: 0;
     right: 0;
-    bottom: 10px;
+    position: absolute;
+    /*bottom: 10px;*/
 }
 .def_pt_page {
     padding-top: 80px;
@@ -1200,6 +1213,12 @@ body.active_menu {
 }
 .list_team .data_player .role {
     font-size: 20px;
+}
+.list_team .player .data_player * {
+    transition: .3s all;
+}
+.list_team .player:hover .data_player * {
+    color: #FF57BA;
 }
 .other_page .partners_place .title_block {
     display: none;
@@ -1313,12 +1332,12 @@ body.active_menu {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-.container_content h1, .container_content h2, .container_content h3, .container_content h4, .container_content h5, .container_content h6 {
+.container_content h1, .container_content h2, .container_content h3, .container_content h4, .container_content h5, .container_content h6,.h1{
     color: #3066BF;
     text-transform: uppercase;
     padding-bottom: 30px;
 }
-.container_content h1 {
+.container_content h1, .h1 {
     font-size: 58px;
     font-weight: 700;
 }
@@ -1488,7 +1507,7 @@ body.active_menu {
     padding: 24px 40px 0 40px;
     z-index: 2;
 }
-.filter_burger.active .filter_hide, .filter_burger:hover .filter_hide {
+.filter_burger.active .filter_hide {
     display: block;
 }
 .filter_hide .title {
@@ -1693,14 +1712,8 @@ body.active_menu {
 .sponsor_list .data_sponsor .content_sponsor a {
     color: #2597f4;
 }
-.sponsor_list .data_sponsor .content_sponsor a:hover {
-    text-decoration: underline;
-}
 .container_content a {
     color: #2597f4;
-}
-.container_content a:hover {
-    text-decoration: underline;
 }
 .container_content .page_contacts_place .part_contact * {
     color: #3066BF;
@@ -1737,9 +1750,61 @@ body.active_menu {
     background-size: cover;
     margin: 0 auto;
 }
+
 .but_to_top:hover {
     background: #3066BF;
 }
 .js_pager_card {
     cursor: pointer;
+}
+.list_owner_data {
+    background-color: #3066BF;
+    padding: 40px 0px 40px 40px;
+    border: 2px solid #3066BF;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 24px;
+}
+.list_owner_data .tabs_place {
+    width: 21%;
+}
+.list_owner_data .tabs_place .tab {
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s all;
+    display: inline-block;
+}
+.list_owner_data .tabs_place .tab:hover {
+    color: #FF57BA;
+}
+.list_owner_data .tabs_place .tab.active {
+    margin-bottom: 20px;
+}
+.list_owner_data .tabs_place .tab.active:after {
+    content: "";
+    background-image: url(/local/templates/dinamo/css/../img/ico/mini_wave_w.svg);
+    background-position: left;
+    background-size: cover;
+    display: block;
+    height: 14px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+.js_tab_content {
+    display: none;
+}
+.js_tab_content.active {
+    display: block;
+}
+.list_owner_data .tabs_content_place {
+    width: 75%;
+    border-left: 2px solid #fff;
+    padding-left: 32px;
+    margin-left: 32px;
+}
+.list_owner_data .tabs_content_place * {
+    color: #fff !important;
 }

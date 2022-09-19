@@ -40,6 +40,11 @@ $arComponentParameters = array(
 			"NAME"=>GetMessage("SORT_ORDER"),
 			"TYPE"=>"STRING"
 		),
+		"NEWS_COUNT" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("NEWS_COUNT"),
+			"TYPE"=>"STRING"
+		),
 		"PAGER_LINK" => Array(
 			"PARENT" => "BASE",
 			"NAME"=>GetMessage("PAGER_LINK"),

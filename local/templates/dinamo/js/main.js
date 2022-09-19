@@ -5,6 +5,7 @@ $(document).ready(function(){
     popup();
     filter();
     events();
+    tabs();
 });
 
 function events() {
@@ -56,12 +57,23 @@ function menu() {
     $('body').on('click', '.js_menu', function (){
         $('body').toggleClass('active_menu');
         let header_height = $('header').outerHeight();
+        // let header_height=104;
         $('.mega_menu').css('top', header_height + 'px');
         $(this).find('.svg_burger').toggle();
+
         $(this).find('.svg_burger_close').toggle();
     });
     $('body').on('click', '.js_filter_burger', function (){
         $(this).toggleClass('active');
+    });
+    $(document).mouseup( function(e) {
+        let div = $('.js_filter_burger');
+        if (div === undefined) return;
+
+        if ( !div.is(e.target)
+            && div.has(e.target).length === 0 ) {
+            $('.js_filter_burger').removeClass('active');
+        }
     });
 }
 
@@ -77,7 +89,7 @@ function sliders() {
         center:true,
         dots:true,
         loop: true,
-        autoWidth:true,
+        autoWidth:false,
         onTranslate: slide_drag,
         responsive:{
             0:{
@@ -185,14 +197,14 @@ function sliders() {
             nav:true,
             navContainer: $('.nav_by_slider_2'),
             dots:false,
+            loop: true,
             center:true,
             onTranslated: slide_drag_2,
             initialized: slide_drag_2,
-            autoWidth:true,
+            autoWidth:false,
             responsive:{
                 600:{
                     items:2
-
                 },
                 1000:{
                     items:3
@@ -262,7 +274,6 @@ function filter() {
             data: data,
             success: (result) => {
                 html = $(result).find('.js_page_filtrable').html();
-                console.log(html);
                 $('body').find('.js_page_filtrable').html(html);
             },
             error: (jqXHR, textStatus, errorThrown) => {
@@ -295,5 +306,15 @@ function filter() {
             }
         });
 
+    });
+}
+
+function tabs() {
+    $('body').on('click', '.js_tab', function () {
+        let index = $(this).attr('data-tab');
+        $('.js_tab').removeClass('active');
+        $(this).toggleClass('active');
+        $('.js_tab_content').removeClass('active');
+        $('.js_tab_content[data-tab-content="'+ index +'"]').addClass('active');
     });
 }

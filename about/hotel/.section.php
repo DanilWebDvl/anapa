@@ -1,0 +1,4 @@
+<?
+$sSectionName = "Отель";
+$arDirProperties = Array();
+?>

@@ -139,11 +139,12 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "TEMPLATE_NAME" => "main_tournament",
         "SORT_BY" => "PROPERTY_PLACE",
         "SORT_ORDER" => "ASC",
+        "NEWS_COUNT" => "9",
         "PAGER_SHOW_ALL" => "Y",
         "PAGER_LINK" => "/team/tournament/",
         "PAGER_TITLE" => "ПОКАЗАТЬ ВСЕ",
         "TITLE_BLOCK" => "Турнирная таблица",
-        "TITLE_BLOCK_2" => "Капитан команды"
+        "TITLE_BLOCK_2" => "Капитан"
     )
 );?>
 <? $APPLICATION->IncludeComponent(
