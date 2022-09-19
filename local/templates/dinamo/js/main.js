@@ -201,7 +201,7 @@ function sliders() {
             center:true,
             onTranslated: slide_drag_2,
             initialized: slide_drag_2,
-            autoWidth:false,
+            autoWidth:true,
             responsive:{
                 600:{
                     items:2

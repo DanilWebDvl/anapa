@@ -40,6 +40,12 @@
         margin-right: 0;
     }
 }
+@media (min-width: 769px) {
+    .slider_multiple_2 .owl-stage {
+        overflow: hidden;
+        height: 400px;
+    }
+}
 @media (min-width: 991px) {
     .news_slider_place .news:first-child {
         width: 630px;

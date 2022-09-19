@@ -21,7 +21,7 @@ $this->setFrameMode(true);
         <div class="slider_multiple_2 owl-carousel">
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <a class="news" href="<?=$arItem['DETAIL_PAGE_URL'] ?>">
-                    <picture>
+                    <picture class="sb_pic"> <!--style="background-image: url(<?//=$arItem['PREVIEW_PICTURE']['RESIZE'] ?>)" -->
                         <img src="<?=$arItem['PREVIEW_PICTURE']['RESIZE'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>">
                     </picture>
                     <span class="text-place flex flex-bottom smooth_back">

@@ -424,9 +424,6 @@ header {
 }
 .news_slider_place .news {
     display: block;
-    -webkit-transition: .3s all;
-    -o-transition: .3s all;
-    transition: .3s all;
     width: 300px;
     height: 400px;
     overflow: hidden;
