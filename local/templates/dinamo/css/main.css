@@ -470,9 +470,6 @@ header {
     height: auto;
     opacity: 1;
 }
-.news_slider_place .owl-stage {
-    margin-left: -110px;
-}
 .news_slider_place .owl-item.active:first-child .news .text-place {
     padding: 40px;
     font-size: 32px;

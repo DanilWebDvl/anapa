@@ -109,11 +109,6 @@ body.active_menu .container_ui .logo_place path.mob_logo {
   max-width: 300px; }
   .slider_multiple_2 .owl-item .news {
     max-width: 300px; }
-.slider_multiple_2 .owl-item.active.center {
-  max-width: 630px !important; }
-  .slider_multiple_2 .owl-item.active.center .news {
-    max-width: 630px !important;
-    width: 100% !important; }
 .slider_multiple_2 .news .sb_pic {
   width: 100%;
   height: 100%;

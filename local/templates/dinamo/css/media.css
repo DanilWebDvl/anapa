@@ -47,6 +47,14 @@
     }
 }
 @media (min-width: 991px) {
+    .slider_multiple_2 .owl-stage-outer {
+        margin-left: -300px;
+    }
+    .slider_multiple_2 .owl-item.active.center {
+        max-width: 630px !important; }
+    .slider_multiple_2 .owl-item.active.center .news {
+        max-width: 630px !important;
+        width: 100% !important; }
     .news_slider_place .news:first-child {
         width: 630px;
     }

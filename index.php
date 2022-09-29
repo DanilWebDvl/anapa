@@ -68,7 +68,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "IBLOCK_TYPE" => "teams",
         "TEMPLATE_NAME" => "main_calendar",
         "SORT_BY" => "PROPERTY_DATE",
-        "SORT_ORDER" => "DESC"
+        "SORT_ORDER" => "ASC"
     )
 );?>
 <? $APPLICATION->IncludeComponent(
