@@ -1,0 +1,31 @@
+Array
+(
+    [sql] => 
+			AND (
+			
+				((((BE.IBLOCK_ID = '1'))))
+				AND (EXISTS (
+						SELECT IBLOCK_ID FROM b_iblock_site WHERE IBLOCK_ID = B.ID
+						AND (((SITE_ID='s1')))
+					))
+				AND ((((BE.ACTIVE='Y'))))
+				AND (((BE.ACTIVE_TO >= now() OR BE.ACTIVE_TO IS NULL) AND (BE.ACTIVE_FROM <= now() OR BE.ACTIVE_FROM IS NULL)))
+				AND (
+				
+					(
+					
+						(
+						
+							((((FPS0.PROPERTY_32 = '2021'))))
+						)
+						AND (
+						
+							((((FPS0.PROPERTY_32 = '2020'))))
+						)
+					)
+				)
+			)
+			AND (((BE.WF_STATUS_ID=1 AND BE.WF_PARENT_ELEMENT_ID IS NULL)))
+)
+
+

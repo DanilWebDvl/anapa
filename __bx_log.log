@@ -1,0 +1,121 @@
+Array
+(
+    [section] => Array
+        (
+            [ACTIVE] => Y
+            [IBLOCK_SECTION_ID] => 
+            [NAME] => Альбом 2
+            [SORT] => 500
+            [CODE] => albom-2
+            [PICTURE] => Array
+                (
+                    [name] => 
+                    [type] => 
+                    [tmp_name] => 
+                    [error] => 4
+                    [size] => 0
+                    [description] => 
+                    [old_file] => 101
+                    [MODULE_ID] => iblock
+                )
+
+            [DESCRIPTION] => Хайлайты с матча 2
+            [DESCRIPTION_TYPE] => text
+            [IPROPERTY_TEMPLATES] => Array
+                (
+                    [SECTION_META_TITLE] => 
+                    [SECTION_META_KEYWORDS] => 
+                    [SECTION_META_DESCRIPTION] => 
+                    [SECTION_PAGE_TITLE] => 
+                    [ELEMENT_META_TITLE] => 
+                    [ELEMENT_META_KEYWORDS] => 
+                    [ELEMENT_META_DESCRIPTION] => 
+                    [ELEMENT_PAGE_TITLE] => 
+                    [SECTION_PICTURE_FILE_ALT] => 
+                    [SECTION_PICTURE_FILE_TITLE] => 
+                    [SECTION_PICTURE_FILE_NAME] => 
+                    [SECTION_DETAIL_PICTURE_FILE_ALT] => 
+                    [SECTION_DETAIL_PICTURE_FILE_TITLE] => 
+                    [SECTION_DETAIL_PICTURE_FILE_NAME] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_ALT] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_TITLE] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_NAME] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_ALT] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_TITLE] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_NAME] => 
+                )
+
+            [UF_DATE] => 21.06.2021
+            [UF_SYS_YEAR] => 
+            [UF_SYS_MONTH] => 
+            [SEARCHABLE_CONTENT] => АЛЬБОМ 2
+ХАЙЛАЙТЫ С МАТЧА 2
+            [MODIFIED_BY] => 1
+            [ID] => 20
+            [IBLOCK_ID] => 6
+        )
+
+)
+
+
+Array
+(
+    [section_add] => Array
+        (
+            [ACTIVE] => Y
+            [IBLOCK_SECTION_ID] => 
+            [IBLOCK_ID] => 6
+            [NAME] => Альбом 8
+            [SORT] => 500
+            [CODE] => albom-8
+            [PICTURE] => Array
+                (
+                    [name] => sport2.jpg
+                    [type] => image/jpeg
+                    [tmp_name] => /home/bitrix/.bx_temp/sitemanager/BXTEMP-2022-08-30/22/bxu/main/c2aa3cff9256c17a7c183d3ef17877db/file1661846361890/default
+                    [size] => 833358
+                    [error] => 0
+                    [description] => 
+                    [COPY_FILE] => Y
+                    [MODULE_ID] => iblock
+                )
+
+            [DESCRIPTION] => Текст
+            [DESCRIPTION_TYPE] => text
+            [IPROPERTY_TEMPLATES] => Array
+                (
+                    [SECTION_META_TITLE] => 
+                    [SECTION_META_KEYWORDS] => 
+                    [SECTION_META_DESCRIPTION] => 
+                    [SECTION_PAGE_TITLE] => 
+                    [ELEMENT_META_TITLE] => 
+                    [ELEMENT_META_KEYWORDS] => 
+                    [ELEMENT_META_DESCRIPTION] => 
+                    [ELEMENT_PAGE_TITLE] => 
+                    [SECTION_PICTURE_FILE_ALT] => 
+                    [SECTION_PICTURE_FILE_TITLE] => 
+                    [SECTION_PICTURE_FILE_NAME] => 
+                    [SECTION_DETAIL_PICTURE_FILE_ALT] => 
+                    [SECTION_DETAIL_PICTURE_FILE_TITLE] => 
+                    [SECTION_DETAIL_PICTURE_FILE_NAME] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_ALT] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_TITLE] => 
+                    [ELEMENT_PREVIEW_PICTURE_FILE_NAME] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_ALT] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_TITLE] => 
+                    [ELEMENT_DETAIL_PICTURE_FILE_NAME] => 
+                )
+
+            [UF_DATE] => 16.02.2020
+            [UF_SYS_YEAR] => 
+            [UF_SYS_MONTH] => 
+            [SEARCHABLE_CONTENT] => АЛЬБОМ 8
+ТЕКСТ
+            [~DATE_CREATE] => now()
+            [CREATED_BY] => 1
+            [MODIFIED_BY] => 1
+        )
+
+)
+
+

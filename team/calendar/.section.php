@@ -1,0 +1,4 @@
+<?
+$sSectionName = "Календарь";
+$arDirProperties = array();
+?>
