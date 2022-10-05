@@ -2,92 +2,56 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Руководство");
 ?>
-    <div class="sb_share"></div>
-    <section class="page_club_place def_pt_page">
-        <div class="container_ui container_content">
-            <div class="flex sponsor_list">
-
-                <div class="part flex flex-between">
-                    <div class="data_sponsor">
-                        <p class="title_sponsor">СОКОЛОВА<br> ЛЮБОВЬ ВЛАДИМИРОВНА</p>
-                        <div class="content_sponsor">
-                            <p><b>ГЕНЕРАЛЬНЫЙ ДИРЕКТОР, ЗАСЛУЖЕННЫЙ МАСТЕР СПОРТА ПО ВОЛЕЙБОЛУ</b></p>
-                            <blockquote>Известная российская волейболистка, нападающая, двукратная чемпионка мира (2006 и 2010), серебряный призёр летних Олимпийских игр 2000 и 2004 годов.</blockquote>
-                        </div>
-                    </div>
-                    <div class="card_sport in_club big_card">
-                        <div class="img_with_wave">
-                            <div class="block"></div>
-                            <img src="/local/templates/dinamo/img/iop.png" alt="Волейград">
-                            <div class="b-wave"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <h2>Достижения</h2>
-                <div class="list_owner_data flex">
-                    <div class="tabs_place">
-                        <div><p class="tab js_tab active" data-tab="1">российская сборная</p></div>
-                        <div><p class="tab js_tab" data-tab="2">В клубной карьере</p></div>
-                        <div><p class="tab js_tab" data-tab="3">личные достижения</p></div>
-                        <div><p class="tab js_tab" data-tab="4">награды и звания</p></div>
-                    </div>
-                    <div class="tabs_content_place">
-                        <div class="tab_content js_tab_content active" data-tab-content="1">
-                            <p>Серебряный призёр Игр XXVII Олимпиады (2000).</p>
-                            <p>Серебряный призёр Игр XXVIII Олимпиады (2004).</p>
-                            <p>Двукратная чемпионка мира (2006, 2010).</p>
-                            <p>Бронзовый призёр чемпионата мира (1998).</p>
-                            <p>Чемпионка Европы (1999, 2001).</p>
-                            <p>Бронзовый призёр чемпионата Европы (2007).</p>
-                            <p>Серебряный призёр Кубка мира (1999).</p>
-                            <p>Победительница Всемирного Кубка чемпионов (1997).</p>
-                            <p>Победительница Гран-при (1999).</p>
-                            <p>Серебряный призёр Гран-при (1998, 2000, 2006).</p>
-                            <p>Бронзовый призёр Гран-при (1996, 2001).</p>
-                            <p>В составе молодёжной сборной России.</p>
-                            <p>Бронзовый призёр чемпионата мира (1995).</p>
-                            <p>Чемпионка Европы (1994).</p>
-                        </div>
-                        <div class="tab_content js_tab_content" data-tab-content="2">
-                            <p>Чемпионка России (1999/00, 2007/08), серебряный (1993/94, 1994/95, 1998/99, 2008/09) и бронзовый (1992/93, 1996/97, 2015/16) призёр чемпионатов России.</p>
-                            <p>Обладательница Кубка России (2007, 2014, 2015), бронзовый призёр Кубка России (2008, 2013).</p>
-                            <p>Чемпионка Турции (2000/01, 2010/11), серебряный (2012/13) и бронзовый (2011/12) призёр чемпионата Турции.</p>
-                            <p>Обладательница Кубка Турции (2001).</p>
-                            <p>Обладательница Суперкубка Турции (2010, 2012).</p>
-                            <p>Чемпионка Италии (2003/04), серебряный призёр чемпионатов Италии (2002/03, 2004/05, 2005/06).</p>
-                            <p>Обладательница Суперкубка Италии (2004).</p>
-                            <p>Чемпионка Испании (2006/07).</p>
-                            <p>Обладательница Кубка Испании (2007).</p>
-                            <p>Победительница Лиги чемпионов (2004/05, 2011/12), финалистка (2007/08) и бронзовый призёр бронзовый призёр (2002/03, 2010/11) Лиги чемпионов.</p>
-                            <p>Обладательница Кубка ЕКВ (2003/04, 2014/15, 2015/16).</p>
-                            <p>Обладательница Кубка Top Teams (2006/07).</p>
-                            <p>Победительница клубного чемпионата мира (2010), серебряный призёр клубного чемпионата мира (2015).</p>
-                        </div>
-                        <div class="tab_content js_tab_content" data-tab-content="3">
-                            <p>1999 (Кубок мира) — лучшая на подаче и приёме</p>
-                            <p>1999 (Гран-при) — лучшая на блоке</p>
-                            <p>2000 (Гран-при) — MVP</p>
-                            <p>2001 (Лига чемпионов) — MVP</p>
-                            <p>2001 (Гран-при) — MVP</p>
-                            <p>2001 (Чемпионат Европы) — лучшая на подаче и приёме</p>
-                            <p>2004 (Кубок ЕКВ) — MVP</p>
-                            <p>2005 (Лига чемпионов) — MVP</p>
-                            <p>2006 — Лучшая волейболистка Европы</p>
-                            <p>2007 (Кубка Top Teams) — MVP</p>
-                            <p>2007 (Чемпионат Европы) — лучшая на приёме</p>
-                            <p>2013 (Кубок России) — лучшая на подаче</p>
-                            <p>2014 (Кубок России) — лучшая в атаке</p>
-                        </div>
-                        <div class="tab_content js_tab_content" data-tab-content="4">
-                            <p>Заслуженный мастер спорта России (2000).</p>
-                            <p>Орден Дружбы (19 апреля 2001) — за большой вклад в развитие физической культуры и спорта, высокие спортивные достижения на Играх XXVII Олимпиады 2000 года в Сиднее. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.detail",
+    "page",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_ELEMENT_CHAIN" => "Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "N",
+        "BROWSER_TITLE" => "-",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "N",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "ELEMENT_CODE" => "rukovodstvo",
+        "ELEMENT_ID" => "",
+        "FIELD_CODE" => array("PREVIEW_PICTURE", ""),
+        "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('rukovodstvo'),
+        "IBLOCK_TYPE" => "public",
+        "IBLOCK_URL" => "",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "MESSAGE_404" => "",
+        "META_DESCRIPTION" => "-",
+        "META_KEYWORDS" => "-",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Страница",
+        "PROPERTY_CODE" => array("", "*"),
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_CANONICAL_URL" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "STRICT_SECTION_CHECK" => "N",
+        "USE_PERMISSIONS" => "N",
+        "USE_SHARE" => "N"
+    )
+);?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
