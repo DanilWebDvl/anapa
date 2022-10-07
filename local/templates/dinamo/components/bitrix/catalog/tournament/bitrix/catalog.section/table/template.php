@@ -23,8 +23,8 @@ $this->setFrameMode(true);
                     <div class="part_full">Команда</div>
                     <div class="part">И</div>
                     <div class="part">В</div>
-                    <div class="part">О</div>
                     <div class="part">П</div>
+                    <div class="part">О</div>
                     <div class="part">Сеты</div>
                 </div>
                 <div class="body_table">
@@ -39,8 +39,8 @@ $this->setFrameMode(true);
                             </div>
                             <div class="part"><?=$arItem['PROPERTIES']['I']['VALUE'] ?></div>
                             <div class="part"><?=$arItem['PROPERTIES']['B']['VALUE'] ?></div>
-                            <div class="part"><?=$arItem['PROPERTIES']['O']['VALUE'] ?></div>
                             <div class="part"><?=$arItem['PROPERTIES']['P']['VALUE'] ?></div>
+                            <div class="part"><?=$arItem['PROPERTIES']['O']['VALUE'] ?></div>
                             <div class="part"><?=$arItem['PROPERTIES']['SET']['VALUE'] ?></div>
                         </div>
                     <? endforeach; ?>

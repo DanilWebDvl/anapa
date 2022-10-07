@@ -23,70 +23,130 @@ Loader::includeModule($module_id);
 Loader::includeModule('iblock');
 
 $request = HttpApplication::getInstance()->getContext()->getRequest();
-
+$iblock_calendar = Module\Project\Helpers\Utils::getIdByCode('calendar');
+$iblock_tournament = Module\Project\Helpers\Utils::getIdByCode('tournament');
 #Описание опций
+$obCalendar = CIBlockSection::GetList(
+    [],
+    [
+        'IBLOCK_ID' => $iblock_calendar,
+        'ACTIVE' => 'Y',
+    ],
+    false,
+    [],
+    [],
+);
+while ($arCalendar = $obCalendar->GetNext())
+    $arCalendars[$arCalendar['ID']] = $arCalendar['NAME'];
+
+$obTournament = CIBlockSection::GetList(
+    [],
+    [
+        'IBLOCK_ID' => $iblock_tournament,
+        'ACTIVE' => 'Y',
+    ],
+    false,
+    [],
+    [],
+);
+while ($arTournament = $obTournament->GetNext())
+    $arTournaments[$arTournament['ID']] = $arTournament['NAME'];
 
 $arIblockList = [];
 $res = CIBlock::GetList(['SORT' => 'ASC'], ['ACTIVE' => 'Y']);
 while ($item = $res->Fetch()) {
     $arIblockList[$item['ID']] = $item['NAME'];
 }
-
-$aTabs = array(
-    array(
-        'DIV' => 'edit1',
-        'TAB' => Loc::getMessage('OPTIONS_TITLE_MAIN'),
-        'ICON' => 'main_settings',
-        'OPTIONS' => array(
-            array(
-                'SOCIAL_VK',
-                Loc::getMessage('SOCIAL_VK'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'SOCIAL_TELEGA',
-                Loc::getMessage('SOCIAL_TELEGA'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'SOCIAL_YOUTUBE',
-                Loc::getMessage('SOCIAL_YOUTUBE'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'FOOTER_1',
-                Loc::getMessage('FOOTER_1'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'FOOTER_2',
-                Loc::getMessage('FOOTER_2'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'FOOTER_PHONE',
-                Loc::getMessage('FOOTER_PHONE'),
-                '',
-                array('text', 90),
-            ),
-            array(
-                'FOOTER_EMAIL',
-                Loc::getMessage('FOOTER_EMAIL'),
-                '',
-                array('text', 90),
-            ),
+$aTabs[] = array(
+    'DIV' => 'edit1',
+    'TAB' => Loc::getMessage('OPTIONS_TITLE_MAIN'),
+    'ICON' => 'main_settings',
+    'OPTIONS' => array(
+        array(
+            'SOCIAL_VK',
+            Loc::getMessage('SOCIAL_VK'),
+            '',
+            array('text', 90),
         ),
+        array(
+            'SOCIAL_TELEGA',
+            Loc::getMessage('SOCIAL_TELEGA'),
+            '',
+            array('text', 90),
+        ),
+        array(
+            'SOCIAL_YOUTUBE',
+            Loc::getMessage('SOCIAL_YOUTUBE'),
+            '',
+            array('text', 90),
+        ),
+        array(
+            'FOOTER_1',
+            Loc::getMessage('FOOTER_1'),
+            '',
+            array('text', 90),
+        ),
+        array(
+            'FOOTER_2',
+            Loc::getMessage('FOOTER_2'),
+            '',
+            array('text', 90),
+        ),
+        array(
+            'FOOTER_PHONE',
+            Loc::getMessage('FOOTER_PHONE'),
+            '',
+            array('text', 90),
+        ),
+        array(
+            'FOOTER_EMAIL',
+            Loc::getMessage('FOOTER_EMAIL'),
+            '',
+            array('text', 90),
+        )
     ),
-    array(
-        'DIV' => 'edit3',
-        'TAB' => Loc::getMessage('MAIN_TAB_RIGHTS'),
-        'TITLE' => Loc::getMessage('MAIN_TAB_TITLE_RIGHTS'),
+);
+$aTabs[] = array(
+    'DIV' => 'edit2',
+    'TAB' => Loc::getMessage('PARSER_TITLE'),
+    'TITLE' => Loc::getMessage('PARSER_TITLE'),
+    "OPTIONS" => array(
+        [
+            'ON_OFF_PARSER',
+            Loc::getMessage('ON_OFF_PARSER'),
+            '',
+            array('checkbox', 'Y')
+        ],
+        [
+            'LINK_PARSER',
+            Loc::getMessage('LINK_PARSER'),
+            '',
+            array('text')
+        ],
+        [
+            'TEAM_FOR_PARSER',
+            Loc::getMessage('TEAM_FOR_PARSER'),
+            '',
+            array('text')
+        ],
+        [
+            'SECTION_PARSER_CALENDAR',
+            Loc::getMessage('SECTION_PARSER_CALENDAR'),
+            '',
+            array('selectbox', $arCalendars)
+        ],
+        [
+            'SECTION_PARSER_TOURNAMENT',
+            Loc::getMessage('SECTION_PARSER_TOURNAMENT'),
+            '',
+            array('selectbox', $arTournaments)
+        ],
     ),
+);
+$aTabs[] = array(
+    'DIV' => 'edit3',
+    'TAB' => Loc::getMessage('MAIN_TAB_RIGHTS'),
+    'TITLE' => Loc::getMessage('MAIN_TAB_TITLE_RIGHTS'),
 );
 #Сохранение
 if ($request->isPost() && $request['Update'] && check_bitrix_sessid()) {
