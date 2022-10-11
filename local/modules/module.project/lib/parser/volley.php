@@ -2,16 +2,15 @@
 namespace Module\Project\Parser;
 
 use Bitrix\Main\Config\Option;
-use \Bitrix\Main\Web\DOM\Document;
+use Bitrix\Main\Web\DOM\Document;
+use Module\Project\Basis;
 
-class Volley {
-    protected $module_id = 'module.project';
+class Volley extends Basis {
     protected $options;
     /**
      * @var Document
      */
     protected $page;
-    protected $errors;
     protected $calendar;
     protected $score;
 
@@ -19,39 +18,10 @@ class Volley {
         $this->options = [
             'ON_OFF' => Option::get($this->module_id, 'ON_OFF_PARSER', 'Y'),
             'LINK' => Option::get($this->module_id, 'LINK_PARSER'),
-            'TEAM' => Option::get($this->module_id, 'TEAM_FOR_PARSER'),
-            'SECTION_CALENDAR' => Option::get($this->module_id, 'SECTION_PARSER_CALENDAR'),
-            'SECTION_TOURNAMENT' => Option::get($this->module_id, 'SECTION_PARSER_TOURNAMENT'),
         ];
         if (empty($this->options['LINK']))
-            $this->addError("Parser link is empty");
+            $this->addError("Parser link for Volley.ru is empty");
 
-    }
-
-    protected function addError($string) {
-        $this->errors[] = $string;
-    }
-
-    protected function showErrors() {
-        if (!empty($this->errors)) {
-            $errosStr = '';
-            foreach ($this->errors as $error) {
-                $errosStr .= $error."; \n ";
-            }
-            $this->submitAlert($errosStr);
-            throw new \Exception($errosStr);
-        }
-    }
-
-    protected function submitAlert($string) {
-
-    }
-
-    /**
-     * @return bool
-     */
-    protected function hasError() {
-        return !empty($this->errors);
     }
 
     public function getPage() {
@@ -61,7 +31,7 @@ class Volley {
         $html = mb_convert_encoding($html, "UTF-8", "windows-1251");
 
         if ($html == null || $status != 200 || empty($html)) {
-            $this->addError("Site is not available");
+            $this->addError("Site Volley.ru is not available");
             $this->showErrors();
         } else {
             $this->page = new Document;
@@ -77,8 +47,9 @@ class Volley {
     public function parseResults() {
         $selector = 'table.result_table tr';
         $arCalendarTr = $this->page->querySelectorAll($selector);
+
         if (empty($arCalendarTr)) {
-            $this->addError("table tournament is empty");
+            $this->addError("table tournament in Volley.ru is empty");
             $this->showErrors();
         }
 
@@ -117,6 +88,7 @@ class Volley {
                         break;
                 }
             }
+
             $arTournaments[$arTournament['NUM']] = $arTournament;
         }
 
@@ -126,8 +98,13 @@ class Volley {
     public function parseCalendar() {
         $selector = 'table.calend_table tr';
         $arCalendarTr = $this->page->querySelectorAll($selector);
+
+        $arLeagues = $this->page->querySelectorAll("#women_leagues_select option[selected]");
+        foreach ($arLeagues as $arLeague)
+            $league = $arLeague->getTextContent();
+
         if (empty($arCalendarTr)) {
-            $this->addError("table calendar is empty");
+            $this->addError("table calendar in Volley.ru is empty");
             $this->showErrors();
         }
 
@@ -164,8 +141,10 @@ class Volley {
                 }
 
             }
-            if (!empty($arTour['RESULTS']))
+            if (!empty($arTour['RESULTS'])) {
                 $arTours[$arTour['NAME']] = $arTour;
+                $arTours[$arTour['NAME']]['LEAGUE'] = $league;
+            }
         }
 
         $this->calendar = $arTours;

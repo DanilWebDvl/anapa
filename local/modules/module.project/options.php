@@ -52,6 +52,17 @@ $obTournament = CIBlockSection::GetList(
 while ($arTournament = $obTournament->GetNext())
     $arTournaments[$arTournament['ID']] = $arTournament['NAME'];
 
+$obTeams = CIBlockElement::GetList(
+    [],
+    ['IBLOCK_ID' => Module\Project\Helpers\Utils::getIdByCode('teamlist'), 'ACTIVE' => 'Y'],
+    false,
+    false,
+    []
+);
+while ($arTeam = $obTeams->GetNext()) {
+    $arTeams[$arTeam['ID']] = $arTeam['NAME'];
+}
+
 $arIblockList = [];
 $res = CIBlock::GetList(['SORT' => 'ASC'], ['ACTIVE' => 'Y']);
 while ($item = $res->Fetch()) {
@@ -127,7 +138,7 @@ $aTabs[] = array(
             'TEAM_FOR_PARSER',
             Loc::getMessage('TEAM_FOR_PARSER'),
             '',
-            array('text')
+            array('selectbox', $arTeams)
         ],
         [
             'SECTION_PARSER_CALENDAR',

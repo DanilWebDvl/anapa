@@ -27,7 +27,8 @@ if (!empty($arResult['ITEMS'])) {
             }
 
             $arItem['PROPERTIES']['DATE']['DAY'] = $month[0][0];
-            $arResult['MONTHS'][$month[0][1]][] = $arItem;
+            $arResult['MONTHS'][(int)$month[0][1]][] = $arItem;
         }
     }
 }
+ksort($arResult['MONTHS']);

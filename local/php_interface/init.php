@@ -14,4 +14,9 @@ if(file_exists($docRoot .'/local/php_interface/sb_tool/init.php')){
 if (file_exists($docRoot . '/local/php_interface/include/define.php')) {
     require_once $docRoot . '/local/php_interface/include/define.php';
 }
+
+function initParser() {
+    new \Module\Project\Parser\SaveVolley();
+    return "initParser()";
+}
 ?>
