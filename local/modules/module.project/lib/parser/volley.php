@@ -171,9 +171,12 @@ class Volley extends Basis {
     public function __construct() {
         $this->getOptions();
         if ($this->options['ON_OFF'] != 'Y')
-            return;
+            return false;
 
         $this->showErrors();
+    }
+
+    public function parse() {
         $this->getPage();
         $this->parsePage();
     }

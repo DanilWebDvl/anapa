@@ -13,7 +13,7 @@ if (!empty($arResult['ITEMS'])) {
             $arItem['FORMAT_DATE'] = $obDate->format($arParams['ACTIVE_DATE_FORMAT']);
         }
         if (!empty($arItem['PREVIEW_PICTURE'])) {
-            $arItem['PREVIEW_PICTURE']['RESIZE'] = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], ['width' => 410, 'height' => 260])['src'];
+            $arItem['PREVIEW_PICTURE']['RESIZE'] = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], ['width' => 1230, 'height' => 870])['src'];
         } else {
             $arItem['PREVIEW_PICTURE']['RESIZE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
         }

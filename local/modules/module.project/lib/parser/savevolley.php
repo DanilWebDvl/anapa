@@ -14,7 +14,9 @@ class SaveVolley extends Basis {
     public function __construct() {
         $this->getOptions();
         $this->showErrors();
+    }
 
+    public function parse() {
         $this->getArVolley();
         $this->updateTornament();
         $this->updateCalendar();
@@ -23,7 +25,6 @@ class SaveVolley extends Basis {
         \CIBlock::clearIBlockTagCache($this->options['IBLOCK_CALENDAR']);
         $this->showErrors();
     }
-
 
     protected function getOptions() {
         $this->options = [
@@ -44,8 +45,11 @@ class SaveVolley extends Basis {
 
     protected function getArVolley() {
         $obVolley = new Volley();
-        $this->arCalendar = $obVolley->getCalendar();
-        $this->arTournament = $obVolley->getScore();
+        if ($obVolley != false) {
+            $obVolley->parse();
+            $this->arCalendar = $obVolley->getCalendar();
+            $this->arTournament = $obVolley->getScore();
+        }
     }
 
     protected function updateTornament() {
@@ -169,7 +173,6 @@ class SaveVolley extends Basis {
         $arTeamNames = array_unique($arTeamNames);
         $arTeams = $this->getTeamsByName($arTeamNames);
         $obEl = new \CIBlockElement();
-        \_::d($arCalendar);
 
         foreach ($arCalendar as $arTour) {
             // PLACE - Название тура
