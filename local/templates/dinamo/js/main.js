@@ -105,7 +105,7 @@ function sliders() {
                 items:3
             },
             1300:{
-                margin:50,
+                margin:40,
                 items:4
             }
         }

@@ -99,9 +99,6 @@ body.active_menu {
     .owl-item {
       .card {
         height: 405px;
-        @media (max-width: 426px) {
-          height: 325px;
-        }
       }
 
       .active {

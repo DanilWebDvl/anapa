@@ -11,6 +11,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+global $filterResult;
+$filterResult['!PROPERTY_SCORE'] = false;
 include 'filter.php';
 ?>
 <section class="page_news_place def_pt_page">
@@ -91,7 +93,7 @@ include 'filter.php';
             "results",
             Array(
                 "IBLOCK_TYPE" => "",
-                "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('results'),
+                "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
                 "NEWS_COUNT" => 3,
                 "SORT_BY1" => $arParams["SORT_BY1"],
                 "SORT_ORDER1" => $arParams["SORT_ORDER1"],
@@ -133,7 +135,7 @@ include 'filter.php';
                 "ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
                 "USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
                 "GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-                "FILTER_NAME" => '',
+                "FILTER_NAME" => 'filterResult',
                 "HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
                 "CHECK_DATES" => $arParams["CHECK_DATES"],
             ),

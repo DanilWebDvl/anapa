@@ -208,6 +208,8 @@ class SaveVolley extends Basis {
                             'PLACE' => $arTour['NAME'],
                             'BATTLE' => $arTour['LEAGUE'],
                             'DATE' => $obDate->format('d.m.Y H:i:s'),
+                            'SYS_YEAR' => $obDate->format('Y'),
+                            'SYS_MONTH' => $obDate->format('m'),
                             'SCORE' => $score,
                             'SET' => $other,
                             'TEAM_H' => $arTeams[$arTour['TEAMS_LEFT'][$key]]['ID'],

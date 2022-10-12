@@ -24,18 +24,18 @@ if ($arParams['SHOW_PAGINATION'] == 'Y')
             <? endif; ?>
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="card prev">
-                    <div class="date_time flex flex-between">
+                    <div class="date_time flex flex-between short_wave_in_cart">
                         <div class="data_place">
                             <p><?=$arItem['FORMAT_DAY'] ?>.<?=$arItem['FORMAT_MONTH'] ?></p>
                         </div>
                         <div class="stage">
-                            <p><?=$arItem['PROPERTIES']['STAGE']['VALUE'] ?></p>
+                            <p><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?></p>
                         </div>
                         <div class="time_place">
                             <p><?=$arItem['FORMAT_TIME'] ?></p>
                         </div>
                     </div>
-                    <div class="vs_place">
+                    <div class="vs_place short_wave_in_cart">
                         <div class="text_center">
                             <img src="<?=$arItem['TEAM_H']['ICO'] ?>">
                             <p class="desc"><?=$arItem['TEAM_H']['NAME'] ?></p>
@@ -50,6 +50,11 @@ if ($arParams['SHOW_PAGINATION'] == 'Y')
                             <p class="desc"><?=$arItem['TEAM_G']['NAME'] ?></p>
                         </div>
                     </div>
+                    <? if (!empty($arItem['PROPERTIES']['SET']['VALUE'])): ?>
+                        <div class="set_list">
+                            <p><?=$arItem['PROPERTIES']['SET']['VALUE'] ?></p>
+                        </div>
+                    <? endif ?>
                 </div>
             <? endforeach; ?>
             <? if ($arParams['SHOW_PAGINATION'] == 'Y'): ?>

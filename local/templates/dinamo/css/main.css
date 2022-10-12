@@ -317,13 +317,12 @@ header {
 }
 
 .calendar_slider_place .card .data_place {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
-    padding: 0 50px 15px;
     text-align: center;
 }
 .calendar_slider_place .card .data_place:after {
-    content: '';
+    /*content: '';*/
     width: calc( 100% + 100px );
     margin-left: -50px;
     margin-top: 15px;
@@ -333,8 +332,8 @@ header {
     display: block;
 }
 .calendar_slider_place .card .time_place {
-    font-size: 32px;
-    font-weight: 500;
+    font-size: 26px;
+    font-weight: 400;
     text-align: center;
 }
 .calendar_slider_place .card .vs_place {
@@ -350,7 +349,7 @@ header {
     align-items: start;
 }
 .calendar_slider_place .slider_multiple .card.prev .vs_place {
-    padding: 25px 25px 45px;
+    padding: 25px 22px 35px;
 }
 .text_center {
     text-align: center;
@@ -1401,11 +1400,14 @@ body.active_menu {
 .container_content .owl-carousel {
     padding-top: 40px;
 }
-.calendar_slider_place .match_results_list .date_time {
+.calendar_slider_place .date_time {
     padding: 0 22px;
     position: relative;
 }
-.calendar_slider_place .match_results_list .date_time:after {
+.short_wave_in_cart {
+    position: relative;
+}
+.short_wave_in_cart:after {
     content: '';
     position: absolute;
     bottom: -17px;
@@ -1419,7 +1421,7 @@ body.active_menu {
 .calendar_slider_place .match_results_list .card {
     width: 410px;
     margin: 0 30px 30px 0;
-    padding: 20px 0 60px;
+    padding: 20px 0 0px;
 }
 .match_results_place .match_results_list .date_time .stage, .calendar_slider_place.match_results_place .card .data_place, .calendar_slider_place.match_results_place .card .time_place {
     font-size: 26px;
@@ -1433,7 +1435,41 @@ body.active_menu {
     content: none;
 }
 .calendar_slider_place.match_results_place .card .vs_place {
-    padding: 60px 35px 0;
+    padding: 60px 35px 20px;
+}
+.card .set_list.with_wave_in_cart {
+    margin-top: 0;
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.card .set_list.with_wave_in_cart:before, .card .set_list.with_wave_in_cart:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0.3;
+    display: block;
+}
+.card .set_list.with_wave_in_cart:before {
+    top: 0;
+}
+.card .set_list.with_wave_in_cart:after {
+    bottom: 0;
+}
+.card .set_list {
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 17px;
+}
+.card .name_battle {
+    padding: 12px 24px;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 17px;
 }
 .calendar_slider_place .card .vs_place > * {
     width: 33%;

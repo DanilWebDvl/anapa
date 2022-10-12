@@ -374,6 +374,9 @@
     }
 }
 @media (max-width: 991px) {
+    .card .set_list.with_wave_in_cart {
+        margin-bottom: 14px;
+    }
     .list_owner_data {
         padding: 24px 0 24px 24px;
     }

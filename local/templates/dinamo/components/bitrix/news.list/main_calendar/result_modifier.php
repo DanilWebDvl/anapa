@@ -19,9 +19,17 @@ if (!empty($arResult['ITEMS'])) {
             if ($obDate->getTimestamp() < $obDateNow->getTimestamp()) {
                 $arItem['PREV'] = 'Y';
             }
-            $arItem['MONTH'] = Module\Project\Helpers\Utils::getNameMothByNum($obDate->format('m'));
+//            $arItem['MONTH'] = Module\Project\Helpers\Utils::getNameMothByNum($obDate->format('m'));
             $arItem['TIME'] = $obDate->format('H:i');
-            $arItem['DAY'] = $obDate->format('d');
+//            $arItem['DAY'] = $obDate->format('d');
+            $arItem['DATE'] = $obDate->format('d.m');
+        }
+
+        if (!empty($arItem['PROPERTIES']['PLACE']['VALUE'])) {
+            $arPlace = explode('тур ', $arItem['PROPERTIES']['PLACE']['VALUE']);
+            $arItem['CITY'] = $arPlace[1];
+            $arTour = explode($arPlace[1], $arItem['PROPERTIES']['PLACE']['VALUE']);
+            $arItem['TOUR'] = $arTour[0];
         }
 
         if (!empty($arItem['PROPERTIES']['TEAM_H']['VALUE'])) {

@@ -20,14 +20,19 @@ $this->setFrameMode(true);
                 <div class="slide">
 
                     <div class="card <?=($arItem['PREV'] == 'Y') ? 'prev' : '' ?>">
-                        <div class="date_time">
+                        <div class="date_time flex flex-between short_wave_in_cart">
                             <div class="data_place">
-                                <p><?=$arItem['MONTH'] ?> <?=$arItem['DAY'] ?></p>
+                                <p><?=$arItem['DATE'] ?></p>
                             </div>
                             <div class="time_place">
                                 <p><?=$arItem['TIME'] ?></p>
                             </div>
                         </div>
+                        <? if (!empty($arItem['PROPERTIES']['BATTLE']['VALUE'])): ?>
+                            <div class="name_battle">
+                                <p><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?>. <?=$arItem['TOUR'] ?></p>
+                            </div>
+                        <? endif ?>
                         <div class="vs_place">
                             <div class="text_center">
                                 <img src="<?=$arItem['TEAM_H']['ICO'] ?>" alt="">
@@ -39,8 +44,13 @@ $this->setFrameMode(true);
                                 <p class="desc"><?=$arItem['TEAM_G']['NAME'] ?></p>
                             </div>
                         </div>
+                        <? if (!empty($arItem['PROPERTIES']['SET']['VALUE'])): ?>
+                            <div class="set_list with_wave_in_cart">
+                                <p><?=$arItem['PROPERTIES']['SET']['VALUE'] ?></p>
+                            </div>
+                        <? endif ?>
                         <div class="desc_place">
-                            <p><?=$arItem['PROPERTIES']['PLACE']['VALUE'] ?: '' ?></p>
+                            <p><?=$arItem['CITY'] ?: '' ?></p>
                         </div>
                     </div>
 

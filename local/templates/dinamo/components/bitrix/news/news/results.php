@@ -11,6 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$GLOBALS[$arParams["FILTER_NAME"]][] = ['!PROPERTY_SCORE' => false];
+global $filterResult;
+$filterResult['!PROPERTY_SCORE'] = false;
 include 'filter.php';
 ?>
 <section class="page_news_place def_pt_page">
@@ -52,14 +55,14 @@ include 'filter.php';
                     "DISPLAY_PREVIEW_TEXT" => "Y",
                     "DISPLAY_TOP_PAGER" => "N",
                     "FIELD_CODE" => array("", ""),
-                    "FILTER_NAME" => "",
+                    "FILTER_NAME" => "filterResult",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                     "IBLOCK_TYPE" => "",
-                    "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('results'),
+                    "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
                     "MESSAGE_404" => "",
-                    "NEWS_COUNT" => "200",
+                    "NEWS_COUNT" => 300,
                     "PAGER_BASE_LINK_ENABLE" => "N",
                     "PAGER_DESC_NUMBERING" => "N",
                     "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -92,7 +95,7 @@ include 'filter.php';
             Array(
                 "SHOW_PAGINATION" => "Y",
                 "IBLOCK_TYPE" => "",
-                "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('results'),
+                "IBLOCK_ID" => Module\Project\Helpers\Utils::getIdByCode('calendar'),
                 "NEWS_COUNT" => 90,
                 "SORT_BY1" => $arParams["SORT_BY1"],
                 "SORT_ORDER1" => $arParams["SORT_ORDER1"],
