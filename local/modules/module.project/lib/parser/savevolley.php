@@ -35,12 +35,19 @@ class SaveVolley extends Basis {
             'IBLOCK_TOURNAMENT' => Utils::getIdByCode('tournament'),
             'IBLOCK_CALENDAR' => Utils::getIdByCode('calendar')
         ];
+
         if (empty($this->options['TEAM']))
             $this->addError("Need add team for parser from Volley.ru");
         if (empty($this->options['SECTION_CALENDAR']))
             $this->addError("Need add section calendar for parser from Volley.ru");
         if (empty($this->options['SECTION_TOURNAMENT']))
             $this->addError("Need add section tournament for parser from Volley.ru");
+
+        $arTeam = \Module\Project\Helpers\Utils::getTeamById($this->options['TEAM']);
+        if (empty($arTeam))
+            $this->addError('Main team ID='. $this->options['TEAM'] .' is invalid');
+        else
+            $this->options['TEAM_NAME'] = $arTeam['PROPERTY_NAME_VOLLEY_VALUE'];
     }
 
     protected function getArVolley() {
@@ -182,6 +189,7 @@ class SaveVolley extends Basis {
                 unset($id);
                 unset($time);
                 unset($score);
+                unset($other);
                 $bool = preg_match('~\<b>([\s\S]+?)<\/b>~',$result, $arScore);
 
                 if ($bool) {// Если есть счет, то достаем его и другие результаты
@@ -302,10 +310,10 @@ class SaveVolley extends Basis {
             $arNeedTeamKey = [];
 
             foreach ($arCalendar['TEAMS_LEFT'] as $key => $arTeamLeft)
-                if ($arTeamLeft == 'Динамо-Анапа (Анапа)')
+                if ($arTeamLeft == $this->options['TEAM_NAME'])
                     $arNeedTeamKey[] = $key;
             foreach ($arCalendar['TEAMS_RIGHT'] as $key => $arTeamLeft)
-                if ($arTeamLeft == 'Динамо-Анапа (Анапа)')
+                if ($arTeamLeft == $this->options['TEAM_NAME'])
                     $arNeedTeamKey[] = $key;
             $arNeedTeamKey = array_unique($arNeedTeamKey);
 
@@ -352,11 +360,17 @@ class SaveVolley extends Basis {
         );
         while ($arEl = $obEls->GetNext()) {
             $arEls[$arEl['PROPERTY_NAME_VOLLEY_VALUE']] = $arEl;
+            $arFind[] = $arEl['PROPERTY_NAME_VOLLEY_VALUE'];
         }
-
+        $arNewTeams = $this->createTeamByTeamsDifference($arName, $arFind);
+        $arEls = array_merge($arNewTeams, $arEls);
         // Найти команды которых нет в БД но есть в удаленке и создать их в бд
 
         return $arEls;
+    }
+
+    protected function createTeamByTeamsDifference($arNedd, $arFind) {
+
     }
 
     /**

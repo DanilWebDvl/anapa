@@ -51,6 +51,28 @@ class Utils
         return $array[$num];
     }
 
+    public static function getTeamById($id) {
+        $iblock = self::getIdByCode('teamlist');
+        if (empty($iblock))
+            return false;
+
+        $obEl = \CIBlockElement::GetList(
+            [],
+            ['ACTIVE' => 'Y', 'IBLOCK_ID' => $iblock, 'ID' => $id],
+            false,
+            false,
+            ['PROPERTY_NAME_VOLLEY', 'ID', 'IBLOCK_ID', 'NAME']
+        );
+        while ($arEls = $obEl->GetNext()) {
+            $arEl = $arEls;
+        }
+
+        if (!empty($arEl))
+            return $arEl;
+        else
+            return false;
+    }
+
     public static function getTeamByProp($iblock, $prop_id, $item_id) {
         $obTEAM_prop = \CIBlockProperty::GetByID($prop_id, $iblock);
         if($arTEAM_prop = $obTEAM_prop->GetNext())
