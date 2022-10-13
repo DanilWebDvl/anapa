@@ -53,7 +53,7 @@ $this->setFrameMode(true);
                                 </div>
                             </div>
                         </div>
-                        <? if ($arParams['PAGER_SHOW_ALL'] == 'Y'): ?>
+                        <? if ($arParams['PAGER_SHOW_ALL'] == 'Y' && !empty($arResult['NAV_STRING'])): ?>
                             <div class="full-btn">
                                 <a href="<?=$arParams['PAGER_LINK'] ?>" class="btn_link"><?=$arParams['PAGER_TITLE'] ?></a>
                             </div>

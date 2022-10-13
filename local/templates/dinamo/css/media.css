@@ -305,6 +305,7 @@
     .card_sport .info_card {
         margin-top: -47%;
         padding: 120px 20px 38px;
+        background-size: contain;
     }
     .card_sport .info_card .num {
         -webkit-box-ordinal-group: 3;
