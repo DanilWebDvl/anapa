@@ -362,15 +362,48 @@ class SaveVolley extends Basis {
             $arEls[$arEl['PROPERTY_NAME_VOLLEY_VALUE']] = $arEl;
             $arFind[] = $arEl['PROPERTY_NAME_VOLLEY_VALUE'];
         }
+
         $arNewTeams = $this->createTeamByTeamsDifference($arName, $arFind);
-        $arEls = array_merge($arNewTeams, $arEls);
+        if ($arNewTeams != false)
+            $arEls = array_merge($arNewTeams, $arEls);
         // Найти команды которых нет в БД но есть в удаленке и создать их в бд
 
         return $arEls;
     }
 
+    /**
+     * @param $arNedd
+     * @param $arFind
+     * @return array|false
+     */
     protected function createTeamByTeamsDifference($arNedd, $arFind) {
+        $arDiff = array_diff($arNedd, $arFind);
+        $arNewEl = false;
 
+        if (!empty($arDiff)) {
+            $obEl = new \CIBlockElement();
+            foreach ($arDiff as $diff) {
+                $arFields = [
+                    'NAME' => $diff,
+                    'IBLOCK_ID' => $this->options['IBLOCK_TEAMS'],
+                    'PROPERTY_VALUES' => [
+                        'NAME_VOLLEY' => $diff
+                    ],
+                    'ACTIVE' => 'Y'
+                ];
+                if ($id = $obEl->Add($arFields)) {
+                    $arFields['ID'] = $id;
+                    $arFields['PROPERTY_NAME_VOLLEY_VALUE'] = $diff;
+                    unset($arFields['PROPERTY_VALUES']);
+
+                    $arNewEl[$diff] = $arFields;
+                } else {
+                    $this->addError('Error when created team '. $diff . '. Error: ' . $obEl->LAST_ERROR);
+                }
+            }
+        }
+
+        return $arNewEl;
     }
 
     /**
