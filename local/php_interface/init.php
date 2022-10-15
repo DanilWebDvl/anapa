@@ -16,8 +16,12 @@ if (file_exists($docRoot . '/local/php_interface/include/define.php')) {
 }
 
 function initParser() {
-    $parser = new \Module\Project\Parser\SaveVolley();
-    $parser->parse();
+    try {
+        $parser = new \Module\Project\Parser\SaveVolley();
+        $parser->parse();
+    } catch (\Exception $e) {
+        ShowError($e);
+    }
 
     return "initParser();";
 }

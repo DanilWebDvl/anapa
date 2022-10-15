@@ -185,11 +185,12 @@ class SaveVolley extends Basis {
             // PLACE - Название тура
             // BATTLE - Лига
 
-            foreach ($arTour['RESULTS'] as $key => $result) {
+            foreach ($arTour['DATES'] as $key => $date) {
                 unset($id);
                 unset($time);
                 unset($score);
                 unset($other);
+                $result = $arTour['RESULTS'][$key];
                 $bool = preg_match('~\<b>([\s\S]+?)<\/b>~',$result, $arScore);
 
                 if ($bool) {// Если есть счет, то достаем его и другие результаты
@@ -306,8 +307,16 @@ class SaveVolley extends Basis {
      * @return array
      */
     protected function formatCalendar() {
+        $max_month = date('t.m.Y', strtotime('+1 month')).' 23:59:00';
+        $maxDate = new DateTime($max_month);
         foreach ($this->arCalendar as $keyC => $arCalendar) { // Оставить в массиве только команду текущего сайта
             $arNeedTeamKey = [];
+
+            $arTime = explode('.', $arCalendar['DATES'][0]);
+            $datetime  = $arTime[0].'.'.$arTime[1].'.20'.$arTime[2].' 00:00:00';
+            $obDate = new DateTime($datetime);
+
+            if ($obDate->getTimestamp() >= $maxDate->getTimestamp()) continue;
 
             foreach ($arCalendar['TEAMS_LEFT'] as $key => $arTeamLeft)
                 if ($arTeamLeft == $this->options['TEAM_NAME'])
@@ -319,7 +328,8 @@ class SaveVolley extends Basis {
 
             $arFormatedCalendar = $this->delEmptyCalendar($arCalendar, ['TEAMS_LEFT', 'TEAMS_RIGHT', 'DATES', 'RESULTS'], $arNeedTeamKey);
 
-            if ($arFormatedCalendar !== null) {
+            if ($arFormatedCalendar !== null) { // Удалены все игры где нет ключевой команды
+
                 $arFormatedCalendar['NAME'] = $arCalendar['NAME'];
                 $arFormatedCalendar['LEAGUE'] = $arCalendar['LEAGUE'];
                 $arFinalCalendar[$keyC] = $arFormatedCalendar;
@@ -330,6 +340,7 @@ class SaveVolley extends Basis {
     }
 
     /**
+     * Удаление игр где нет ключевой команды
      * @param $arCalendar
      * @param $arKeys
      * @param $arNeedTeamKey

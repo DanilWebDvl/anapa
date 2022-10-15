@@ -141,10 +141,10 @@ class Volley extends Basis {
                 }
 
             }
-            if (!empty($arTour['RESULTS'])) {
+//            if (!empty($arTour['RESULTS'])) {
                 $arTours[$arTour['NAME']] = $arTour;
                 $arTours[$arTour['NAME']]['LEAGUE'] = $league;
-            }
+//            }
         }
 
         $this->calendar = $arTours;
