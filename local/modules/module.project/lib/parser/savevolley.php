@@ -194,7 +194,7 @@ class SaveVolley extends Basis {
                 $bool = preg_match('~\<b>([\s\S]+?)<\/b>~',$result, $arScore);
 
                 if ($bool) {// Если есть счет, то достаем его и другие результаты
-                    $score = str_replace(':', ' : ', $arScore[1]);
+                    $score = str_replace(' : ', ' : ', $arScore[1]);
                     preg_match('~\\(([\s\S]+?)\)~',$result, $arOther);
                     $other = str_replace(', ', ' | ', $arOther[1]);
                     $other = str_replace(':', '-', $other);

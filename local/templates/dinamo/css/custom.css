@@ -67,7 +67,7 @@ body.active_menu .container_ui .logo_place path.mob_logo {
   z-index: -1; }
 
 .calendar_slider_place .owl-stage .owl-item .card {
-  height: 405px; }
+  min-height: 405px; }
 .calendar_slider_place .owl-stage .owl-item .active .card {
   background-color: #3066BF; }
 .slider_team_place .data_player .name {

@@ -307,7 +307,7 @@ header {
     margin: 0 auto;
     background-color: #3066BF;
     border-radius: 20px;
-    padding: 20px 0 45px;
+    padding: 20px 0;
     -webkit-transition: 1s all;
     -o-transition: 1s all;
     transition: 1s all;
@@ -348,9 +348,6 @@ header {
     -ms-flex-align: start;
     align-items: start;
 }
-.calendar_slider_place .slider_multiple .card.prev .vs_place {
-    padding: 25px 22px 35px;
-}
 .text_center {
     text-align: center;
 }
@@ -370,14 +367,6 @@ header {
 .calendar_slider_place .card .vs_place .vs_text {
     font-size: 48px;
     font-weight: 500;
-    padding: 0 10px;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-.calendar_slider_place .slider_multiple .card.prev .vs_place .vs_text {
-    font-size: 32px;
-    padding: 0;
 }
 .calendar_slider_place .card .vs_place .vs_text .desc {
     font-size: 18px;
@@ -388,10 +377,14 @@ header {
 }
 .calendar_slider_place .card .desc_place {
     text-align: center;
-    padding: 0 30px;
+    padding: 0 30px 10px;
     font-size: 26px;
 }
-
+.slider_multiple .owl-item, .slider_multiple .slide, .slider_multiple .owl-stage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
 .slider_multiple .owl-dots {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -407,6 +400,7 @@ header {
 .slider_multiple .owl-dots .owl-dot {
     margin: -20px 7px 0;
     width: 16px;
+    min-width: 16px;
     height: 16px;
     border-radius: 50%;
     background-color: #2696F5;
@@ -417,6 +411,7 @@ header {
 .slider_multiple .owl-dots .owl-dot.active {
     background-color: #FF57BA;
     width: 20px;
+    min-width: 20px;
     height: 20px;
 }
 .slider_multiple .owl-dots .owl-dot.prevActive {
@@ -1360,9 +1355,10 @@ body.active_menu {
     font-size: 48px;
     font-weight: 500;
 }
-.container_c ontent p, .container_content span, .container_content {
+.container_content p, .container_content span, .container_content {
     color: #1A1A1A;
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: 200;
 }
 .container_content p, .container_content span {
     padding-bottom: 20px;

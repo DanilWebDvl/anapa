@@ -87,20 +87,21 @@ function sliders() {
     slider_multiple.owlCarousel({
         stagePadding: 50,
         center:true,
-        dots:true,
-
         autoWidth:false,
         onTranslate: slide_drag,
         responsive:{
             0:{
+                dots:false,
                 margin:10,
                 items:1
             },
             600:{
+                dots:false,
                 margin:30,
                 items:2
             },
             1000:{
+                dots:true,
                 margin:70,
                 items:3
             },

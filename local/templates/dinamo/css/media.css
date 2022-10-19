@@ -132,6 +132,9 @@
     }
 }
 @media (max-width: 1024px) {
+    .calendar_slider_place .card .vs_place .vs_text {
+        font-size: 36px;
+    }
     .tournament_place .leader_place .card_sport {
         margin: 0 auto;
         width: 370px;
@@ -264,7 +267,7 @@
     }
     .calendar_slider_place .card .desc_place {
         font-size: 24px;
-        padding: 0 24px;
+        padding: 0 24px 10px;
     }
     .calendar_slider_place .owl-stage-outer {
         padding-bottom: 60px;
@@ -456,9 +459,6 @@
     .calendar_slider_place .match_results_list .card, .pager_cards_list .pager_card {
         width: 100%;
         margin-right: 0;
-    }
-    .calendar_slider_place .card .vs_place .vs_text {
-        font-size: 38px;
     }
     .list_team {
         -webkit-box-pack: justify;
