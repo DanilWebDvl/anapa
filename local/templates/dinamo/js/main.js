@@ -108,6 +108,9 @@ function sliders() {
             1300:{
                 margin:40,
                 items:4
+            },
+            1900:{
+                items:6
             }
         }
     });
@@ -164,10 +167,6 @@ function sliders() {
             1300:{
                 margin:50,
                 items:4
-            },
-            1700:{
-                margin:50,
-                items:7
             }
         }
     });
