@@ -111,6 +111,9 @@ function sliders() {
             },
             1900:{
                 items:6
+            },
+            2400:{
+                items:7
             }
         }
     });
