@@ -124,15 +124,20 @@ function sliders() {
             scrollX = 0;
         }
     });
-    let num = 0;
+    let num = 0, find = true, last = 0;
     $(slider_multiple).find('.card').each(function (index, el) {
+        last = index;
         if ($(el).hasClass('prev')) {
             num = index;
         } else {
+            find = false;
             return false;
         }
     });
-    $(slider_multiple).owlCarousel('to', num + 1);
+    if (!find)
+        $(slider_multiple).owlCarousel('to', num + 1);
+    else
+        $(slider_multiple).owlCarousel('to', last);
 
     var slider_multiple_team = $('.slider_multiple_team');
     slider_multiple_team.owlCarousel({
@@ -159,6 +164,10 @@ function sliders() {
             1300:{
                 margin:50,
                 items:4
+            },
+            1700:{
+                margin:50,
+                items:7
             }
         }
     });

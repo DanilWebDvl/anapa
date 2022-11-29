@@ -50,6 +50,62 @@ class LastSeason extends \CBitrixComponent
             $this->errors->setError(new Error('Section date is empty'));
     }
 
+    protected function makeFilterItems() {
+        /* Получаем последнюю сыгранную игру */
+        $arFilter = [
+            "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
+            "ACTIVE" => "Y",
+            "!PROPERTY_SCORE" => false
+        ];
+        $obEl = CIblockElement::GetList(
+            ["PROPERTY_DATE" => "DESC"],
+            $arFilter,
+            false,
+            ['nTopCount' => 1],
+            ['PROPERTY_DATE', 'ID']
+        );
+        while ($arEl = $obEl->GetNext()) {
+            $date = $arEl['PROPERTY_DATE_VALUE'];
+        }
+        /* -Получаем последнюю сыгранную игру- */
+
+        /* Забираем id игр ближайших к последней */
+        $obDate = new DateTime($date);
+        $arFilter = [
+            "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
+            "ACTIVE" => "Y",
+            "<=PROPERTY_DATE" => $obDate->format('Y-m-d H:i:s')
+        ];
+        $obEl = CIblockElement::GetList(
+            ["PROPERTY_DATE" => "DESC"],
+            $arFilter,
+            false,
+            ['nTopCount' => 5],
+            ['ID']
+        );
+        while ($arEl = $obEl->GetNext()) {
+            $arId[] = $arEl['ID']; // Прошедшие игры
+        }
+        unset($arFilter['<=PROPERTY_DATE']);
+        $arFilter['>PROPERTY_DATE'] = $obDate->format('Y-m-d H:i:s');
+        $obEl = CIblockElement::GetList(
+            ["PROPERTY_DATE" => "ASC"],
+            $arFilter,
+            false,
+            ['nTopCount' => 4],
+            ['ID']
+        );
+        while ($arEl = $obEl->GetNext()) {
+            $arId[] = $arEl['ID']; // Прошедшие игры
+            $a[] = $arEl['ID'];
+        }
+        sort($arId);
+        /* -Забираем id игр ближайших к последней- */
+
+        if (!empty($arId))
+            $GLOBALS['customFilter'] = ['ID' => $arId];
+    }
+
     public function executeComponent()
     {
         if (!$this->errors->isEmpty()) {
@@ -60,6 +116,10 @@ class LastSeason extends \CBitrixComponent
             return false;
         }
         global $APPLICATION;
+
+        if ($this->arParams['NEAR_CUR_DATE'] == 'Y') {
+            $this->makeFilterItems();
+        }
 
         $APPLICATION->IncludeComponent(
     "bitrix:news.list",
@@ -85,7 +145,7 @@ class LastSeason extends \CBitrixComponent
                 "DISPLAY_PREVIEW_TEXT" => "Y",
                 "DISPLAY_TOP_PAGER" => "N",
                 "FIELD_CODE" => array("", ""),
-                "FILTER_NAME" => "",
+                "FILTER_NAME" => $this->arParams['NEAR_CUR_DATE'] == 'Y' ? "customFilter" : "",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
                 "IBLOCK_TYPE" => $this->arParams["IBLOCK_TYPE"],

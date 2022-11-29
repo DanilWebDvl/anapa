@@ -10,4 +10,5 @@ $MESS['NEWS_COUNT'] = 'Количество элементов';
 $MESS['PAGER_TITLE'] = 'Текст кнопки "все"';
 $MESS['TITLE_BLOCK'] = 'Заголовок блока';
 $MESS['TITLE_BLOCK_2'] = 'Заголовок блока 2';
+$MESS['NEAR_CUR_DATE'] = 'Близко к текущей дате';
 ?>

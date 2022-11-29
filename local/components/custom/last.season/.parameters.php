@@ -70,6 +70,11 @@ $arComponentParameters = array(
 			"NAME"=>GetMessage("PAGER_SHOW_ALL"),
 			"TYPE"=>"STRING"
 		),
+		"NEAR_CUR_DATE" => Array(
+			"PARENT" => "BASE",
+			"NAME"=>GetMessage("NEAR_CUR_DATE"),
+			"TYPE"=>"STRING"
+		),
 	),
 );
 ?>

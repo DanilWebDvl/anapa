@@ -15,6 +15,10 @@ if (file_exists($docRoot . '/local/php_interface/include/define.php')) {
     require_once $docRoot . '/local/php_interface/include/define.php';
 }
 
+function pd($array) {
+    ?><pre><? print_r($array) ?></pre><?
+}
+
 function initParser() {
     try {
         $parser = new \Module\Project\Parser\SaveVolley();
