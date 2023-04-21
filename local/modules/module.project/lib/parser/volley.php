@@ -45,54 +45,58 @@ class Volley extends Basis {
     }
 
     public function parseResults() {
-        $selector = 'table.result_table tr';
-        $arCalendarTr = $this->page->querySelectorAll($selector);
+        $selector = 'table.result_table';
+        $resultTables = $this->page->querySelectorAll($selector);
 
-        if (empty($arCalendarTr)) {
+        if (empty($resultTables)) {
             $this->addError("table tournament in Volley.ru is empty");
             $this->showErrors();
         }
 
-        $count_teams = count($arCalendarTr) - 1;
-        foreach($arCalendarTr as $nodeTr) { // Каждая tr это отдельная команда
-            $arNodeTd = $nodeTr->querySelectorAll('td');
-            $arNodeText = $nodeTr->querySelectorAll('.text');
-            $colResFrom = 1 + $count_teams;
-            if (empty($arNodeText)) continue;
+        foreach ($resultTables as $key => $resultTable) {
+            if ($key != 1) continue;
+            $arCalendarTr = $resultTable->querySelectorAll('tr');
+            $count_teams = count($arCalendarTr) - 1;
+            foreach($arCalendarTr as $nodeTr) { // Каждая tr это отдельная команда
+                $arNodeTd = $nodeTr->querySelectorAll('td');
+                $arNodeText = $nodeTr->querySelectorAll('.text');
+                $colResFrom = 1 + $count_teams;
+                if (empty($arNodeText)) continue;
 
-            foreach ($arNodeTd as $key => $nodeTd) {
-                $text = $nodeTd->getInnerHTML();
+                foreach ($arNodeTd as $key => $nodeTd) {
+                    $text = $nodeTd->getInnerHTML();
 
-                switch ($key) {
-                    case 0: // Даты игр
-                        $text = str_replace('<span>', '<span> ', $text);
-                        $arTournament['NAME'] = strip_tags($text);
-                        break;
-                    case 1: // Даты игр
-                        $arTournament['NUM'] = strip_tags($text);
-                        break;
-                    case $colResFrom + 1: // Код игр (12 ключ)
-                        $arTournament['GAME'] = strip_tags($text);
-                        break;
-                    case $colResFrom + 2: // Код игр (12 ключ)
-                        $arTournament['WIN'] = strip_tags($text);
-                        break;
-                    case $colResFrom + 3: // Код игр (12 ключ)
-                        $arTournament['LOSE'] = strip_tags($text);
-                        break;
-                    case $colResFrom + 4: // Код игр (12 ключ)
-                        $arTournament['SCORE'] = strip_tags($text);
-                        break;
-                    case $colResFrom + 5: // Код игр (12 ключ)
-                        $arTournament['TWO'] = strip_tags($text);
-                        break;
+                    switch ($key) {
+                        case 0: // Даты игр
+                            $text = str_replace('<span>', '<span> ', $text);
+                            $arTournament['NAME'] = strip_tags($text);
+                            break;
+                        case 1: // Даты игр
+                            $arTournament['NUM'] = strip_tags($text);
+                            break;
+                        case $colResFrom + 1: // Код игр (12 ключ)
+                            $arTournament['GAME'] = strip_tags($text);
+                            break;
+                        case $colResFrom + 2: // Код игр (12 ключ)
+                            $arTournament['WIN'] = strip_tags($text);
+                            break;
+                        case $colResFrom + 3: // Код игр (12 ключ)
+                            $arTournament['LOSE'] = strip_tags($text);
+                            break;
+                        case $colResFrom + 4: // Код игр (12 ключ)
+                            $arTournament['SCORE'] = strip_tags($text);
+                            break;
+                        case $colResFrom + 5: // Код игр (12 ключ)
+                            $arTournament['TWO'] = strip_tags($text);
+                            break;
+                    }
                 }
+
+                $arTournaments[$arTournament['NUM']] = $arTournament;
             }
 
-            $arTournaments[$arTournament['NUM']] = $arTournament;
+            $this->score = $arTournaments;
         }
-
-        $this->score = $arTournaments;
     }
 
     public function parseCalendar() {
