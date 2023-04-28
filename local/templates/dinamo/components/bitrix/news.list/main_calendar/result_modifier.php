@@ -30,6 +30,12 @@ if (!empty($arResult['ITEMS'])) {
             $arItem['CITY'] = $arPlace[1];
             $arTour = explode($arPlace[1], $arItem['PROPERTIES']['PLACE']['VALUE']);
             $arItem['TOUR'] = $arTour[0];
+
+            if (empty($arItem['CITY']))
+                $arItem['CITY'] = $arItem['PROPERTIES']['PLACE']['VALUE'];
+
+            if (empty($arItem['TOUR']))
+                $arItem['TOUR'] = $arItem['PROPERTIES']['STAGE']['VALUE'];
         }
 
         if (!empty($arItem['PROPERTIES']['TEAM_H']['VALUE'])) {

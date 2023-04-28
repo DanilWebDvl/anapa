@@ -100,6 +100,80 @@ class Volley extends Basis {
     }
 
     public function parseCalendar() {
+        $selector = 'table.calend_table';
+        $arCalendar = $this->page->querySelectorAll($selector);
+        $arCalendarStage = $this->page->querySelectorAll('.result_table_header');
+        foreach($arCalendarStage as $node) {
+            $nodeB = $node->querySelector('b');
+            $arStage[] = $nodeB->getInnerHTML();
+        }
+
+        $arLeagues = $this->page->querySelectorAll("#women_leagues_select option[selected]");
+        foreach ($arLeagues as $arLeague)
+            $league = $arLeague->getTextContent();
+
+        if (empty($arCalendar)) {
+            $this->addError("table calendar in Volley.ru is empty");
+            $this->showErrors();
+        }
+
+        foreach($arCalendar as $keyCal => $node) {
+            $arCalendarTr = $node->querySelectorAll('tr');
+
+            foreach($arCalendarTr as $nodeTr) { // Каждая tr это отдельный тур
+                $arNodeTd = $nodeTr->querySelectorAll('td');
+                $arNodeText = $nodeTr->querySelectorAll('.text');
+                unset($arTour);
+                unset($need_team);
+                if (empty($arNodeText)) continue;
+
+                foreach ($arNodeTd as $key => $nodeTd) {
+
+                    $text = $nodeTd->getInnerHTML();
+                    switch ($key) {
+                        case 0: // Даты игр
+                            $arContent = $this->explodeColumn($text);
+                            $arTour['DATES'] = $arContent;
+                            break;
+                        case 2: // Название тура
+                            $arTour['NAME'] = trim(strip_tags($text));
+                            break;
+                        case 4: // Команды лево
+                            $arContent = $this->explodeColumn($text);
+                            $arTour['TEAMS_LEFT'] = $arContent;
+                            break;
+                        case 6: // Команды права
+                            $arContent = $this->explodeColumn($text);
+                            $arTour['TEAMS_RIGHT'] = $arContent;
+                            break;
+                        case 10: // Команды права
+                            $arContent = $this->explodeColumn($text, false);
+                            $arTour['RESULTS'] = $arContent;
+                            break;
+                    }
+
+                }
+                $stage = '';
+                if ($keyCal > 0)
+                    $stage = $arStage[$keyCal+1];
+
+//            if (!empty($arTour['RESULTS'])) {
+                $arTours[$arTour['NAME']] = $arTour;
+                $arTours[$arTour['NAME']]['LEAGUE'] = $league;
+                $arTours[$arTour['NAME']]['STAGE'] = $stage;
+//            }
+            }
+
+        }
+        $this->calendar = $arTours;
+    }
+
+    /**
+     * @return void
+     * @throws \Exception
+     * @deprecated
+     */
+    public function parseCalendarOld() {
         $selector = 'table.calend_table tr';
         $arCalendarTr = $this->page->querySelectorAll($selector);
 
