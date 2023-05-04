@@ -76,11 +76,12 @@ class LastSeason extends \CBitrixComponent
             "ACTIVE" => "Y",
             "<=PROPERTY_DATE" => $obDate->format('Y-m-d H:i:s')
         ];
+        $count = round($this->arParams["NEWS_COUNT"] / 2);
         $obEl = CIblockElement::GetList(
             ["PROPERTY_DATE" => "DESC"],
             $arFilter,
             false,
-            ['nTopCount' => 5],
+            ['nTopCount' => $count ?: 5],
             ['ID']
         );
         while ($arEl = $obEl->GetNext()) {
@@ -92,7 +93,7 @@ class LastSeason extends \CBitrixComponent
             ["PROPERTY_DATE" => "ASC"],
             $arFilter,
             false,
-            ['nTopCount' => 4],
+            ['nTopCount' => $count ? $count - 1 : 4],
             ['ID']
         );
         while ($arEl = $obEl->GetNext()) {
