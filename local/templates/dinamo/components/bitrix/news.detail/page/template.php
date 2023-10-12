@@ -14,9 +14,11 @@
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 $this->setFrameMode(true);
-
-if (empty($arResult['PROPERTIES']['TYPE']['VALUE_XML_ID']) || $arResult['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'PAGE')
+if (empty($arResult['PROPERTIES']['TYPE']['VALUE_XML_ID']) || $arResult['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'PAGE') {
     include 'page.php';
-elseif ($arResult['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'MANAGER')
+} elseif ($arResult['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'MANAGER') {
     include 'manager.php';
+} elseif ($arResult['PROPERTIES']['TYPE']['VALUE_XML_ID'] == 'RP') {
+    include 'rp.php';
+}
 ?>

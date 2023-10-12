@@ -120,3 +120,6 @@ body.active_menu .container_ui .logo_place path.mob_logo {
 .sb_club .logo_sponsor {
   width: 440px;
   height: 440px; }
+.sb_width_full{
+  width: 100%;
+}
