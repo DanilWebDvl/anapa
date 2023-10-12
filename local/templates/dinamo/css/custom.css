@@ -126,8 +126,11 @@ body.active_menu .container_ui .logo_place path.mob_logo {
 }
 
 .page_calendar_place > .double_side{
-	grid-template-columns: 1fr 2fr;	
+	grid-template-columns: 1fr 2fr;
 }
 .page_calendar_place > .double_side .left-side{
 	margin-right: 20px;
+}
+.sb_width_full{
+  width: 100%;
 }
