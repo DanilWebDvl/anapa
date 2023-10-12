@@ -20,7 +20,7 @@ $this->setFrameMode(true);
         <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
         <? foreach ($arResult['ITEMS'] as $arItem): ?>
             <? if (!empty($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'])) {
-                foreach ($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'] as $keyIndex=>$PROPERTY_PHOTO) {
+                foreach ($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'] as $keyIndex => $PROPERTY_PHOTO) {
                     $link = CFile::GetPath($PROPERTY_PHOTO);
                     $RESIZE = $link;
                     ?>
@@ -32,7 +32,7 @@ $this->setFrameMode(true);
                         <div class="flex flex-between flex-a-center">
                             <p class="data"><?= $arItem['PROPERTIES']['DATE']['VALUE'] ?></p>
                         </div>
-                        <p><?= $arItem['PROPERTIES']['MORE_PHOTO']['DESCRIPTION'][$keyIndex] ? : $arItem['NAME'] ?></p>
+                        <p><?= $arItem['PROPERTIES']['MORE_PHOTO']['DESCRIPTION'][$keyIndex] ?: $arItem['NAME'] ?></p>
                     </span>
                         </div>
                     </div>

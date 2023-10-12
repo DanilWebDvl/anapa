@@ -13,7 +13,7 @@
                             <p><b><?= $arResult['PROPERTIES']['TEXT_1']['~VALUE']['TEXT'] ?></b></p>
                         <? endif ?>
                         <? if (!empty($arResult['PROPERTIES']['QUOTE_1']['VALUE'])): ?>
-                            <blockquote><?= $arResult['PROPERTIES']['QUOTE_1']['VALUE'] ?></blockquote>
+                            <blockquote><?= $arResult['PROPERTIES']['QUOTE_1']['~VALUE']['TEXT'] ?></blockquote>
                         <? endif ?>
                     </div>
                 </div>
