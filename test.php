@@ -1,8 +1,14 @@
-<?
-//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 //$APPLICATION->SetTitle("Мебельная компания");
 //global $USER;
 //$USER->Authorize(1);
-phpinfo();
+//$obVolley = new Module\Project\Parser\Volley();
+//$obVolley->parse();
+//$arCalendar = $obVolley->getCalendar();
+//$arTournament = $obVolley->getScore();
+//initParser();
 ?>
-<?//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<pre><? print_r($arCalendar) ?></pre>
+<pre><?// print_r($arTournament) ?></pre>
+<?php //require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

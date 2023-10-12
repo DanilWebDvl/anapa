@@ -120,3 +120,14 @@ body.active_menu .container_ui .logo_place path.mob_logo {
 .sb_club .logo_sponsor {
   width: 440px;
   height: 440px; }
+
+.card_sport .img_with_wave .num{
+	z-index: 5;
+}
+
+.page_calendar_place > .double_side{
+	grid-template-columns: 1fr 2fr;	
+}
+.page_calendar_place > .double_side .left-side{
+	margin-right: 20px;
+}

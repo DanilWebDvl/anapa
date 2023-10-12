@@ -30,6 +30,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Анкета",
+		"https://academy.volleygrad.ru/anketa_2",
+		Array(),
+		Array(),
+		""
+	),
+	Array(
 		"Волейград",
 		"/about/",
 		Array(), 

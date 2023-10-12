@@ -215,6 +215,7 @@ class SaveVolley extends Basis {
                         'DATE' => $obDate->format('Y-m-d'),
                         'PROPERTY_VALUES' => array(
                             'PLACE' => $arTour['NAME'],
+                            'STAGE' => $arTour['STAGE'],
                             'BATTLE' => $arTour['LEAGUE'],
                             'DATE' => $obDate->format('d.m.Y H:i:s'),
                             'SYS_YEAR' => $obDate->format('Y'),
@@ -332,6 +333,7 @@ class SaveVolley extends Basis {
 
                 $arFormatedCalendar['NAME'] = $arCalendar['NAME'];
                 $arFormatedCalendar['LEAGUE'] = $arCalendar['LEAGUE'];
+                $arFormatedCalendar['STAGE'] = $arCalendar['STAGE'];
                 $arFinalCalendar[$keyC] = $arFormatedCalendar;
             }
         }

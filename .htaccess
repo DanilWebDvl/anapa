@@ -9,7 +9,7 @@ ErrorDocument 404 /404.php
 
 	#php_value mbstring.internal_encoding UTF-8
 </IfModule>
-
+php_value auto_prepend_file "/home/bitrix/www/bitrix/modules/security/tools/start.php"
 <IfModule mod_rewrite.c>
 	Options +FollowSymLinks
 	RewriteEngine on

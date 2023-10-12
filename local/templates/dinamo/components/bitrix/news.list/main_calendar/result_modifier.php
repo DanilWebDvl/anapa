@@ -27,9 +27,11 @@ if (!empty($arResult['ITEMS'])) {
 
         if (!empty($arItem['PROPERTIES']['PLACE']['VALUE'])) {
             $arPlace = explode('тур ', $arItem['PROPERTIES']['PLACE']['VALUE']);
-            $arItem['CITY'] = $arPlace[1];
-            $arTour = explode($arPlace[1], $arItem['PROPERTIES']['PLACE']['VALUE']);
-            $arItem['TOUR'] = $arTour[0];
+			$arItem['CITY'] ??= $arPlace[1] ?? '';
+			$arItem['TOUR'] ??= $arPlace[0] ?? '';
+
+			$arItem['CITY'] = $arItem['CITY'] ?: $arItem['PROPERTIES']['PLACE']['VALUE'];
+			$arItem['TOUR'] = $arItem['TOUR'] ?: $arItem['PROPERTIES']['STAGE']['VALUE'];
         }
 
         if (!empty($arItem['PROPERTIES']['TEAM_H']['VALUE'])) {

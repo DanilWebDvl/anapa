@@ -69,7 +69,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "TEMPLATE_NAME" => "main_calendar",
         "SORT_BY" => "PROPERTY_DATE",
         "SORT_ORDER" => "ASC",
-        "NEWS_COUNT" => 9,
+        "NEWS_COUNT" => 11,
         "NEAR_CUR_DATE" => "Y"
     )
 );?>
