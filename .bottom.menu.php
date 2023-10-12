@@ -35,6 +35,13 @@ $aMenuLinks = Array(
         Array(),
         Array(),
         ""
+    ),
+    Array(
+        "Анкета для вступления в клуб",
+        "https://academy.volleygrad.ru/anketa_2",
+        Array(),
+        Array(),
+        ""
     )
 );
 ?>

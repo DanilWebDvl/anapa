@@ -14,7 +14,7 @@ Loc::loadLanguageFile(__FILE__);
 global $APPLICATION;
 $obComponent = $this->__component;
 $navNum = $arResult['NAV_NUM'];
-$iblockId = $arResult['ID'] ?: '';
+$iblockId = $arResult['ID'] ?: '0';
 $strId = $navNum . $iblockId;
 $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 
