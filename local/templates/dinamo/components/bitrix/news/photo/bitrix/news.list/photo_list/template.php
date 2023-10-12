@@ -22,18 +22,24 @@ $this->setFrameMode(true);
             <? if (!empty($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'])) {
                 foreach ($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'] as $keyIndex => $PROPERTY_PHOTO) {
                     $link = CFile::GetPath($PROPERTY_PHOTO);
-                    $RESIZE = $link;
+                    if (!empty($arItem['PREVIEW_PICTURE'])) {
+                        $RESIZE = CFile::ResizeImageGet($PROPERTY_PHOTO, ['width' => 1230, 'height' => 870])['src'];
+                    } else {
+                        $RESIZE = SITE_TEMPLATE_PATH . '/img/empty.jpg';
+                    }
                     ?>
                     <div class="js_pager_card pager_card pos-rel" href="<?= $link ?>"
                          data-fancybox="gallery">
-                        <picture><img src="<?= $RESIZE ?>" alt=""></picture>
+
+                        <picture><div style="background: url(<?= $RESIZE ?>)" class="sb_img"></div></picture>
+
                         <div class="text-place flex flex-bottom smooth_back color_line sky">
-                    <span class="content-slide">
-                        <div class="flex flex-between flex-a-center">
-                            <p class="data"><?= $arItem['PROPERTIES']['DATE']['VALUE'] ?></p>
-                        </div>
-                        <p><?= $arItem['PROPERTIES']['MORE_PHOTO']['DESCRIPTION'][$keyIndex] ?: $arItem['NAME'] ?></p>
-                    </span>
+                            <span class="content-slide">
+                                <div class="flex flex-between flex-a-center">
+                                    <p class="data"><?= $arItem['PROPERTIES']['DATE']['VALUE'] ?></p>
+                                </div>
+                                <p><?= $arItem['PROPERTIES']['MORE_PHOTO']['DESCRIPTION'][$keyIndex] ?: $arItem['NAME'] ?></p>
+                            </span>
                         </div>
                     </div>
                     <?
