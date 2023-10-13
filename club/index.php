@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Руководство");
 ?>
-<?/*$APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
     "bitrix:news.detail",
     "page",
     Array(
@@ -53,7 +53,7 @@ $APPLICATION->SetTitle("Руководство");
         "USE_PERMISSIONS" => "N",
         "USE_SHARE" => "N"
     )
-);*/?>
+);?>
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.detail",
     "page",

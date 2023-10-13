@@ -31,8 +31,8 @@
         </div>
         <? if (!empty($arResult['PROPERTIES']['ACHIV_TITLE']['VALUE'])): ?>
             <div>
-                <h2>Достижения</h2>
-                <div class="list_owner_data flex">
+                <h2 class="slide-up-block">Достижения</h2>
+                <div class="list_owner_data flex" style="display:none;">
                     <div class="tabs_place">
                         <? foreach ($arResult['PROPERTIES']['ACHIV_TITLE']['VALUE'] as $key_ti => $achiv_title): ?>
                             <div><p class="tab js_tab<?=$key_ti == 0 ? ' active' : '' ?>" data-tab="<?=$key_ti + 1 ?>"><?=$achiv_title ?></p></div>
