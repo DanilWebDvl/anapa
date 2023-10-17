@@ -1005,6 +1005,7 @@ header {
     right: 0;
     left: 0;
     height: 450px;
+    z-index: -1;
 }
 footer {
     background-color: #3066BF;
