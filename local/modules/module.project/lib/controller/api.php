@@ -35,7 +35,8 @@ class Api extends Controller
     }
     public static function gameAction($competition_id,$team_id='')
     {
-        //https://volley.ru/api/game?competition_id=XXXX&team_id=YYYY
+        //https://volley.ru/api/game?competition_id=01H7W0X1HT6BV10RKHMKXE0SZX&limit=1000
+        //https://volley.ru/api/game?competition_id=XXXX&team_id=YYYY&limit=1000
         $link = 'https://volley.ru/api/';
         $link .= 'game';
         if($competition_id){
