@@ -16,7 +16,7 @@
 $this->setFrameMode(true);
 ?>
 <? if (!empty($arResult['ITEMS'])): ?>
-    <div class="pager_cards_list flex items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
+    <div class="pager_cards_list rain items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
         <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
         <? foreach ($arResult['ITEMS'] as $arItem): ?>
             <? if (!empty($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'])) {
