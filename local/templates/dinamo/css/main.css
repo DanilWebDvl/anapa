@@ -1574,6 +1574,12 @@ body.active_menu {
 	transform: scale(1.09);
 }
 
+.pager_cards_list.rain {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding-bottom: 12px;
+}
 .pager_cards_list.rain .pager_card {
 	width: 100%;
 	height: 100%;
