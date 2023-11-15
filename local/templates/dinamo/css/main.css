@@ -1581,14 +1581,13 @@ body.active_menu {
 	padding-bottom: 12px;
 }
 .pager_cards_list.rain picture {
-	display: block; 
-    height: 100%;
+	display: block;
+	height: 100%;
 }
 .pager_cards_list.rain picture div {
-    height: 100%;
-	background-size: cover!important;
+	height: 100%;
+	background-size: cover !important;
 }
-
 .pager_cards_list.rain .pager_card {
 	width: 100%;
 	height: 100%;
@@ -1826,7 +1825,7 @@ body.active_menu {
 	grid-template-columns: 2fr 1fr 50px 1fr 2fr;
 }
 .table_place.calendar_table .part {
-	width: 30%;
+	width: 15%;
 }
 .sponsor_list .part {
 	padding-bottom: 80px;
