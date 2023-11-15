@@ -19,8 +19,12 @@ $this->setFrameMode(true);
             <div class="table_scroll">
                 <div class="table">
                     <div class="header_table">
-                        <? if (mb_strlen($key) < 2) {$key = '0'.$key;} ?>
-                        <div class="part"><?=Module\Project\Helpers\Utils::getNameMothByNum($key); ?></div>
+
+                        <?
+                        list($month, $year) = explode('_', $key);
+                        if (mb_strlen($month) < 2) {$month = '0'.$month;}
+                        ?>
+                        <div class="part"><?=Module\Project\Helpers\Utils::getNameMothByNum($month); ?> <?=$year?></div>
                     </div>
                     <div class="body_table">
                         <? foreach($arMoth as $arItem): ?>

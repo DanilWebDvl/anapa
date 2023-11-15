@@ -9,7 +9,18 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 if (!empty($arResult['ITEMS'])) {
     foreach ($arResult['ITEMS'] as $arItem) {
         unset($month);
+        $dateString = $arItem['PROPERTIES']['DATE']['VALUE'];
+        list($day, $month, $year) = explode('.', $dateString);
         preg_match_all('/[0-32]./', $arItem['PROPERTIES']['DATE']['VALUE'], $month);
+
+
+// Преобразуем значения в числа (если это необходимо)
+        $arItem['day'] = (int)$day;
+        $arItem['month'] = (int)$month;
+        $arItem['year'] = (int)$year;
+
+
+
         if (!empty($month[0][1])) {
 
             if (!empty($arItem['PROPERTIES']['TEAM_H']['VALUE'])) {
@@ -27,7 +38,9 @@ if (!empty($arResult['ITEMS'])) {
             }
 
             $arItem['PROPERTIES']['DATE']['DAY'] = $month[0][0];
-            $arResult['MONTHS'][(int)$month[0][1]][] = $arItem;
+            $arResult['MONTHS'][(int)$month[0][1].'_' . $arItem['year']][] = $arItem;
+            //$arResult['YEAR'][$arItem['YEAR']][] = $arItem;
+
         }
     }
 }
