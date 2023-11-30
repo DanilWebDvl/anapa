@@ -121,7 +121,7 @@ foreach ($arCalendar as $item) {
                         $itemTournament = $arInfoTournament->$idKeyTournament->grid[$idKeyGroup];
                         foreach ($itemTournament as $arTeam) {
                             $arNewFields = [];
-                            $arNewFields['XML_ID'] = $arTeam->tid;
+                            $arNewFields['XML_ID'] = md5($arTeam->tid . $idKeyTournament);
                             $arNewFields['IBLOCK_SECTION_ID'] = $arInfoEventTournament['ID'];
 
                             $arNewFields['NAME'] = $arTeam->team_title;
