@@ -72,7 +72,8 @@ foreach ($arCalendar as $item) {
                         $arPropGame['SET'] = $strRound;
                     }
                     $arPropGame['SCORE'] = $itemGame->teamAScore . ':' . $itemGame->teamBScore;
-                    if($arPropGame['SCORE'] == '0:0'){
+
+                    if($arPropGame['SCORE'] == '0:0' && $arPropGame['SET']==''){
                         $arPropGame['SCORE']='';
                     }
                     $arFieldsGame['PROPERTY_VALUES'] = $arPropGame;
