@@ -67,7 +67,7 @@ class LastSeason extends \CBitrixComponent
         while ($arEl = $obEl->GetNext()) {
             $date = $arEl['PROPERTY_DATE_VALUE'];
         }
-        /* -Получаем последнюю сыгранную игру- */
+            /* -Получаем последнюю сыгранную игру- */
 
         /* Забираем id игр ближайших к последней */
         $obDate = new DateTime($date);

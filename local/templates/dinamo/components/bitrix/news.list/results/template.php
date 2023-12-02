@@ -26,7 +26,7 @@ if ($arParams['SHOW_PAGINATION'] == 'Y')
                 <div class="card prev">
                     <div class="date_time flex flex-between short_wave_in_cart">
                         <div class="data_place">
-                            <p><?=$arItem['FORMAT_DAY'] ?>.<?=$arItem['FORMAT_MONTH'] ?></p>
+                            <p><?=$arItem['FORMAT_DAY'] ?>.<?=$arItem['FORMAT_MONTH'] ?>.<?=$arItem['FORMAT_YEAR']?></p>
                         </div>
                         <div class="stage">
                             <p><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?></p>

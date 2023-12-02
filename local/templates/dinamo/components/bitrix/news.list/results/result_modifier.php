@@ -13,6 +13,7 @@ if (!empty($arResult['ITEMS'])) {
             $arItem['FORMAT_DATE'] = $obDate->format($arParams['ACTIVE_DATE_FORMAT']);
             $arItem['FORMAT_DAY'] = $obDate->format('d');
             $arItem['FORMAT_MONTH'] = $obDate->format('m');
+            $arItem['FORMAT_YEAR'] = $obDate->format('Y');
             $arItem['FORMAT_TIME'] = $obDate->format('H:i');
         }
 

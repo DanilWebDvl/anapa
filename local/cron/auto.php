@@ -59,7 +59,7 @@ foreach ($arCalendar as $item) {
                     $arPropGame['PLACE'] = trim('г. ' . $itemGame->City_title . ' ' . $itemGame->arena_id); // ??? нужно понять что сюда записывать
 
                     $arPropGame['BATTLE'] = $item->title;
-
+//\_::d($item->rounds[0]->title);
                     //Роунды == Партии
                     $strRound = '';
                     foreach ($itemGame->rounds as $arInfoRound) {
@@ -72,6 +72,9 @@ foreach ($arCalendar as $item) {
                         $arPropGame['SET'] = $strRound;
                     }
                     $arPropGame['SCORE'] = $itemGame->teamAScore . ':' . $itemGame->teamBScore;
+                    if($arPropGame['SCORE'] == '0:0'){
+                        $arPropGame['SCORE']='';
+                    }
                     $arFieldsGame['PROPERTY_VALUES'] = $arPropGame;
 
                     //Проверяем есть ли такая игра в Данном Событие

@@ -22,7 +22,7 @@ if (!empty($arResult['ITEMS'])) {
 //            $arItem['MONTH'] = Module\Project\Helpers\Utils::getNameMothByNum($obDate->format('m'));
             $arItem['TIME'] = $obDate->format('H:i');
 //            $arItem['DAY'] = $obDate->format('d');
-            $arItem['DATE'] = $obDate->format('d.m');
+            $arItem['DATE'] = $obDate->format('d.m.Y');
         }
 
         if (!empty($arItem['PROPERTIES']['PLACE']['VALUE'])) {
