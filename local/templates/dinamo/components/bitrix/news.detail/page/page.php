@@ -2,7 +2,7 @@
     .main_banner {
 
         min-height: 600px;
-        margin-top: -38px;
+
         /*background-image: url(*/<?php //=$arResult['DETAIL_PICTURE']['SRC'] ?>/*);*/
         background-image: url('/images/banner_static.png');
     }

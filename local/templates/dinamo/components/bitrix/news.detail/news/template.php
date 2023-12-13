@@ -20,7 +20,7 @@ $this->setFrameMode(true);
             /*background-image: url(*/<?php //=$arResult['DETAIL_PICTURE']['SRC'] ?>/*);*/
             background-image: url('/images/banner_static.png');
             min-height: 600px;
-            margin-top: -38px;
+
         }
         .main_banner img {
             opacity: 0;
