@@ -1,6 +1,10 @@
 <style>
     .main_banner {
-        background-image: url(<?=$arResult['DETAIL_PICTURE']['SRC'] ?>);
+
+        min-height: 600px;
+        margin-top: -38px;
+        /*background-image: url(*/<?php //=$arResult['DETAIL_PICTURE']['SRC'] ?>/*);*/
+        background-image: url('/images/banner_static.png');
     }
     .main_banner img {
         opacity: 0;
