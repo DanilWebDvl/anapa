@@ -30,7 +30,7 @@ $this->setFrameMode(true);
                         </div>
                         <? if (!empty($arItem['PROPERTIES']['BATTLE']['VALUE'])): ?>
                             <div class="name_battle">
-                                <p><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?>. <?=$arItem['TOUR'] ?></p>
+                                <p><?=$arItem['PROPERTIES']['BATTLE']['VALUE'] ?>.</p>
                             </div>
                         <? endif ?>
                         <div class="vs_place">
