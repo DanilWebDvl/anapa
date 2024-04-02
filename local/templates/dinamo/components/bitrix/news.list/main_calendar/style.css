@@ -1,0 +1,9 @@
+.time_place-region{
+    font-size: 14px;
+    background: #f9f9f96e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding-bottom: 2px;
+}

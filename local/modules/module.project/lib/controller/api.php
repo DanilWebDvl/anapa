@@ -46,7 +46,6 @@ class Api extends Controller
             $link .= '&team_id=' . $team_id;
         }
         $link .='&limit=1000';
-
         $strJson = self::getQuery($link);
         if($strJson){
             return json_decode($strJson)->results;
@@ -60,7 +59,6 @@ class Api extends Controller
         if($competition_id){
             $link .= '?competition_id=' . $competition_id . '&limit=1000';
         }
-\_::d($link);
         $strJson = self::getQuery($link);
         if($strJson){
             return json_decode($strJson);

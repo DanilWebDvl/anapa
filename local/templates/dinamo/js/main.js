@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function events() {
     $('body').on('click', '.js_pager_card', function () {
-        let link = $(this).find('a').attr('href');
+        var link = $(this).find('a').attr('href');
         if (link !== undefined && link !== '') {
             document.location.href = link;
         }
@@ -47,7 +47,7 @@ function team_page() {
         $('.js_team_filter .js_part').removeClass('active');
         $(this).addClass('active');
 
-        let index = $(this).attr('data-index');
+        var index = $(this).attr('data-index');
         $('.js_slide_for_top').removeClass('active');
         $('.js_slide_for_top[data-index='+index+']').addClass('active');
     });

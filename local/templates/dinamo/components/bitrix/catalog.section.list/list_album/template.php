@@ -17,7 +17,7 @@ $this->setFrameMode(true);
     <? if (!empty($arResult['SECTIONS'])): ?>
         <div class="pager_cards_list grid">
             <? foreach ($arResult['SECTIONS'] as $arItem): ?>
-                <div class="js_pager_card pager_card pos-rel">
+                <div class="js_pager_card pager_card pos-rel 33">
                     <picture><img src="<?=$arItem['PICTURE']['SRC'] ?>" alt="<?=$arItem['PICTURE']['ALT'] ?>"></picture>
                     <div class="text-place flex flex-bottom smooth_back color_line sky">
                         <span class="content-slide">

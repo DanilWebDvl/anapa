@@ -26,6 +26,7 @@ $this->setFrameMode(true);
                             </div>
                             <div class="time_place">
                                 <p><?=$arItem['TIME'] ?></p>
+                                <div class="time_place-region">мск</div>
                             </div>
                         </div>
                         <? if (!empty($arItem['PROPERTIES']['BATTLE']['VALUE'])): ?>

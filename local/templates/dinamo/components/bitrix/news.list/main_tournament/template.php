@@ -12,11 +12,11 @@
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 $this->setFrameMode(true);
-?>
-<? if (!empty($arResult['ITEMS']) || !empty($arResult['PLAYER'])): ?>
+if (!empty($arResult['ITEMS']) || !empty($arResult['PLAYER'])): ?>
     <section class="tournament_place def_mt pos-rel">
         <div class="b_waves near_both mob_show"></div>
         <div class="container_ui">
+
             <div class="flex flex-between flex-tournament">
                 <? if (!empty($arResult['ITEMS'])): ?>
                     <div class="table_place">

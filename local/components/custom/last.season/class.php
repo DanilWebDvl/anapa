@@ -55,7 +55,11 @@ class LastSeason extends \CBitrixComponent
         $arFilter = [
             "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
             "ACTIVE" => "Y",
-            "!PROPERTY_SCORE" => false
+            [
+                'LOGIC'=>'AND',
+                "!PROPERTY_SCORE" => false,
+                "!=PROPERTY_SCORE" => ':'
+            ]
         ];
         $obEl = CIblockElement::GetList(
             ["PROPERTY_DATE" => "DESC"],
@@ -68,7 +72,6 @@ class LastSeason extends \CBitrixComponent
             $date = $arEl['PROPERTY_DATE_VALUE'];
         }
             /* -Получаем последнюю сыгранную игру- */
-
         /* Забираем id игр ближайших к последней */
         $obDate = new DateTime($date);
         $arFilter = [

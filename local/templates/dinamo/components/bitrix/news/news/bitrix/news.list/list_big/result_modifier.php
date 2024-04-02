@@ -17,8 +17,9 @@ if (!empty($arResult['ITEMS'])) {
         } else {
             $arItem['PREVIEW_PICTURE']['RESIZE'] = SITE_TEMPLATE_PATH . '/img/empty.jpg';
         }
+        $obParser = new CTextParser;
         if (!empty($arItem['PREVIEW_TEXT']))
-            $arItem['FORMAT_PREVIEW_TEXT'] = TruncateText($arItem['PREVIEW_TEXT'], 49);
+            $arItem['FORMAT_PREVIEW_TEXT'] = $obParser->html_cut($arItem['PREVIEW_TEXT'], 49);
     }
 }
 $cp = $this->__component;
