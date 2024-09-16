@@ -9,6 +9,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 //$arTournament = $obVolley->getScore();
 //initParser();
 ?>
-<pre><? print_r($arCalendar) ?></pre>
+
+<pre><?// print_r($arCalendar) ?></pre>
 <pre><?// print_r($arTournament) ?></pre>
-<?php //require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

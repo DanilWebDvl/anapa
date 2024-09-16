@@ -8,8 +8,22 @@ $aMenuLinks = Array(
         Array(),
         ""
 	),
+    Array(
+        "История",
+        "/club/istoriya/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Арена",
+        "/club/arena/",
+        Array(),
+        Array(),
+        ""
+    ),
 	Array(
-		"Спонсоры и партнеры",
+		"Спонсорам и партнерам",
 		"/club/sponrors/",
 		Array(), 
 		Array(),

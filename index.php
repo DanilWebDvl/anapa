@@ -1,9 +1,9 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Динамо-Анапа");
 include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
 ?>
-<?$APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "main_slider",
     Array(
@@ -59,8 +59,14 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "SORT_ORDER2" => "ASC",
         "STRICT_SECTION_CHECK" => "N"
     )
-);?>
-<?$APPLICATION->IncludeComponent(
+); ?>
+<div class="container_ui">
+    <h2 class="title_block mt60">Игра "Динамо-Анапа" - "Северянка"</h2>
+    <div class="flex flex-center mt60">
+        <a href="https://volley.ru/stream/01J4V9G28Q7BPQ1FWJ9DAM1H4Y" class="btn_link" target="_blank">Трансляция</a>
+    </div>
+</div>
+<? $APPLICATION->IncludeComponent(
     "custom:last.season",
     "",
     Array(
@@ -72,7 +78,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "NEWS_COUNT" => 11,
         "NEAR_CUR_DATE" => "Y"
     )
-);?>
+); ?>
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "main_news",
@@ -132,7 +138,163 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "PAGER_LINK" => '/news/'
     )
 ); ?>
-<?$APPLICATION->IncludeComponent(
+<?
+
+global $customFilter;
+
+$arFilter = [
+    "IBLOCK_ID" => 11,
+    "ACTIVE" => "Y",
+    "SECTION_ID" => "71",
+    ">DATE_CREATE" => "01.01.2024",
+    [
+        'LOGIC' => 'OR',
+        "!=PROPERTY_SET" => ':',
+        "!=PROPERTY_SET" => '0:0',
+    ]
+
+];
+$obEl = CIblockElement::GetList(
+    ["ID" => "DESC"],
+    $arFilter,
+    false,
+    ['nTopCount' => 50],
+    ['ID', 'PROPERTY_SCORE']
+);
+while ($obEl_tmp = $obEl->GetNextElement()) {
+    $arfieldTmp = $obEl_tmp->GetFields();
+    $arId[] = $arfieldTmp['ID']; // Прошедшие игры
+
+}
+
+$GLOBALS['customFilter'] = ['ID' => $arId];
+
+?>
+<?
+$APPLICATION->IncludeComponent(
+    "bitrix:catalog.section",
+    "table_main",
+    array(
+        "IBLOCK_TYPE" => "teams",
+        "IBLOCK_ID" => "11",
+        "ELEMENT_SORT_FIELD" => "sort",
+        "ELEMENT_SORT_ORDER" => "asc",
+        "ELEMENT_SORT_FIELD2" => "id",
+        "ELEMENT_SORT_ORDER2" => "desc",
+        "PROPERTY_CODE_MOBILE" => "",
+        "META_KEYWORDS" => "-",
+        "META_DESCRIPTION" => "-",
+        "BROWSER_TITLE" => "-",
+        "SET_LAST_MODIFIED" => "N",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "BASKET_URL" => "/personal/basket.php",
+        "ACTION_VARIABLE" => "action",
+        "PRODUCT_ID_VARIABLE" => "id",
+        "SECTION_ID_VARIABLE" => "SECTION_ID",
+        "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+        "PRODUCT_PROPS_VARIABLE" => "prop",
+        "FILTER_NAME" => "",
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => "36000000",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "SET_TITLE" => "N",
+        "MESSAGE_404" => "",
+        "SET_STATUS_404" => "N",
+        "SHOW_404" => "N",
+        "FILE_404" => "",
+        "DISPLAY_COMPARE" => "N",
+        "PAGE_ELEMENT_COUNT" => "30",
+        "MAX_ELEMENT_COUNT" => "10",
+        "LINE_ELEMENT_COUNT" => "3",
+        "PRICE_CODE" => [],
+        "USE_PRICE_COUNT" => "N",
+        "SHOW_PRICE_COUNT" => "1",
+        "PRICE_VAT_INCLUDE" => "N",
+        "USE_PRODUCT_QUANTITY" => "N",
+        "ADD_PROPERTIES_TO_BASKET" => "N",
+        "PARTIAL_PRODUCT_PROPERTIES" => "N",
+        "PRODUCT_PROPERTIES" => [],
+        "DISPLAY_TOP_PAGER" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "Y",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_BASE_LINK" => "",
+        "PAGER_PARAMS_NAME" => "",
+        "LAZY_LOAD" => "N",
+        "MESS_BTN_LAZY_LOAD" => "Показать ещё",
+        "LOAD_ON_SCROLL" => "N",
+        "OFFERS_CART_PROPERTIES" => [],
+        "OFFERS_FIELD_CODE" => null,
+        "OFFERS_PROPERTY_CODE" => [],
+        "OFFERS_SORT_FIELD" => null,
+        "OFFERS_SORT_ORDER" => null,
+        "OFFERS_SORT_FIELD2" => null,
+        "OFFERS_SORT_ORDER2" => null,
+        "OFFERS_LIMIT" => 0,
+        "SECTION_ID" => "71",
+        "SECTION_CODE" => "01H7W0X1HT6BV10RKHMKXE0SZX",
+        "SECTION_URL" => "/team/tournament/#SECTION_CODE_PATH#/",
+        "DETAIL_URL" => "/team/tournament/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+        "USE_MAIN_ELEMENT_SECTION" => "N",
+        "CONVERT_CURRENCY" => "N",
+        "CURRENCY_ID" => "",
+        "HIDE_NOT_AVAILABLE" => "N",
+        "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+        "LABEL_PROP" => [],
+        "LABEL_PROP_MOBILE" => "",
+        "LABEL_PROP_POSITION" => "",
+        "ADD_PICT_PROP" => "-",
+        "PRODUCT_DISPLAY_MODE" => null,
+        "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+        "ENLARGE_PRODUCT" => "STRICT",
+        "ENLARGE_PROP" => "",
+        "SHOW_SLIDER" => "N",
+        "SLIDER_INTERVAL" => "3000",
+        "SLIDER_PROGRESS" => "N",
+        "OFFER_ADD_PICT_PROP" => null,
+        "OFFER_TREE_PROPS" => [],
+        "PRODUCT_SUBSCRIPTION" => "Y",
+        "SHOW_DISCOUNT_PERCENT" => "N",
+        "DISCOUNT_PERCENT_POSITION" => "",
+        "SHOW_OLD_PRICE" => "N",
+        "SHOW_MAX_QUANTITY" => "N",
+        "MESS_SHOW_MAX_QUANTITY" => "",
+        "RELATIVE_QUANTITY_FACTOR" => "",
+        "MESS_RELATIVE_QUANTITY_MANY" => "",
+        "MESS_RELATIVE_QUANTITY_FEW" => "",
+        "MESS_BTN_BUY" => "Купить",
+        "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+        "MESS_BTN_SUBSCRIBE" => "Подписаться",
+        "MESS_BTN_DETAIL" => "Подробнее",
+        "MESS_NOT_AVAILABLE" => "Нет в наличии",
+        "MESS_BTN_COMPARE" => "Сравнение",
+        "USE_ENHANCED_ECOMMERCE" => "N",
+        "DATA_LAYER_NAME" => "",
+        "BRAND_PROPERTY" => "",
+        "TEMPLATE_THEME" => "blue",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "ADD_TO_BASKET_ACTION" => "",
+        "SHOW_CLOSE_POPUP" => "N",
+        "COMPARE_PATH" => "/team/tournament/",
+        "PAGER_LINK" => "/team/tournament/",
+        "PAGER_TITLE" => "ПОКАЗАТЬ ВСЕ",
+        "TITLE_BLOCK" => "Турнирная таблица",
+        "TITLE_BLOCK_2" => "Игрок месяца",
+        "COMPARE_NAME" => "",
+        "USE_COMPARE_LIST" => "Y",
+        "BACKGROUND_IMAGE" => "-",
+        "COMPATIBLE_MODE" => "Y",
+        "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+    ),
+    $component
+);
+?>
+<? /*$APPLICATION->IncludeComponent(
     "custom:last.season",
     "",
     Array(
@@ -141,6 +303,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "TEMPLATE_NAME" => "main_tournament",
         "SORT_BY" => "PROPERTY_PLACE",
         "SORT_ORDER" => "ASC",
+        'FILTER_NAME' => 'customFilter',
         "NEWS_COUNT" => "9",
         "PAGER_SHOW_ALL" => "Y",
         "PAGER_LINK" => "/team/tournament/",
@@ -148,7 +311,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "TITLE_BLOCK" => "Турнирная таблица",
         "TITLE_BLOCK_2" => "Игрок месяца"
     )
-);?>
+);*/ ?>
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "main_team",
@@ -208,7 +371,7 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "PAGER_LINK" => '/team/'
     )
 ); ?>
-<?$APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     "custom:media_main",
     "",
     Array(
@@ -219,5 +382,5 @@ include $_SERVER['DOCUMENT_ROOT'] . 'filters.php';
         "PAGER_TITLE" => "ВСЕ МЕДИА",
         "TITLE_BLOCK" => "Медиа"
     )
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+); ?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

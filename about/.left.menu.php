@@ -8,13 +8,13 @@ $aMenuLinks = Array(
         Array(),
         ""
 	),
-	Array(
-		"Арена",
-		"/about/arena/",
-		Array(), 
-		Array(),
-		"" 
-	),
+//	Array(
+//		"Арена",
+//		"/about/arena/",
+//		Array(),
+//		Array(),
+//		""
+//	),
 	Array(
 		"Отель",
 		"/about/hotel/",
