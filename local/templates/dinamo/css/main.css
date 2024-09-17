@@ -182,9 +182,35 @@ header {
 	font-weight: 800;
 	text-transform: uppercase;
 	padding-right: 40px;
+	position: relative;
 }
 .menu_t .part:last-child {
 	padding-right: 0;
+}
+.menu_t .part.active .root-item-selected {
+	color: #FF57BA;
+}
+.menu_t .part .child_list {
+	display: none;
+	position: absolute;
+	top: 25px;
+	left: -20px;
+	background-color: #2696f5;
+	color: #fff;
+	padding: 20px;
+	z-index: 997;
+	list-style: none;
+	border-radius: 5px;
+}
+.menu_t .part:hover .child_list {
+	display: block;
+}
+.menu_t .part .child_list li {
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+.menu_t .part .child_list li:last-child {
+	padding-bottom: 0;
 }
 .soc_t .soc_ico path {
 	fill: #3066bf;
