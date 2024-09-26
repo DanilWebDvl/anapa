@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("История");
     <p>21 октября 2023 года на территории «ВОЛЕЙГРАДА» состоялось торжественное открытие универсального спортивного комплекса «Волейград Арена» – площадью 7760 кв.м и вместимостью трибун на 1500 человек. В предстоящем сезоне наша команда начнет проводить здесь свои домашние туры.</p>
     <p>Талисман команды – Акуленок.</p>
 
-    <div class="single_slider owl-carousel">
+    <div class="slider_multiple_3 owl-carousel">
         <div>
             <img src="https://dinamo-anapa.ru/upload/medialibrary/048/we3du7hetni4zvux0wwe240neyralcju.jpg"/>
         </div>
@@ -67,7 +67,7 @@ $APPLICATION->SetTitle("История");
         </div>
     </div>
     <div class="mb100 slide_for_content">
-        <div class="nav_by_slider nav_by_slider_single"></div>
+        <div class="nav_by_slider nav_by_slider_multiple_3"></div>
     </div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

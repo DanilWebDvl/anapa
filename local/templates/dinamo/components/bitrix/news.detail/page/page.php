@@ -118,20 +118,14 @@
                 <div class="nav_by_slider nav_by_slider_single_2"></div>
             <? endif ?>
             <? if (!empty($arResult['PROPERTIES']['SLIDER_3']['VALUE'])): ?>
-                <div class="single_slider_3 owl-carousel">
+                <div class="slider_multiple_3 owl-carousel">
                     <? foreach ($arResult['PROPERTIES']['SLIDER_3']['VALUE'] as $key => $value): ?>
                         <div>
                             <img src="<?= CFile::GetPath($value) ?>"/>
-                            <? if (!empty($arResult['PROPERTIES']['SLIDER_3']['DESCRIPTION'][$key])) ?>
-                            <div class="slide_for_content">
-                                <div class="right-btn desc_photo">
-                                    <p><?= $arResult['PROPERTIES']['SLIDER_3']['DESCRIPTION'][$key] ?></p>
-                                </div>
-                            </div>
                         </div>
                     <? endforeach; ?>
                 </div>
-                <div class="nav_by_slider nav_by_slider_single_3"></div>
+                <div class="nav_by_slider nav_by_slider_multiple_3"></div>
             <? endif ?>
         </div>
     </div>

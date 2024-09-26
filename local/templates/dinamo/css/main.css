@@ -532,7 +532,8 @@ header {
 	display: flex;
 }
 .nav_by_slider.nav_by_slider_single,
-.nav_by_slider.nav_by_slider_single_2 {
+.nav_by_slider.nav_by_slider_single_2,
+.nav_by_slider.nav_by_slider_multiple_3 {
 	padding-top: 20px;
 }
 .nav_by_slider button {

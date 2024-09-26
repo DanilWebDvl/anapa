@@ -30,7 +30,7 @@ $APPLICATION->SetTitle("Арена");
     <p>В предстоящем 2024-2025 игровом сезоне арена примет первые домашние матчи нашей команды.</p>
     <p>Вместимость арены составляет 1500 человек. В спортивной зоне предусмотрены оборудованные раздевалки, тренерские, медицинский кабинет, а также арена оснащена новейшей мультимедиа-инфраструктурой.</p>
     <p>Кроме этого, в УСК «Волейград Арена» расположен бассейн с пятью дорожками и трибунами для зрителей на 150 мест, а также: тренажерный зал, 2 зала для групповых занятий, тренировочные площадки.</p>
-    <div class="single_slider owl-carousel">
+    <div class="slider_multiple_3 owl-carousel">
         <div>
             <img src="/upload/medialibrary/d27/yhz07pbczvrb32yl3dcpqkhqlsxsnh0x.jpg"/>
         </div>
@@ -78,7 +78,7 @@ $APPLICATION->SetTitle("Арена");
         </div>
     </div>
     <div class="mb100 slide_for_content">
-        <div class="nav_by_slider nav_by_slider_single"></div>
+        <div class="nav_by_slider nav_by_slider_multiple_3"></div>
     </div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
