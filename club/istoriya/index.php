@@ -33,5 +33,41 @@ $APPLICATION->SetTitle("История");
     <p>Сезон 2024-2025 для команды стартует под эгидой нового главного тренера – Труша Александра Евгеньевича. Обновился и «омолодился» игровой состав: средний возраст игрока составляет 18 лет.</p>
     <p>21 октября 2023 года на территории «ВОЛЕЙГРАДА» состоялось торжественное открытие универсального спортивного комплекса «Волейград Арена» – площадью 7760 кв.м и вместимостью трибун на 1500 человек. В предстоящем сезоне наша команда начнет проводить здесь свои домашние туры.</p>
     <p>Талисман команды – Акуленок.</p>
+
+    <div class="single_slider owl-carousel">
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/048/we3du7hetni4zvux0wwe240neyralcju.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/cac/1vwnraw7kz2hh5kn03jn6zh6veozxtdh.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/818/0janajrf03216t4b3sev53o7dgkeot8z.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/d4a/2yidohlwht8uedhc6ecjo18of50nnnpu.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/4b4/e5deb2iohvqitjsehgg3p6djcuubgznq.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/b36/z1bjqwryxwt0nr3o3w64atkrzuzw36hi.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/5c3/vc9x7hyo7bbbrf4vdt1ev7gl1e10mn9z.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/46e/6iiypzx9gcafgcr1f5370swmfx4x2c9f.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/fd6/z2e9iv7dqrxsawno0khfee7hd4qzzhag.jpg"/>
+        </div>
+        <div>
+            <img src="https://dinamo-anapa.ru/upload/medialibrary/f0a/1nbsuw04r4c6jmxsppauf5jfeg9gd7cr.jpg"/>
+        </div>
+    </div>
+    <div class="mb100 slide_for_content">
+        <div class="nav_by_slider nav_by_slider_single"></div>
+    </div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

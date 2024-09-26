@@ -1993,3 +1993,10 @@ body.active_menu {
 .list_owner_data .tabs_content_place * {
 	color: #fff !important;
 }
+.blue, .container_content p.blue {
+    color: #3066bf;
+}
+.container_ui .title_colored {
+    color: #3066bf;
+    margin-bottom: 30px;
+}

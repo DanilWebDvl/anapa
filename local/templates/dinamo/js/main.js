@@ -247,6 +247,50 @@ function sliders() {
             }
         });
     }
+    $('.single_slider_3').owlCarousel({
+        nav:true,
+        items:1,
+        dots: false,
+        navContainer: $('.nav_by_slider_single_3'),
+    });
+    if ( document.documentElement.clientWidth <= 767 ){
+        $('.slider_multiple_3').removeClass('owl-carousel');
+    }
+    if ( document.documentElement.clientWidth > 767 ){
+        var slider_multiple_3 = $('.slider_multiple_3');
+        slider_multiple_3.owlCarousel({
+            margin: 30,
+            nav:true,
+            navContainer: $('.nav_by_slider_3'),
+            dots:false,
+            loop: true,
+            center:true,
+            onTranslated: slide_drag_3,
+            initialized: slide_drag_3,
+            autoWidth:true,
+            responsive:{
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
+        slider_multiple_3.on('mousewheel', '.owl-stage', function (e) {
+            scrollX++;
+            if (scrollX > 5) {
+                if (e.originalEvent.deltaX>0 && document.documentElement.clientWidth > 991 && e.originalEvent.deltaX!==0) {
+                    slider_multiple_3.trigger('next.owl');
+                    e.preventDefault();
+                } else if (e.originalEvent.deltaX!==-0) {
+                    slider_multiple_3.trigger('prev.owl');
+                    e.preventDefault();
+                }
+                scrollX = 0;
+            }
+        });
+    }
 }
 
 function slide_drag(event) {
@@ -261,6 +305,12 @@ function slide_drag(event) {
 }
 
 function slide_drag_2(event) {
+    $(event.currentTarget).find('.news').removeAttr('style');
+    if ( document.documentElement.clientWidth > 991 ){
+        //$(event.currentTarget).find('.center .active:nth-child(1)').css('width', '630px');
+    }
+}
+function slide_drag_3(event) {
     $(event.currentTarget).find('.news').removeAttr('style');
     if ( document.documentElement.clientWidth > 991 ){
         //$(event.currentTarget).find('.center .active:nth-child(1)').css('width', '630px');

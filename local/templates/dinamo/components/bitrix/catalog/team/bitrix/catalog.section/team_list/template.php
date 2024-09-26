@@ -85,6 +85,18 @@ $this->setFrameMode(true);
                                         <p class="right"><?=$arProp['HOBBY']['VALUE'] ?></p>
                                     </div>
                                 <? endif ?>
+                                <? if (!empty($arProp['BORN_PLACE']['VALUE'])): ?>
+                                    <div class="part_board flex">
+                                        <p class="left"><?=$arProp['BORN_PLACE']['NAME'] ?></p>
+                                        <p class="right"><?=$arProp['BORN_PLACE']['VALUE'] ?></p>
+                                    </div>
+                                <? endif ?>
+                                <? if (!empty($arProp['IN_CLUB_FROM']['VALUE'])): ?>
+                                    <div class="part_board flex">
+                                        <p class="left"><?=$arProp['IN_CLUB_FROM']['NAME'] ?></p>
+                                        <p class="right"><?=$arProp['IN_CLUB_FROM']['VALUE'] ?></p>
+                                    </div>
+                                <? endif ?>
                             </div>
                             <? if (!empty($arProp['ACHIEV']['VALUE'])): ?>
                                 <div class="achievements">

@@ -1,4 +1,4 @@
 <?
-$sSectionName = "Спонсоры и партнеры";
+$sSectionName = "Спонсорам и партнерам";
 $arDirProperties = array();
 ?>
