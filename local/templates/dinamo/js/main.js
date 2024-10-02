@@ -198,16 +198,44 @@ function sliders() {
         });
     }
     $('.single_slider').owlCarousel({
+        margin: 30,
         nav:true,
         items:1,
         dots: false,
         navContainer: $('.nav_by_slider_single'),
+        center:true,
+        loop: true,
+        responsive:{
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
     });
     $('.single_slider_2').owlCarousel({
+        margin: 30,
         nav:true,
         items:1,
         dots: false,
         navContainer: $('.nav_by_slider_single_2'),
+        center:true,
+        loop: true,
+        responsive:{
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
     });
     if ( document.documentElement.clientWidth <= 767 ){
         $('.slider_multiple_2').removeClass('owl-carousel');

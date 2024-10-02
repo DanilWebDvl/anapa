@@ -11,8 +11,18 @@ $uidTeamDinamoAnapa = $arTeamDinamoAnapa['XML_ID'];
 $arCalendar = Api::competitionAction();
 foreach ($arCalendar as $item) {
     if ($item->sex == 0) {//Если игра Женская
-        $obGames = Api::gameAction($item->ulid,
-            $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
+        //$obGames = Api::gameAction($item->ulid,
+        //    $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
+
+        $obGames = [];
+        $obAllGames = Api::gameAction($item->ulid,'',true);
+
+        foreach ($obAllGames as $obGame) {
+            if(($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
+                $obGames[] = $obGame;
+            }
+        }
+
         $isCreatEvent = count($obGames) > 0;//флаг создания события в Инфоблоке календаря
         if ($isCreatEvent) { // Если флаг == True
 
@@ -27,7 +37,7 @@ foreach ($arCalendar as $item) {
 
             } else {
                 //иначе Создаем Раздел в Инфоблоке Календаря с Названием $item->title XML_ID Ставим $item->uid
-                $arFieldsEvent['NAME'] = $item->title;
+                $arFieldsEvent['NAME'] = $item->longtitle;
                 $arFieldsEvent['XML_ID'] = $arFieldsEvent['CODE'] = $item->ulid;
                 $newDate = date('d.m.Y', strtotime($item->endDate));
                 $arFieldsEvent['UF_FINAL_DATE_SEASON'] = $newDate;
@@ -94,7 +104,7 @@ foreach ($arCalendar as $item) {
 
             //Работаем с турнирной таблицей
             //01H7W0X1HT6BV10RKHMKXE0SZX
-            if ($arInfoTournament = Api::competitionresultsAction($item->ulid)) {
+            if ($arInfoTournament = Api::competitionresultsAction($item->ulid, true)) {
                 $arKeyTournament = $arIdGroup = [];
 
                 if ($arInfoEventTournament = Module\Project\Helpers\Utils::getEventToXml_id($item->ulid,
@@ -102,7 +112,7 @@ foreach ($arCalendar as $item) {
                     //$EnumUF_LIST_GROUP=Module\Project\Helpers\Utils::getEnumListProp2Section('GROUP',Module\Project\Helpers\Utils::getIdByCode('tournament'));
                 } else {
                     //создаем его
-                    $arFieldsEvent['NAME'] = $item->title;
+                    $arFieldsEvent['NAME'] = $item->longtitle;
                     $arFieldsEvent['XML_ID'] = $arFieldsEvent['CODE'] = $item->ulid;
                     $newDate = date('d.m.Y', strtotime($item->endDate));
                     $arFieldsEvent['UF_FINAL_DATE_SEASON'] = $newDate;
@@ -121,7 +131,6 @@ foreach ($arCalendar as $item) {
                         }
                     }
                 }
-
                 foreach ($arKeyTournament as $idKeyTournament) {
                     foreach ($arIdGroup[$idKeyTournament] as $idKeyGroup) {
                         $itemTournament = $arInfoTournament->$idKeyTournament->grid[$idKeyGroup];
