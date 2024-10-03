@@ -473,10 +473,9 @@
 		margin-bottom: 40px;
 		height: 220px;
 	}
-	.partners_list .part {
-		width: 50%;
-		margin-bottom: 30px;
-		text-align: center;
+	.partners_list {
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 	.double_side {
 		display: block;
@@ -565,9 +564,6 @@
 	.sponsor_list .data_sponsor .title_sponsor {
 		font-size: 35px;
 		word-break: break-word;
-	}
-	.partners_list .part {
-		width: 100%;
 	}
 	.special_date_title {
 		-webkit-box-orient: vertical;
@@ -698,11 +694,6 @@
 	}
 	.logo_place {
 		width: 70px;
-	}
-	.partners_list {
-		-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
 	}
 	.mb100 {
 		margin-bottom: 50px;

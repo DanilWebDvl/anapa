@@ -17,7 +17,7 @@ $this->setFrameMode(true);
     <section class="partners_place def_pt b_waves">
         <div class="container_ui">
             <h2 class="title_block mb100">Наши партнеры и спонсоры</h2>
-            <div class="flex partners_list">
+            <div class="partners_list">
                 <? foreach ($arResult['ITEMS'] as $arItem): if (empty($arItem['ICO'])) continue; ?>
                     <?
                     if (!empty($arItem['PROPERTIES']['LINK']['VALUE']))

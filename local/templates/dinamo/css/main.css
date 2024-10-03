@@ -1045,9 +1045,18 @@ header {
 	padding-bottom: 120px;
 }
 .partners_list {
-	-webkit-box-pack: space-evenly;
-	-ms-flex-pack: space-evenly;
-	justify-content: space-evenly;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+}
+.partners_list .part img {
+	max-width: 100%;
 }
 .b_waves {
 	background-image: url("../img/bwaves.png");
