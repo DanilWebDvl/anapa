@@ -15,7 +15,7 @@ foreach ($arCalendar as $item) {
         //    $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
 
         $obGames = [];
-        $obAllGames = Api::gameAction($item->ulid,'',true);
+        $obAllGames = Api::gameAction($item->ulid, $uidTeamDinamoAnapa);
 
         foreach ($obAllGames as $obGame) {
             if(($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
@@ -104,7 +104,7 @@ foreach ($arCalendar as $item) {
 
             //Работаем с турнирной таблицей
             //01H7W0X1HT6BV10RKHMKXE0SZX
-            if ($arInfoTournament = Api::competitionresultsAction($item->ulid, true)) {
+            if ($arInfoTournament = Api::competitionresultsAction($item->ulid)) {
                 $arKeyTournament = $arIdGroup = [];
 
                 if ($arInfoEventTournament = Module\Project\Helpers\Utils::getEventToXml_id($item->ulid,
