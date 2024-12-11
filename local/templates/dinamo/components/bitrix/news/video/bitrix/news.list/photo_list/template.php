@@ -18,7 +18,7 @@ $this->setFrameMode(true);
         <div class="pager_cards_list grid items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
             <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
-                <div class="js_pager_card pager_card pos-rel" href="<?=$arItem['PROPERTIES']['VIDEO']['VALUE']['path'] ?: $arItem['PROPERTIES']['YOUTUBE']['VALUE'] ?>" data-fancybox="gallery">
+                <div class="js_pager_card pager_card pos-rel 55" href="<?=$arItem['PROPERTIES']['VIDEO']['VALUE']['path'] ?: $arItem['PROPERTIES']['YOUTUBE']['VALUE'] ?>" data-fancybox="gallery">
                     <picture class="video_ico"><img src="<?=$arItem['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ?>"></picture>
                     <div class="text-place flex flex-bottom smooth_back color_line sky">
                         <span class="content-slide">

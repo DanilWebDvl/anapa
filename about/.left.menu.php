@@ -1,20 +1,20 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 $aMenuLinks = Array(
-	Array(
+	/*Array(
 		"Информация",
 		"/about/informatsiya/",
 		Array(),
         Array(),
         ""
-	),
-	Array(
-		"Арена",
-		"/about/arena/",
-		Array(), 
-		Array(),
-		"" 
-	),
+	),*/
+//	Array(
+//		"Арена",
+//		"/about/arena/",
+//		Array(),
+//		Array(),
+//		""
+//	),
 	Array(
 		"Отель",
 		"/about/hotel/",

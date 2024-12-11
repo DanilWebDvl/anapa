@@ -27,14 +27,14 @@ $this->setFrameMode(true);
     <?if ($arItem["IS_PARENT"]):?>
 
         <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-        <li class="parent_item_list">
-            <p class="parent_item">
-                <a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a>
-            </p>
-            <ul class="child_list">
+            <li class="parent_item_list">
+                <p class="parent_item">
+                    <a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a>
+                </p>
+                <ul class="child_list">
         <?else:?>
-        <li<?if ($arItem["SELECTED"]):?> class="selected"<?endif?>><a href="<?=$arItem["LINK"]?>" class="parent"><?=$arItem["TEXT"]?></a>
-        <ul class="child_list">
+            <li<?if ($arItem["SELECTED"]):?> class="selected"<?endif?>><a href="<?=$arItem["LINK"]?>" class="parent"><?=$arItem["TEXT"]?></a>
+                <ul class="child_list">
         <?endif?>
 
     <?else:?>

@@ -15,6 +15,15 @@ $this->setFrameMode(true);
 ?>
 <? if (!empty($arResult['ITEMS'])): ?>
     <section class="calendar_slider_place">
+		<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array(
+	"AREA_FILE_SHOW" => "file",
+		"PATH" => "/include/translation.php"
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "Y"
+	)
+);?>
         <div class="slider_multiple owl-carousel">
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="slide">
@@ -26,6 +35,7 @@ $this->setFrameMode(true);
                             </div>
                             <div class="time_place">
                                 <p><?=$arItem['TIME'] ?></p>
+                                <div class="time_place-region">мск</div>
                             </div>
                         </div>
                         <? if (!empty($arItem['PROPERTIES']['BATTLE']['VALUE'])): ?>

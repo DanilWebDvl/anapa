@@ -28,7 +28,7 @@ $this->setFrameMode(true);
                         $RESIZE = SITE_TEMPLATE_PATH . '/img/empty.jpg';
                     }
                     ?>
-                    <div class="js_pager_card pager_card pos-rel" href="<?= $link ?>"
+                    <div class="js_pager_card pager_card pos-rel 66" href="<?= $link ?>"
                          data-fancybox="gallery">
 
                         <picture><div style="background: url(<?= $RESIZE ?>)" class="sb_img"></div></picture>
@@ -45,7 +45,7 @@ $this->setFrameMode(true);
                     <?
                 }
             } else { ?>
-            <div class="js_pager_card pager_card pos-rel" href="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>"
+            <div class="js_pager_card pager_card pos-rel 77" href="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>"
                  data-fancybox="gallery">
                 <picture><img src="<?= $arItem['PREVIEW_PICTURE']['RESIZE'] ?>" alt=""></picture>
                 <div class="text-place flex flex-bottom smooth_back color_line sky">

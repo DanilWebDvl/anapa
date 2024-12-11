@@ -55,7 +55,11 @@ class LastSeason extends \CBitrixComponent
         $arFilter = [
             "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
             "ACTIVE" => "Y",
-            "!PROPERTY_SCORE" => false
+            [
+                'LOGIC'=>'AND',
+                "!PROPERTY_SCORE" => false,
+                "!=PROPERTY_SCORE" => ':'
+            ]
         ];
         $obEl = CIblockElement::GetList(
             ["PROPERTY_DATE" => "DESC"],
@@ -68,7 +72,6 @@ class LastSeason extends \CBitrixComponent
             $date = $arEl['PROPERTY_DATE_VALUE'];
         }
             /* -Получаем последнюю сыгранную игру- */
-
         /* Забираем id игр ближайших к последней */
         $obDate = new DateTime($date);
         $arFilter = [
@@ -122,66 +125,72 @@ class LastSeason extends \CBitrixComponent
             $this->makeFilterItems();
         }
 
-        $APPLICATION->IncludeComponent(
-    "bitrix:news.list",
-            $this->arParams["TEMPLATE_NAME"],
-            Array(
-                "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                "ADD_SECTIONS_CHAIN" => "N",
-                "AJAX_MODE" => "N",
-                "AJAX_OPTION_ADDITIONAL" => "",
-                "AJAX_OPTION_HISTORY" => "N",
-                "AJAX_OPTION_JUMP" => "N",
-                "AJAX_OPTION_STYLE" => "N",
-                "CACHE_FILTER" => "N",
-                "CACHE_GROUPS" => "Y",
-                "CACHE_TIME" => "36000000",
-                "CACHE_TYPE" => "A",
-                "CHECK_DATES" => "Y",
-                "DETAIL_URL" => "",
-                "DISPLAY_BOTTOM_PAGER" => "Y",
-                "DISPLAY_DATE" => "N",
-                "DISPLAY_NAME" => "Y",
-                "DISPLAY_PICTURE" => "N",
-                "DISPLAY_PREVIEW_TEXT" => "Y",
-                "DISPLAY_TOP_PAGER" => "N",
-                "FIELD_CODE" => array("", ""),
-                "FILTER_NAME" => $this->arParams['NEAR_CUR_DATE'] == 'Y' ? "customFilter" : "",
-                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                "IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
-                "IBLOCK_TYPE" => $this->arParams["IBLOCK_TYPE"],
-                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                "INCLUDE_SUBSECTIONS" => "Y",
-                "MESSAGE_404" => "",
-                "NEWS_COUNT" => $this->arParams["NEWS_COUNT"] ?: "20",
-                "PAGER_BASE_LINK_ENABLE" => "N",
-                "PAGER_DESC_NUMBERING" => "N",
-                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                "PAGER_SHOW_ALL" => $this->arParams["PAGER_SHOW_ALL"] ?: "N",
-                "PAGER_SHOW_ALWAYS" => "N",
-                "PAGER_TEMPLATE" => ".default",
-                "PAGER_TITLE" => $this->arParams["PAGER_TITLE"] ?: "",
-                "PARENT_SECTION" => $this->section_id,
-                "PARENT_SECTION_CODE" => "",
-                "PREVIEW_TRUNCATE_LEN" => "",
-                "PROPERTY_CODE" => array("*"),
-                "SET_BROWSER_TITLE" => "N",
-                "SET_LAST_MODIFIED" => "N",
-                "SET_META_DESCRIPTION" => "N",
-                "SET_META_KEYWORDS" => "N",
-                "SET_STATUS_404" => "N",
-                "SET_TITLE" => "N",
-                "SHOW_404" => "N",
-                "SORT_BY1" => $this->arParams["SORT_BY"] ?: "SORT",
-                "SORT_BY2" => "ID",
-                "SORT_ORDER1" => $this->arParams["SORT_ORDER"] ?: "DESC",
-                "SORT_ORDER2" => "ASC",
-                "STRICT_SECTION_CHECK" => "N",
-                "PAGER_LINK" => $this->arParams["PAGER_LINK"] ?: "",
-                "TITLE_BLOCK" => $this->arParams["TITLE_BLOCK"] ?: "",
-                "TITLE_BLOCK_2" => $this->arParams["TITLE_BLOCK_2"] ?: "",
-                "SECTION" => $this->section
-            )
-        );
+        $APPLICATION->IncludeComponent("bitrix:news.list", "={$this->arParams["TEMPLATE_NAME"]}", array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => $this->arParams["NEAR_CUR_DATE"]=="Y"?"customFilter":"",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => $this->arParams["IBLOCK_ID"],
+		"IBLOCK_TYPE" => $this->arParams["IBLOCK_TYPE"],
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => $this->arParams["NEWS_COUNT"]?:"20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => $this->arParams["PAGER_SHOW_ALL"]?:"N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => $this->arParams["PAGER_TITLE"]?:"",
+		"PARENT_SECTION" => $this->section_id,
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "*",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => $this->arParams["SORT_BY"]?:"SORT",
+		"SORT_BY2" => "ID",
+		"SORT_ORDER1" => $this->arParams["SORT_ORDER"]?:"DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"PAGER_LINK" => $this->arParams["PAGER_LINK"]?:"",
+		"TITLE_BLOCK" => $this->arParams["TITLE_BLOCK"]?:"",
+		"TITLE_BLOCK_2" => $this->arParams["TITLE_BLOCK_2"]?:"",
+		"SECTION" => $this->section
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "N"
+	)
+);
     }
 }

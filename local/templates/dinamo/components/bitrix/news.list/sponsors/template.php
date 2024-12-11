@@ -15,6 +15,7 @@ $this->setFrameMode(true);
 ?>
 <section class="page_sponsors_place def_pt_page">
     <div class="container_ui">
+        <h2 class="title_colored">СПОНСОРЫ И ПАРТНЕРЫ</h2>
         <? if (!empty($arResult['ITEMS'])): ?>
             <div class="flex sponsor_list">
                 <? foreach ($arResult['ITEMS'] as $arItem): ?>

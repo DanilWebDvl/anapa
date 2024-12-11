@@ -11,8 +11,18 @@ $uidTeamDinamoAnapa = $arTeamDinamoAnapa['XML_ID'];
 $arCalendar = Api::competitionAction();
 foreach ($arCalendar as $item) {
     if ($item->sex == 0) {//Если игра Женская
-        $obGames = Api::gameAction($item->ulid,
-            $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
+        //$obGames = Api::gameAction($item->ulid,
+        //    $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
+
+        $obGames = [];
+        $obAllGames = Api::gameAction($item->ulid, $uidTeamDinamoAnapa);
+
+        foreach ($obAllGames as $obGame) {
+            if(($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
+                $obGames[] = $obGame;
+            }
+        }
+
         $isCreatEvent = count($obGames) > 0;//флаг создания события в Инфоблоке календаря
         if ($isCreatEvent) { // Если флаг == True
 
@@ -27,7 +37,7 @@ foreach ($arCalendar as $item) {
 
             } else {
                 //иначе Создаем Раздел в Инфоблоке Календаря с Названием $item->title XML_ID Ставим $item->uid
-                $arFieldsEvent['NAME'] = $item->title;
+                $arFieldsEvent['NAME'] = $item->longtitle;
                 $arFieldsEvent['XML_ID'] = $arFieldsEvent['CODE'] = $item->ulid;
                 $newDate = date('d.m.Y', strtotime($item->endDate));
                 $arFieldsEvent['UF_FINAL_DATE_SEASON'] = $newDate;
@@ -44,16 +54,18 @@ foreach ($arCalendar as $item) {
                     $arFieldsGame['XML_ID'] = $arFieldsGame['CODE'] = $itemGame->ulid;
                     $arFieldsGame['IBLOCK_SECTION_ID'] = $idEvent;
                     $arPropGame = [];
-                    $arInfoTeamA = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamA_ulid,
-                        $itemGame->TeamA_title);
-                    $arInfoTeamB = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamB_ulid,
-                        $itemGame->TeamB_title);
+                    $arInfoTeamA = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamA_ulid,$itemGame->TeamA_title?:0);
+                    $arInfoTeamB = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamB_ulid,$itemGame->TeamB_title?:0);
                     $arPropGame['TEAM_H'] = $arInfoTeamA['ID'];//*обезательное поле
-                    $arPropGame['TEAM_H_SERVICE'] = $itemGame->TeamA_title . ' | ' . $itemGame->TeamA_ulid;
+                    $arPropGame['TEAM_H_SERVICE'] = $itemGame->TeamA_title?:0 . ' | ' . $itemGame->TeamA_ulid?:0;
                     $arPropGame['TEAM_G'] = $arInfoTeamB['ID'];//*обезательное поле
-                    $arPropGame['TEAM_G_SERVICE'] = $itemGame->TeamB_title . ' | ' . $itemGame->TeamB_ulid;
+                    $arPropGame['TEAM_G_SERVICE'] = $itemGame->TeamB_title?:0 . ' | ' . $itemGame->TeamB_ulid?:0;
 
-                    $newDateGame = date('d.m.Y H:i:s', strtotime($itemGame->gameDate));
+                    if($itemGame->gameDate_msk){
+                        $newDateGame = date('d.m.Y H:i:s', strtotime($itemGame->gameDate_msk));
+                    }else{
+                        $newDateGame = date('d.m.Y H:i:s', strtotime($itemGame->gameDate_str));
+                    }
                     $arPropGame['DATE'] = $newDateGame;//*обезательное поле
 
                     $arPropGame['PLACE'] = trim('г. ' . $itemGame->City_title . ' ' . $itemGame->arena_id); // ??? нужно понять что сюда записывать
@@ -71,6 +83,7 @@ foreach ($arCalendar as $item) {
                     if ($strRound != '') {
                         $arPropGame['SET'] = $strRound;
                     }
+
                     $arPropGame['SCORE'] = $itemGame->teamAScore . ':' . $itemGame->teamBScore;
 
                     if($arPropGame['SCORE'] == '0:0' && $arPropGame['SET']==''){
@@ -81,7 +94,6 @@ foreach ($arCalendar as $item) {
                     //Проверяем есть ли такая игра в Данном Событие
                     if ($arInfoGame = Module\Project\Helpers\Utils::getGameToXml_id($itemGame->ulid)) {
                         //Есть, обновляем игру
-                        //TODO: нужно  ли это??? Скорее всего да, для обновления Этапов
                         Module\Project\Helpers\Utils::updateGame($arInfoGame['ID'], $arFieldsGame);
                     } else {
                         Module\Project\Helpers\Utils::setGame($arFieldsGame);
@@ -100,7 +112,7 @@ foreach ($arCalendar as $item) {
                     //$EnumUF_LIST_GROUP=Module\Project\Helpers\Utils::getEnumListProp2Section('GROUP',Module\Project\Helpers\Utils::getIdByCode('tournament'));
                 } else {
                     //создаем его
-                    $arFieldsEvent['NAME'] = $item->title;
+                    $arFieldsEvent['NAME'] = $item->longtitle;
                     $arFieldsEvent['XML_ID'] = $arFieldsEvent['CODE'] = $item->ulid;
                     $newDate = date('d.m.Y', strtotime($item->endDate));
                     $arFieldsEvent['UF_FINAL_DATE_SEASON'] = $newDate;
@@ -119,7 +131,6 @@ foreach ($arCalendar as $item) {
                         }
                     }
                 }
-
                 foreach ($arKeyTournament as $idKeyTournament) {
                     foreach ($arIdGroup[$idKeyTournament] as $idKeyGroup) {
                         $itemTournament = $arInfoTournament->$idKeyTournament->grid[$idKeyGroup];

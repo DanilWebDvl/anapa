@@ -33,6 +33,7 @@ $this->setFrameMode(true);
         </div>
         <div class="right-side">
             <?
+
             $intSectionID = $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",
                 "table",

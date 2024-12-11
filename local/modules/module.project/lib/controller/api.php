@@ -26,14 +26,14 @@ class Api extends Controller
     public static function competitionAction()
     {
         $link = 'https://volley.ru/api/';
-        $link .= 'competition';
+        $link .= 'competition?limit=50';
         $strJson = self::getQuery($link);
         if($strJson){
             return json_decode($strJson)->results;
         }
         return [];
     }
-    public static function gameAction($competition_id,$team_id='')
+    public static function gameAction($competition_id,$team_id='', $multi = false)
     {
         //https://volley.ru/api/game?competition_id=01H7W0X1HT6BV10RKHMKXE0SZX&limit=1000
         //https://volley.ru/api/game?competition_id=XXXX&team_id=YYYY&limit=1000
@@ -46,21 +46,27 @@ class Api extends Controller
             $link .= '&team_id=' . $team_id;
         }
         $link .='&limit=1000';
-
+        if ($multi)
+        {
+            $link .= '&multi=1';
+        }
         $strJson = self::getQuery($link);
         if($strJson){
             return json_decode($strJson)->results;
         }
         return [];
     }
-    public static function competitionresultsAction($competition_id)
+    public static function competitionresultsAction($competition_id, $multi = false)
     {
         //https://volley.ru/api/competitionresult?competition_id=01H6X1MDX4D2KA17J3E9A51MWP
         $link = 'https://volley.ru/api/competitionresult';
         if($competition_id){
             $link .= '?competition_id=' . $competition_id . '&limit=1000';
         }
-\_::d($link);
+        if ($multi)
+        {
+            $link .= '&multi=1';
+        }
         $strJson = self::getQuery($link);
         if($strJson){
             return json_decode($strJson);

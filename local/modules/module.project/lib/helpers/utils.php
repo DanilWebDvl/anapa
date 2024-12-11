@@ -224,7 +224,7 @@ class Utils
 
         $obEl = \CIBlockSection::GetList(
             [],
-            ['ACTIVE' => 'Y', 'IBLOCK_ID' => $iblock, 'XML_ID' => $XML_ID],
+            [ 'IBLOCK_ID' => $iblock, 'XML_ID' => $XML_ID],
             false,
             ['ID','NAME','XML_ID', 'UF_*']
         );

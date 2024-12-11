@@ -1,16 +1,21 @@
 <style>
     .main_banner {
 
-        min-height: 600px;
+        /*min-height: 600px;*/
 
         /*background-image: url(*/<?php //=$arResult['DETAIL_PICTURE']['SRC'] ?>/*);*/
-        background-image: url('/images/banner_static.png');
+        /*background-image: url('/images/banner_static.png');*/
     }
-    .main_banner img {
-        opacity: 0;
+    @media (min-width: 1200px)
+    {
+        .main_banner img {
+            /*opacity: 0;*/
+            position: relative;
+            top: -50px;
+        }
     }
     .page_title{
-        color: #ffffff;
+        /*color: #ffffff;*/
     }
 </style>
 <section class="page_about_place def_pt_page">
@@ -111,6 +116,16 @@
                     <? endforeach; ?>
                 </div>
                 <div class="nav_by_slider nav_by_slider_single_2"></div>
+            <? endif ?>
+            <? if (!empty($arResult['PROPERTIES']['SLIDER_3']['VALUE'])): ?>
+                <div class="slider_multiple_3 owl-carousel">
+                    <? foreach ($arResult['PROPERTIES']['SLIDER_3']['VALUE'] as $key => $value): ?>
+                        <div>
+                            <img src="<?= CFile::GetPath($value) ?>"/>
+                        </div>
+                    <? endforeach; ?>
+                </div>
+                <div class="nav_by_slider nav_by_slider_multiple_3"></div>
             <? endif ?>
         </div>
     </div>
