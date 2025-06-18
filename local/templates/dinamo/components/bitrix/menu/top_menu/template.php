@@ -25,7 +25,7 @@ $this->setFrameMode(true);
                 <?php if ($arItem["IS_PARENT"]):?>
 
                     <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-                        <li class="part<?=($arItem['SELECTED'] == true) ? ' active' : '' ?>">
+                        <li class="part<?=($arItem['SELECTED'] == true) ? ' active' : '' ?><?=$arItem['PARAMS']['HIGHLIGHT'] ? ' highlight' : '' ?>">
                             <a href="<?=$arItem['LINK'] ?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem['TEXT'] ?></a>
                             <ul class="child_list">
                     <?php else:?>
@@ -36,7 +36,7 @@ $this->setFrameMode(true);
 
                 <?php else:?>
                     <?if ($arItem["DEPTH_LEVEL"] == 1):?>
-                        <li class="part<?=($arItem['SELECTED'] == true) ? ' active' : '' ?>">
+                        <li class="part<?=($arItem['SELECTED'] == true) ? ' active' : '' ?><?=$arItem['PARAMS']['HIGHLIGHT'] ? ' highlight' : '' ?>">
                             <a href="<?=$arItem['LINK'] ?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem['TEXT'] ?></a>
                         </li>
                     <?else:?>
