@@ -31,13 +31,16 @@ $aMenuLinks = Array(
 	Array(
 		"Академия ВФВ", 
 		"https://vfvakademiya.ru", 
-		Array(), 
-		Array("HIGHLIGHT"=>"1"), 
+
+		Array(),
+		Array('HIGHLIGHT' => true),
+
 		"" 
 	),
 	Array(
 		"Волейград", 
-		"http://volleygrad.ru", 
+
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 

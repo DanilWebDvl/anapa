@@ -16,14 +16,14 @@ $this->setFrameMode(true);
 <? if (!empty($arResult['ITEMS'])): ?>
     <section class="calendar_slider_place">
 		<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array(
-	"AREA_FILE_SHOW" => "file",
-		"PATH" => "/include/translation.php"
-	),
-	false,
-	array(
-	"ACTIVE_COMPONENT" => "Y"
-	)
-);?>
+            "AREA_FILE_SHOW" => "file",
+                "PATH" => "/include/translation.php"
+            ),
+            false,
+            array(
+            "ACTIVE_COMPONENT" => "N"
+            )
+        );?>
         <div class="slider_multiple owl-carousel">
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="slide">
