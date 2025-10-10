@@ -212,6 +212,24 @@ header {
 .menu_t .part .child_list li:last-child {
 	padding-bottom: 0;
 }
+.menu_t .highlight .root-item {
+	/*position: relative;*/
+	background-color: #dfebf9;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 0 -5px 0 -5px;
+	/*z-index: 1;*/
+}
+.menu_t .highlight .root-item:before {
+	/*content: '';*/
+	position: absolute;
+	background-color: #dfebf9;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	z-index: -1;
+}
 .soc_t .soc_ico path {
 	fill: #3066bf;
 }

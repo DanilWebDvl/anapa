@@ -125,7 +125,7 @@ class LastSeason extends \CBitrixComponent
             $this->makeFilterItems();
         }
 
-        $APPLICATION->IncludeComponent("bitrix:news.list", "={$this->arParams["TEMPLATE_NAME"]}", array(
+        $APPLICATION->IncludeComponent("bitrix:news.list", "{$this->arParams["TEMPLATE_NAME"]}", array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -189,7 +189,7 @@ class LastSeason extends \CBitrixComponent
 	),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "N"
+	"ACTIVE_COMPONENT" => "Y"
 	)
 );
     }

@@ -1,54 +1,53 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 $aMenuLinks = Array(
 	Array(
-		"Новости",
-		"/news/",
+		"Новости", 
+		"/news/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Команда",
-		"/team/",
+		"Команда", 
+		"/team/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Клуб",
-		"/club/",
+		"Клуб", 
+		"/club/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Медиа",
-		"/media/",
+		"Медиа", 
+		"/media/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Анкета",
-		"https://academy.volleygrad.ru/anketa_2",
-		Array(),
-		Array(),
-		""
+		"Академия ВФВ", 
+		"https://vfvakademiya.ru", 
+		Array(), 
+		Array("HIGHLIGHT"=>"1"), 
+		"" 
 	),
 	Array(
-		"Волейград",
-		"/about/",
+		"Волейград", 
+		"http://volleygrad.ru", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"",
-		"",
-		Array(),
-		Array(),
-		""
+		"", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
