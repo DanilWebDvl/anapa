@@ -30,6 +30,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Охрана труда",
+		"/club/okhrana-truda/",
+		Array(),
+		Array(),
+		""
+	),
+	Array(
 		"Контакты",
 		"/club/contacts/",
 		Array(),

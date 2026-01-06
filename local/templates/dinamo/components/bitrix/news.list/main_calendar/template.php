@@ -27,8 +27,7 @@ $this->setFrameMode(true);
         <div class="slider_multiple owl-carousel">
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="slide">
-
-                    <div class="card <?=($arItem['PREV'] == 'Y') ? 'prev' : '' ?>">
+                    <div class="card <?=($arItem['PREV'] == 'Y') ? 'prev' : '' ?>" data-info="<?=($_REQUEST['DEV']=='Y')?print_r($arItem,true):''?>">
                         <div class="date_time flex flex-between short_wave_in_cart">
                             <div class="data_place">
                                 <p><?=$arItem['DATE'] ?></p>

@@ -15,6 +15,7 @@ use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
 ?>
+
 <section class="page_calendar_place def_pt_page">
     <div class="container_ui flex double_side">
         <div class="left-side">

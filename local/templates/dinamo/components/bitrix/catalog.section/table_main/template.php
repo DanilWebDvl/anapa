@@ -12,6 +12,12 @@
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$itemsAll = $arResult['ITEMS_REFORMAT'];
+$itemsLimited = array_slice($itemsAll, 0, $arParams['MAX_ELEMENT_COUNT']);
+$itemsHidden = array_slice($itemsAll, $arParams['MAX_ELEMENT_COUNT']);
+
+
 ?>
 <? if (!empty($arResult['ITEMS_REFORMAT'])): ?>
     <section class="tournament_place def_mt pos-rel">
@@ -37,7 +43,7 @@ $this->setFrameMode(true);
                                 <?
                                 $sb_inc = 1;
                                 ?>
-                                <? foreach ($arResult['ITEMS_REFORMAT'] as $arItem): ?>
+                                <? foreach ($itemsLimited as $arItem): ?>
                                     <div class="row_table">
                                         <div class="part black"><?= $arItem['PROPERTIES']['PLACE']['VALUE'] ?></div>
                                         <div class="part with_img">
@@ -57,15 +63,44 @@ $this->setFrameMode(true);
                                     }
                                     $sb_inc++;?>
                                 <? endforeach; ?>
+                                <div id="more-items-container"></div>
+
                             </div>
                         </div>
                     </div>
-                    <? if ($arParams['PAGER_SHOW_ALL'] == 'Y' && count($arResult['ITEMS_REFORMAT']) > $arParams['MAX_ELEMENT_COUNT']): ?>
+                    <script>
+                        window.moreItems = <?= json_encode($itemsHidden, JSON_UNESCAPED_UNICODE) ?>;
+                    </script>
+
+                    <? if ($arParams['PAGER_SHOW_ALL'] == 'Y' && count($itemsHidden) > 0): ?>
                         <div class="full-btn">
-                            <a href="<?= $arParams['PAGER_LINK'] ?>"
-                               class="btn_link"><?= $arParams['PAGER_TITLE'] ?></a>
+                            <div class="btn_link" style="cursor: pointer" id="loadMoreBtn"><?= $arParams['PAGER_TITLE'] ?></div>
                         </div>
                     <? endif ?>
+                    <script>
+                        document.getElementById('loadMoreBtn')?.addEventListener('click', function() {
+                            const container = document.getElementById('more-items-container');
+
+                            window.moreItems.forEach(item => {
+                                const row = document.createElement('div');
+                            row.className = 'row_table';
+                            row.innerHTML = `
+            <div class="part black">${item.PROPERTIES.PLACE.VALUE}</div>
+            <div class="part with_img"><img src="${item.TEAM.ICO}" alt=""></div>
+            <div class="part_full"><span>${item.TEAM.NAME}</span></div>
+            <div class="part">${item.PROPERTIES.I.VALUE}</div>
+            <div class="part">${item.PROPERTIES.B.VALUE}</div>
+            <div class="part">${item.PROPERTIES.P.VALUE}</div>
+            <div class="part">${item.PROPERTIES.O.VALUE}</div>
+            <div class="part">${item.PROPERTIES.SET.VALUE}</div>
+        `;
+                            container.appendChild(row);
+                        });
+
+                            this.remove(); // скрываем кнопку после подгрузки
+                        });
+                    </script>
+
                 </div>
             </div>
         </div>

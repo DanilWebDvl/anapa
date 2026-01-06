@@ -8,25 +8,26 @@ global $DB;
 //Получаем uid команды Динамо Анапы
 $arTeamDinamoAnapa = Module\Project\Helpers\Utils::getTeamByCode('vk-dinamo-anapa-anapa');
 $uidTeamDinamoAnapa = $arTeamDinamoAnapa['XML_ID'];
+//\_::dd($uidTeamDinamoAnapa);
+$uidTeamDinamoAnapa = '01JZT58VDW0W581AJDCPQT1203';
+//01H5VQWAN1MHTH1BNJKGEW05D6
+//Новый ид команды Анапа == 01JZT58VDW0W581AJDCPQT1203
+
 echo "start competitionAction";
 $arCalendar = Api::competitionAction();
 foreach ($arCalendar as $item) {
     if ($item->sex == 0) {//Если игра Женская
         //$obGames = Api::gameAction($item->ulid,
         //    $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
-
         $obGames = [];
         $obAllGames = Api::gameAction($item->ulid, $uidTeamDinamoAnapa);
         if (!$obAllGames) continue;
-
-
 
         foreach ($obAllGames as $obGame) {
             if (($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
                 $obGames[] = $obGame;
             }
         }
-
         $isCreatEvent = count($obGames) > 0;//флаг создания события в Инфоблоке календаря
         if ($isCreatEvent) { // Если флаг == True
 

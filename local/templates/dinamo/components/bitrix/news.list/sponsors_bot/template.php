@@ -17,15 +17,15 @@ $this->setFrameMode(true);
     <section class="partners_place def_pt b_waves">
         <div class="container_ui">
             <h2 class="title_block mb100">Наши партнеры и спонсоры</h2>
-            <div class="partners_list">
+            <div class="owl-carousel sponsors_slider">
                 <? foreach ($arResult['ITEMS'] as $arItem): if (empty($arItem['ICO'])) continue; ?>
                     <?
                     if (!empty($arItem['PROPERTIES']['LINK']['VALUE']))
                         $link = $arItem['PROPERTIES']['LINK']['VALUE'];
                     ?>
-                    <a class="part"<?=!empty($link) ? ' href="'.$link.'"' : '' ?> target="_blank">
-                        <img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
-                    </a>
+						<a class="part"<?=!empty($link) ? ' href="'.$link.'"' : '' ?> target="_blank">
+							<img src="<?=$arItem['ICO'] ?>" alt="<?=$arItem['NAME'] ?>">
+						</a>
                 <? endforeach; ?>
             </div>
         </div>

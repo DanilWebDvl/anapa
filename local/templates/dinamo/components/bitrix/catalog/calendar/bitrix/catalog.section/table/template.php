@@ -29,6 +29,9 @@ $this->setFrameMode(true);
                     <div class="body_table">
                         <? foreach($arMoth as $arItem): ?>
                             <div class="row_table">
+                                <div <?= ($_REQUEST['DEV'] != 'Y')?'style="display: none"':''?>>
+                                    <?=$arItem['XML_ID'];?>
+                                </div>
                                 <div class="part_small text_center black"><?=$arItem['PROPERTIES']['DATE']['DAY'] ?></div>
                                 <div class="part_full with_img">
                                     <span class="text_right"><?=$arItem['TEAM_H']['NAME'] ?></span>
