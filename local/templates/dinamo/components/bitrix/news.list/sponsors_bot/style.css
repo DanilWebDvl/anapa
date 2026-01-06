@@ -1,0 +1,22 @@
+.sponsors_slider.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsors_slider.owl-carousel .owl-item a.part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sponsors_slider.owl-carousel .owl-item img {
+    max-height: 200px;
+	max-width:100%;
+    width: auto;
+}
+
+.sponsors_slider .owl-item {
+    height: 200px;
+}

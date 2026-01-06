@@ -1,28 +1,33 @@
 <?php
 // подключение служебной части пролога
 use Module\Project\Controller\Api;
+
 $_SERVER["DOCUMENT_ROOT"] = '/home/bitrix/www';
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 global $DB;
 //Получаем uid команды Динамо Анапы
 $arTeamDinamoAnapa = Module\Project\Helpers\Utils::getTeamByCode('vk-dinamo-anapa-anapa');
 $uidTeamDinamoAnapa = $arTeamDinamoAnapa['XML_ID'];
+//\_::dd($uidTeamDinamoAnapa);
+$uidTeamDinamoAnapa = '01JZT58VDW0W581AJDCPQT1203';
+//01H5VQWAN1MHTH1BNJKGEW05D6
+//Новый ид команды Анапа == 01JZT58VDW0W581AJDCPQT1203
 
+echo "start competitionAction";
 $arCalendar = Api::competitionAction();
 foreach ($arCalendar as $item) {
     if ($item->sex == 0) {//Если игра Женская
         //$obGames = Api::gameAction($item->ulid,
         //    $uidTeamDinamoAnapa);//Получаем информацию детально о Игре в которых участвует только команда Динамо-Анапы
-
         $obGames = [];
         $obAllGames = Api::gameAction($item->ulid, $uidTeamDinamoAnapa);
+        if (!$obAllGames) continue;
 
         foreach ($obAllGames as $obGame) {
-            if(($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
+            if (($obGame->teamAId == $uidTeamDinamoAnapa || $obGame->teamBId == $uidTeamDinamoAnapa) && $obGame->competition_id == $item->ulid) {
                 $obGames[] = $obGame;
             }
         }
-
         $isCreatEvent = count($obGames) > 0;//флаг создания события в Инфоблоке календаря
         if ($isCreatEvent) { // Если флаг == True
 
@@ -43,7 +48,6 @@ foreach ($arCalendar as $item) {
                 $arFieldsEvent['UF_FINAL_DATE_SEASON'] = $newDate;
                 $idEvent = Module\Project\Helpers\Utils::setEvent($arFieldsEvent);
             }
-
             if ($idEvent) {
                 //Если есть Ид события обновим список игр
                 foreach ($obGames as $itemGame) {
@@ -54,16 +58,16 @@ foreach ($arCalendar as $item) {
                     $arFieldsGame['XML_ID'] = $arFieldsGame['CODE'] = $itemGame->ulid;
                     $arFieldsGame['IBLOCK_SECTION_ID'] = $idEvent;
                     $arPropGame = [];
-                    $arInfoTeamA = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamA_ulid,$itemGame->TeamA_title?:0);
-                    $arInfoTeamB = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamB_ulid,$itemGame->TeamB_title?:0);
+                    $arInfoTeamA = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamA_ulid, $itemGame->TeamA_title ?: 0);
+                    $arInfoTeamB = Module\Project\Helpers\Utils::getTeamByXmlId($itemGame->TeamB_ulid, $itemGame->TeamB_title ?: 0);
                     $arPropGame['TEAM_H'] = $arInfoTeamA['ID'];//*обезательное поле
-                    $arPropGame['TEAM_H_SERVICE'] = $itemGame->TeamA_title?:0 . ' | ' . $itemGame->TeamA_ulid?:0;
+                    $arPropGame['TEAM_H_SERVICE'] = $itemGame->TeamA_title ?: 0 . ' | ' . $itemGame->TeamA_ulid ?: 0;
                     $arPropGame['TEAM_G'] = $arInfoTeamB['ID'];//*обезательное поле
-                    $arPropGame['TEAM_G_SERVICE'] = $itemGame->TeamB_title?:0 . ' | ' . $itemGame->TeamB_ulid?:0;
+                    $arPropGame['TEAM_G_SERVICE'] = $itemGame->TeamB_title ?: 0 . ' | ' . $itemGame->TeamB_ulid ?: 0;
 
-                    if($itemGame->gameDate_msk){
+                    if ($itemGame->gameDate_msk) {
                         $newDateGame = date('d.m.Y H:i:s', strtotime($itemGame->gameDate_msk));
-                    }else{
+                    } else {
                         $newDateGame = date('d.m.Y H:i:s', strtotime($itemGame->gameDate_str));
                     }
                     $arPropGame['DATE'] = $newDateGame;//*обезательное поле
@@ -86,8 +90,8 @@ foreach ($arCalendar as $item) {
 
                     $arPropGame['SCORE'] = $itemGame->teamAScore . ':' . $itemGame->teamBScore;
 
-                    if($arPropGame['SCORE'] == '0:0' && $arPropGame['SET']==''){
-                        $arPropGame['SCORE']='';
+                    if ($arPropGame['SCORE'] == '0:0' && $arPropGame['SET'] == '') {
+                        $arPropGame['SCORE'] = '';
                     }
                     $arFieldsGame['PROPERTY_VALUES'] = $arPropGame;
 

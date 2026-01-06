@@ -1,53 +1,56 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Новости", 
-		"/news/", 
+		"Новости",
+		"/news/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Команда", 
-		"/team/", 
+		"Команда",
+		"/team/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Клуб", 
-		"/club/", 
+		"Клуб",
+		"/club/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Медиа", 
-		"/media/", 
+		"Медиа",
+		"/media/",
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Академия ВФВ", 
-		"https://vfvakademiya.ru", 
+		"Академия ВФВ",
+		"https://vfvakademiya.ru",
+
 		Array(),
 		Array('HIGHLIGHT' => true),
+
+		""
+	),
+	Array(
+		"Волейград",
+
+		"/about/",
+		Array(), 
+		Array(), 
 		"" 
 	),
 	Array(
-		"Волейград", 
-		"/about/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"", 
-		"", 
-		Array(), 
-		Array(), 
-		"" 
+		"",
+		"",
+		Array(),
+		Array(),
+		""
 	)
 );
 ?>

@@ -12,12 +12,16 @@
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 $this->setFrameMode(true);
+$temp = $arResult['ITEMS'][0];
+$arResult['ITEMS'][0] = $arResult['ITEMS'][1];
+$arResult['ITEMS'][1] = $temp;
 ?>
 <? if (!empty($arResult['ITEMS'])): ?>
 
     <div class="js_page_filtrable">
         <div class="pager_cards_list grid mt60 items<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>">
             <!--items-<?= $arResult['NAV_NUM'] . $arResult['ID'] ?>-->
+			
             <? foreach ($arResult['ITEMS'] as $arItem): ?>
                 <div class="js_pager_card pager_card pos-rel 88">
                     <picture>

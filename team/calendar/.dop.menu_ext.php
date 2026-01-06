@@ -16,4 +16,5 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
 );
 
 $aMenuLinks = array_merge($aMenuLinks, $aMenuLinksExt);
+$aMenuLinks = array_reverse($aMenuLinks);
 ?>

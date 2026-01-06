@@ -88,6 +88,7 @@ class SaveVolley extends Basis {
         foreach ($this->arTournament as $arTour) { // Захожу в каждую позицию с сайта Volley.ru
             unset($arProps);
             unset($arFields);
+            //\_::dd($arTour['NAME']);
             $team_id = $arTeams[$arTour['NAME']]['ID'];
 
             $curTour = $arTournaments[$team_id];

@@ -7,7 +7,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @global \CDatabase $DB */
 /** @var CBitrixComponentTemplate $this */
 if (!empty($arResult['ITEMS'])) {
-    foreach ($arResult['ITEMS'] as &$arItem) {
+    foreach ($arResult['ITEMS'] as $key =>&$arItem) {
+        if(empty($arItem['PROPERTIES']['SET']['VALUE'])){
+            unset($arResult['ITEMS'][$key] );
+            continue;
+        }
+
         if (!empty($arItem['PROPERTIES']['DATE']['VALUE'])) {
             $obDate = new \Bitrix\Main\Type\DateTime($arItem['PROPERTIES']['DATE']['VALUE']);
             $arItem['FORMAT_DATE'] = $obDate->format($arParams['ACTIVE_DATE_FORMAT']);
